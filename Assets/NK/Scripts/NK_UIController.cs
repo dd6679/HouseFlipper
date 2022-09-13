@@ -16,7 +16,7 @@ public class NK_UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetMouseButtonDown(1))
         {
             if (isCheckBehavior)
             {
