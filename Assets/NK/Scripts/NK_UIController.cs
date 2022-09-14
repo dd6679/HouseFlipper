@@ -1,22 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NK_UIController : MonoBehaviour
 {
-    GameObject behaviorUI;
-    bool isCheckBehavior= false;
+    public GameObject behaviorUI;
+    bool isCheckBehavior = false;
+
+    public GameObject taskUI;
+    bool isCheckTask = false;
+
+    public GameObject waitUI;
+    private float currentTime;
+
+    public static bool isFinishWaiting = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        behaviorUI = transform.GetChild(0).gameObject;
         behaviorUI.SetActive(isCheckBehavior);
+        taskUI.SetActive(isCheckTask);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetMouseButtonDown(1))
         {
             if (isCheckBehavior)
             {
@@ -27,6 +37,36 @@ public class NK_UIController : MonoBehaviour
                 isCheckBehavior = true;
             }
             behaviorUI.SetActive(isCheckBehavior);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if(isCheckTask)
+            {
+                isCheckTask = false;
+            }
+            else
+            {
+                isCheckTask =true;
+            }
+            taskUI.SetActive(isCheckTask);
+        }
+
+        if (Input.GetMouseButton(0) && NK_PlayerBehavior.isWaiting)
+        { 
+            currentTime += Time.deltaTime;
+            waitUI.transform.GetChild(1).GetComponent<Image>().fillAmount = currentTime;
+            waitUI.SetActive(true);
+            if (currentTime >= 1)
+            {
+                isFinishWaiting = true;
+            }
+        }
+        else
+        {
+            waitUI.SetActive(false);
+            currentTime = 0;
+            //isFinishWaiting = false;
         }
     }
 }
