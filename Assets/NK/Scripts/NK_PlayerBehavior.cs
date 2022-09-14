@@ -5,8 +5,14 @@ using UnityEngine;
 
 public class NK_PlayerBehavior : MonoBehaviour
 {
+    public GameObject targetFactory;
     public GameObject customGrid;
+    public float waitTime = 0.5f;
+    public static bool isWaiting = false;
+
     GameObject moveTarget;
+    Vector3 ScreenCenter;
+
     // 플레이어 행동 상태
     public enum PlayerBehaviorState
     {
@@ -22,11 +28,13 @@ public class NK_PlayerBehavior : MonoBehaviour
     }
 
     public static PlayerBehaviorState behaviorState = PlayerBehaviorState.Idle;
+    public 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        ScreenCenter = new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
+        moveTarget = Instantiate(targetFactory);
     }
 
     // Update is called once per frame
@@ -62,14 +70,13 @@ public class NK_PlayerBehavior : MonoBehaviour
         }
     }
 
-
     private void Move()
     {
         // 마우스 클릭 시
-        if (Input.GetMouseButtonDown(0))
+        //if (Input.GetMouseButtonDown(0))
         {
             // 마우스 포지션을 취득해서 대입
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(ScreenCenter);
             NK_CustomGrid gridScript = customGrid.GetComponent<NK_CustomGrid>();
 
             // 마우스 포지션에서 레이를 던져 물체 감지 시 hit에 대입
@@ -78,11 +85,25 @@ public class NK_PlayerBehavior : MonoBehaviour
                 // 오브젝트의 타겟 취득
                 if (hit.collider.gameObject.CompareTag("Furniture"))
                 {
-                    moveTarget = hit.collider.gameObject.transform.parent.GetChild(0).gameObject;
+                    GameObject go = hit.collider.gameObject;
+                    moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
                     gridScript.target = moveTarget;
                     gridScript.structure = hit.collider.gameObject;
-                    moveTarget.SetActive(true);
+                    isWaiting = true;
                 }
+
+                if (NK_UIController.isFinishWaiting == true)
+                {
+                    moveTarget.SetActive(true);
+                    isWaiting = false;
+                }
+                /*else
+                {
+                    gridScript.target = null;
+                    gridScript.structure = null;
+                    if (moveTarget != null)
+                        moveTarget.SetActive(false);
+                }*/
             }
         }
     }
