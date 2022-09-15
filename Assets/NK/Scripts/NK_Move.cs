@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,16 @@ public class NK_Move : MonoBehaviour
     public Transform camPos;
     GameObject objectHitPosition;
     RaycastHit hitRay, hitLayerMask;
+
+    private void Update()
+    {
+        Rotate();
+    }
+
+    private void Rotate()
+    {
+        
+    }
 
     private void OnMouseUp()
     {
