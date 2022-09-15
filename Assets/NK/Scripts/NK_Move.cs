@@ -25,7 +25,7 @@ public class NK_Move : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
             speed = 180;
-            yScroll = 180 * yScroll / speed;
+            //yScroll = 180 * yScroll / speed;
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
