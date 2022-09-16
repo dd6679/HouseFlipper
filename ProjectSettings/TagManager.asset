@@ -6,16 +6,19 @@ TagManager:
   tags:
   - Furniture
   - Bullet
+  - UMAIgnore
+  - Glass
+  - Wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
   - Floor
   - Furniture
-  - 
+  - House
   - 
   - 
   - 

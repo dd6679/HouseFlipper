@@ -14,7 +14,13 @@ namespace ShatterToolkit.Helpers
                 
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
-                    hit.collider.SendMessage("Shatter", hit.point, SendMessageOptions.DontRequireReceiver);
+                    if (Vector3.Distance(hit.collider.gameObject.transform.position, transform.position) <= 1.8f && hit.collider.gameObject.tag.Contains("Wall"))
+                    {
+                        Rigidbody rig = hit.collider.gameObject.GetComponent<Rigidbody>();
+                        rig.isKinematic = false;
+                        hit.collider.SendMessage("Shatter", hit.point, SendMessageOptions.DontRequireReceiver);
+
+                    }
                 }
             }
         }

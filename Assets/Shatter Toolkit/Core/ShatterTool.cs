@@ -189,8 +189,6 @@ namespace ShatterToolkit
                 }
                 
                 Split(planes);
-                Destroy(gameObject, 2f);
-
             }
         }
         
@@ -377,9 +375,6 @@ namespace ShatterToolkit
                 newShatterTool.CalculateCenter();
                 
                 newGameObjects[i] = newGameObject;
-                Destroy(gameObject, 2f);
-
-
             }
         }
     }
