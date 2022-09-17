@@ -28,7 +28,7 @@ public class NK_PlayerBehavior : MonoBehaviour
     }
 
     public static PlayerBehaviorState behaviorState = PlayerBehaviorState.Idle;
-    public 
+    public
 
     // Start is called before the first frame update
     void Start()
@@ -70,41 +70,50 @@ public class NK_PlayerBehavior : MonoBehaviour
         }
     }
 
+    Outline outline;
+
     private void Move()
     {
-        // 마우스 클릭 시
-        //if (Input.GetMouseButtonDown(0))
+        // 마우스 포지션을 취득해서 대입
+        Ray ray = Camera.main.ScreenPointToRay(ScreenCenter);
+        NK_CustomGrid gridScript = customGrid.GetComponent<NK_CustomGrid>();
+
+        // 마우스 포지션에서 레이를 던져 물체 감지 시 hit에 대입
+        if (Physics.Raycast(ray, out var hit))
         {
-            // 마우스 포지션을 취득해서 대입
-            Ray ray = Camera.main.ScreenPointToRay(ScreenCenter);
-            NK_CustomGrid gridScript = customGrid.GetComponent<NK_CustomGrid>();
-
-            // 마우스 포지션에서 레이를 던져 물체 감지 시 hit에 대입
-            if (Physics.Raycast(ray, out var hit))
+            // 오브젝트의 타겟 취득
+            if (hit.collider.gameObject.CompareTag("Furniture"))
             {
-                // 오브젝트의 타겟 취득
-                if (hit.collider.gameObject.CompareTag("Furniture"))
-                {
-                    GameObject go = hit.collider.gameObject;
-                    moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
-                    gridScript.target = moveTarget;
-                    gridScript.structure = hit.collider.gameObject;
-                    isWaiting = true;
-                }
-
-                if (NK_UIController.isFinishWaiting == true)
-                {
-                    moveTarget.SetActive(true);
-                    isWaiting = false;
-                }
-                /*else
-                {
-                    gridScript.target = null;
-                    gridScript.structure = null;
-                    if (moveTarget != null)
-                        moveTarget.SetActive(false);
-                }*/
+                outline = hit.collider.gameObject.GetComponent<Outline>();
+                if (outline != null)
+                    outline.enabled = true;
+                GameObject go = hit.collider.gameObject;
+                //moveTarget.transform.SetParent(go.transform, true);
+                //moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
+                //moveTarget.transform.localScale = go.transform.localScale;
+                gridScript.target = moveTarget;
+                gridScript.structure = hit.collider.gameObject;
+                isWaiting = true;
             }
+            else
+            {
+                isWaiting = false;
+                if (outline != null)
+                    outline.enabled = false;
+            }
+            if (NK_UIController.isFinishWaiting)
+            {
+                moveTarget.SetActive(true);
+                isWaiting = false;
+            }
+            /*else
+            {
+                gridScript.target = null;
+                gridScript.structure = null;
+                if (moveTarget != null)
+                    moveTarget.SetActive(false);
+            }*/
+
         }
     }
 
