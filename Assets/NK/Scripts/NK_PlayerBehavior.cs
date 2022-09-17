@@ -28,7 +28,6 @@ public class NK_PlayerBehavior : MonoBehaviour
     }
 
     public static PlayerBehaviorState behaviorState = PlayerBehaviorState.Idle;
-    public
 
     // Start is called before the first frame update
     void Start()
@@ -90,7 +89,7 @@ public class NK_PlayerBehavior : MonoBehaviour
                 GameObject go = hit.collider.gameObject;
                 //moveTarget.transform.SetParent(go.transform, true);
                 //moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
-                //moveTarget.transform.localScale = go.transform.localScale;
+                moveTarget.transform.localScale = go.transform.localScale;
                 gridScript.target = moveTarget;
                 gridScript.structure = hit.collider.gameObject;
                 isWaiting = true;
@@ -120,6 +119,7 @@ public class NK_PlayerBehavior : MonoBehaviour
     private void Clean()
     {
         // 청소도구를 플레이어에게 쥐게 한다
+        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.CleanTool);
         // 청소하는 모션을 적용시킨다
         // - 맵에서 지저분한 물체가 청소도구와 닿으면 Destroy
     }
@@ -127,6 +127,7 @@ public class NK_PlayerBehavior : MonoBehaviour
     private void Paint()
     {
         // 페인트롤을 플레이어에게 쥐게 한다
+        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.PaintTool);
         // 페인트하는 모션을 적용시킨다
         // - 맵에서 페인트롤과 닿으면 벽의 색이 바뀐다
     }
@@ -134,6 +135,7 @@ public class NK_PlayerBehavior : MonoBehaviour
     private void Sell()
     {
         // 가격 측정 기기를 플레이어에게 쥐게 한다
+        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.SellTool);
         // 기기를 가구에 댄다
         // 가격이 나온다
     }
@@ -141,6 +143,7 @@ public class NK_PlayerBehavior : MonoBehaviour
     private void DemolishWall()
     {
         // 망치를 플레이어에게 쥐게 한다
+        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.DemolishTool);
         // 부수는 모션을 적용시킨다
         // - 맵에서 망치와 닿으면 Demolish
     }
@@ -153,7 +156,6 @@ public class NK_PlayerBehavior : MonoBehaviour
         if (moveTarget != null)
         {
             moveTarget.SetActive(false);
-
         }
     }
 

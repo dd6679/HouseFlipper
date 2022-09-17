@@ -18,8 +18,8 @@ public class DK_PlayerMove : MonoBehaviour
     void Start()
     {
         cc = GetComponent<CharacterController>();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
