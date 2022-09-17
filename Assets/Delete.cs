@@ -20,7 +20,7 @@ public class Delete : MonoBehaviour
     {
         if (other.gameObject.name.Contains("Clone"))
         {
-            Destroy(other.gameObject,4f);
+            Destroy(other.gameObject,2f);
         }
     }
 }
