@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class DustDelete : MonoBehaviour
 {
+    // 삭제시간
     float currentTime = 1f;
     RaycastHit hit;
 
     void Start()
     {
-        //capsuleColor = gameObject.GetComponent<Renderer>();
+
     }
 
 
@@ -30,9 +31,11 @@ public class DustDelete : MonoBehaviour
                     if(color.a < 0.55f)
                     {
                         Destroy(hit.collider.gameObject);
+                        currentTime = 1;
                     }
                 }
             }
         }
+        print(currentTime);
     }
 }
