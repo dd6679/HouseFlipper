@@ -14,6 +14,8 @@ public class NK_ChangeTool : MonoBehaviour
     }
 
     public GameObject[] tools;
+    public int index = -1;
+    public bool isMoving = false;
 
     public static NK_ChangeTool instance;
 
@@ -31,7 +33,21 @@ public class NK_ChangeTool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (index >= 0)
+        {
+            Animator anim = tools[index].GetComponent<Animator>();
+            if (Input.GetMouseButtonDown(0))
+            {
+                anim.SetBool("isMove", true);
+                isMoving = true;
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                anim.SetBool("isMove", false);
+                isMoving = false;
+            }
+
+        }
     }
     private void InitializeTool()
     {
@@ -43,10 +59,15 @@ public class NK_ChangeTool : MonoBehaviour
 
     public void SwitchTool(int newIndex)
     {
+        if (index == newIndex)
+        {
+            return;
+        }
+        index = newIndex;
         for (int i = 0; i < tools.Length; i++)
         {
             tools[(i)].SetActive(false);
         }
-        tools[(newIndex)].SetActive(true);
+        tools[(index)].SetActive(true);
     }
 }

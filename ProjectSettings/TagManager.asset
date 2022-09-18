@@ -9,6 +9,7 @@ TagManager:
   - UMAIgnore
   - Glass
   - Wall
+  - Dust
   layers:
   - Default
   - TransparentFX

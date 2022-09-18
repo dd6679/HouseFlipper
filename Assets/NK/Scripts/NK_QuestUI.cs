@@ -8,21 +8,44 @@ public class NK_QuestUI : MonoBehaviour
     public Text location;
     public string locationName;
     public Text questFactory;
-    public List<string> questNames = new List<string>();
+    public Image questParent;
+    public static Dictionary<string, List<string>> quests = new Dictionary<string, List<string>> { 
+        { "거실", new List<string> { "쓰레기 버리기", "먼지 닦기", "벽 철거하기", "페인트 칠하기" } }, 
+        { "밖", new List<string> { "쓰레기 버리기" } } };
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Transform[] childList = questParent.GetComponentsInChildren<Transform>();
+
+            if (childList != null)
+            {
+                for (int i = 1; i < childList.Length; i++)
+                {
+                    Destroy(childList[i].gameObject);
+                }
+            }
+
             location.text = locationName;
 
-            foreach(string s in questNames)
+            for (int i = 0; i < quests[location.text].Count; i++)
             {
                 Text quest = Instantiate(questFactory);
-                quest.transform.SetParent(GameObject.Find("quests").transform);
-                quest.text = s;
-                //quest.transform
+                quest.transform.SetParent(questParent.transform);
+                quest.rectTransform.position = questParent.rectTransform.position + new Vector3(100, -12 + -50 * i, 0);
+                quest.text = quests[location.text][i];
             }
+
+            questParent.rectTransform.sizeDelta = new Vector2(500, 55 * quests[location.text].Count);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+
         }
     }
 }

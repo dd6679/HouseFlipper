@@ -120,7 +120,8 @@ public class NK_PlayerBehavior : MonoBehaviour
     {
         // 청소도구를 플레이어에게 쥐게 한다
         NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.CleanTool);
-        // 청소하는 모션을 적용시킨다
+        // 마우스 클릭 중일 때 청소하는 모션을 적용시킨다
+
         // - 맵에서 지저분한 물체가 청소도구와 닿으면 Destroy
     }
 
