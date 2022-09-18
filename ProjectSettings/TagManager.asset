@@ -9,6 +9,8 @@ TagManager:
   - UMAIgnore
   - Glass
   - Wall
+  - Trash
+  - Dust
   layers:
   - Default
   - TransparentFX

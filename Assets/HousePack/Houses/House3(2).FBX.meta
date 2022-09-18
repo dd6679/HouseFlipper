@@ -1,0 +1,537 @@
+fileFormatVersion: 2
+guid: f47b50daa776113429b59c1d49cf869f
+timeCreated: 1431536396
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: aerial4
+    100002: Attic3
+    100004: blind6
+    100006: blind6 1
+    100008: blood4
+    100010: brick_oven4
+    100012: carpet1
+    100014: ceiling2
+    100016: chair1
+    100018: chair7
+    100020: chair9
+    100022: chimney3
+    100024: Corps3(2)
+    100026: Decal_brick1
+    100028: Decal_brick3
+    100030: Door01
+    100032: Door02
+    100034: Door03
+    100036: Door03(1)
+    100038: Door14
+    100040: Door14 1
+    100042: Door3
+    100044: drain4
+    100046: Foundation3(2)
+    100048: Frame6
+    100050: garbage11
+    100052: garbage2
+    100054: garbage3
+    100056: garbage3 1
+    100058: garbage4
+    100060: garbage5
+    100062: garbage8
+    100064: //RootNode
+    100066: lamp4
+    100068: lamp4 1
+    100070: lamp5
+    100072: lamp7
+    100074: lamp7 1
+    100076: lamp7 2
+    100078: lamp8
+    100080: lamp8 1
+    100082: masks1
+    100084: masks2
+    100086: masks5
+    100088: mattress1
+    100090: mattress2
+    100092: moss1
+    100094: moss11
+    100096: moss13
+    100098: moss4
+    100100: moss4 1
+    100102: moss5
+    100104: moss5 1
+    100106: moss7
+    100108: moss7 1
+    100110: moss8
+    100112: moss9
+    100114: piano1
+    100116: plate2
+    100118: porch6
+    100120: poster5
+    100122: rad2
+    100124: Roof5
+    100126: sill003
+    100128: sill1
+    100130: sill1 1
+    100132: sill1 2
+    100134: sill1 3
+    100136: sill2
+    100138: sink5
+    100140: socket1
+    100142: socket1 1
+    100144: socket2
+    100146: socket2 1
+    100148: socket3
+    100150: socket3 1
+    100152: socket4
+    100154: stove9
+    100156: switch1
+    100158: switch1 1
+    100160: switch2
+    100162: switch2 1
+    100164: switch3
+    100166: switch3 1
+    100168: switch3 2
+    100170: tv3
+    100172: vane3
+    100174: ventilation1
+    100176: ventilation1 1
+    100178: washer1
+    100180: Window07
+    100182: Window07 1
+    100184: Window07(1)
+    100186: Window07(2)
+    100188: Window11(2)
+    400000: aerial4
+    400002: Attic3
+    400004: blind6
+    400006: blind6 1
+    400008: blood4
+    400010: brick_oven4
+    400012: carpet1
+    400014: ceiling2
+    400016: chair1
+    400018: chair7
+    400020: chair9
+    400022: chimney3
+    400024: Corps3(2)
+    400026: Decal_brick1
+    400028: Decal_brick3
+    400030: Door01
+    400032: Door02
+    400034: Door03
+    400036: Door03(1)
+    400038: Door14
+    400040: Door14 1
+    400042: Door3
+    400044: drain4
+    400046: Foundation3(2)
+    400048: Frame6
+    400050: garbage11
+    400052: garbage2
+    400054: garbage3
+    400056: garbage3 1
+    400058: garbage4
+    400060: garbage5
+    400062: garbage8
+    400064: //RootNode
+    400066: lamp4
+    400068: lamp4 1
+    400070: lamp5
+    400072: lamp7
+    400074: lamp7 1
+    400076: lamp7 2
+    400078: lamp8
+    400080: lamp8 1
+    400082: masks1
+    400084: masks2
+    400086: masks5
+    400088: mattress1
+    400090: mattress2
+    400092: moss1
+    400094: moss11
+    400096: moss13
+    400098: moss4
+    400100: moss4 1
+    400102: moss5
+    400104: moss5 1
+    400106: moss7
+    400108: moss7 1
+    400110: moss8
+    400112: moss9
+    400114: piano1
+    400116: plate2
+    400118: porch6
+    400120: poster5
+    400122: rad2
+    400124: Roof5
+    400126: sill003
+    400128: sill1
+    400130: sill1 1
+    400132: sill1 2
+    400134: sill1 3
+    400136: sill2
+    400138: sink5
+    400140: socket1
+    400142: socket1 1
+    400144: socket2
+    400146: socket2 1
+    400148: socket3
+    400150: socket3 1
+    400152: socket4
+    400154: stove9
+    400156: switch1
+    400158: switch1 1
+    400160: switch2
+    400162: switch2 1
+    400164: switch3
+    400166: switch3 1
+    400168: switch3 2
+    400170: tv3
+    400172: vane3
+    400174: ventilation1
+    400176: ventilation1 1
+    400178: washer1
+    400180: Window07
+    400182: Window07 1
+    400184: Window07(1)
+    400186: Window07(2)
+    400188: Window11(2)
+    2300000: aerial4
+    2300002: Attic3
+    2300004: blind6
+    2300006: blind6 1
+    2300008: blood4
+    2300010: brick_oven4
+    2300012: carpet1
+    2300014: ceiling2
+    2300016: chair1
+    2300018: chair7
+    2300020: chair9
+    2300022: chimney3
+    2300024: Corps3(2)
+    2300026: Decal_brick1
+    2300028: Decal_brick3
+    2300030: Door01
+    2300032: Door02
+    2300034: Door03
+    2300036: Door03(1)
+    2300038: Door14
+    2300040: Door14 1
+    2300042: Door3
+    2300044: drain4
+    2300046: Foundation3(2)
+    2300048: Frame6
+    2300050: garbage11
+    2300052: garbage2
+    2300054: garbage3
+    2300056: garbage3 1
+    2300058: garbage4
+    2300060: garbage5
+    2300062: garbage8
+    2300064: lamp4
+    2300066: lamp4 1
+    2300068: lamp5
+    2300070: lamp7
+    2300072: lamp7 1
+    2300074: lamp7 2
+    2300076: lamp8
+    2300078: lamp8 1
+    2300080: masks1
+    2300082: masks2
+    2300084: masks5
+    2300086: mattress1
+    2300088: mattress2
+    2300090: moss1
+    2300092: moss11
+    2300094: moss13
+    2300096: moss4
+    2300098: moss4 1
+    2300100: moss5
+    2300102: moss5 1
+    2300104: moss7
+    2300106: moss7 1
+    2300108: moss8
+    2300110: moss9
+    2300112: piano1
+    2300114: plate2
+    2300116: porch6
+    2300118: poster5
+    2300120: rad2
+    2300122: Roof5
+    2300124: sill003
+    2300126: sill1
+    2300128: sill1 1
+    2300130: sill1 2
+    2300132: sill1 3
+    2300134: sill2
+    2300136: sink5
+    2300138: socket1
+    2300140: socket1 1
+    2300142: socket2
+    2300144: socket2 1
+    2300146: socket3
+    2300148: socket3 1
+    2300150: socket4
+    2300152: stove9
+    2300154: switch1
+    2300156: switch1 1
+    2300158: switch2
+    2300160: switch2 1
+    2300162: switch3
+    2300164: switch3 1
+    2300166: switch3 2
+    2300168: tv3
+    2300170: vane3
+    2300172: ventilation1
+    2300174: ventilation1 1
+    2300176: washer1
+    2300178: Window07
+    2300180: Window07 1
+    2300182: Window07(1)
+    2300184: Window07(2)
+    2300186: Window11(2)
+    3300000: aerial4
+    3300002: Attic3
+    3300004: blind6
+    3300006: blind6 1
+    3300008: blood4
+    3300010: brick_oven4
+    3300012: carpet1
+    3300014: ceiling2
+    3300016: chair1
+    3300018: chair7
+    3300020: chair9
+    3300022: chimney3
+    3300024: Corps3(2)
+    3300026: Decal_brick1
+    3300028: Decal_brick3
+    3300030: Door01
+    3300032: Door02
+    3300034: Door03
+    3300036: Door03(1)
+    3300038: Door14
+    3300040: Door14 1
+    3300042: Door3
+    3300044: drain4
+    3300046: Foundation3(2)
+    3300048: Frame6
+    3300050: garbage11
+    3300052: garbage2
+    3300054: garbage3
+    3300056: garbage3 1
+    3300058: garbage4
+    3300060: garbage5
+    3300062: garbage8
+    3300064: lamp4
+    3300066: lamp4 1
+    3300068: lamp5
+    3300070: lamp7
+    3300072: lamp7 1
+    3300074: lamp7 2
+    3300076: lamp8
+    3300078: lamp8 1
+    3300080: masks1
+    3300082: masks2
+    3300084: masks5
+    3300086: mattress1
+    3300088: mattress2
+    3300090: moss1
+    3300092: moss11
+    3300094: moss13
+    3300096: moss4
+    3300098: moss4 1
+    3300100: moss5
+    3300102: moss5 1
+    3300104: moss7
+    3300106: moss7 1
+    3300108: moss8
+    3300110: moss9
+    3300112: piano1
+    3300114: plate2
+    3300116: porch6
+    3300118: poster5
+    3300120: rad2
+    3300122: Roof5
+    3300124: sill003
+    3300126: sill1
+    3300128: sill1 1
+    3300130: sill1 2
+    3300132: sill1 3
+    3300134: sill2
+    3300136: sink5
+    3300138: socket1
+    3300140: socket1 1
+    3300142: socket2
+    3300144: socket2 1
+    3300146: socket3
+    3300148: socket3 1
+    3300150: socket4
+    3300152: stove9
+    3300154: switch1
+    3300156: switch1 1
+    3300158: switch2
+    3300160: switch2 1
+    3300162: switch3
+    3300164: switch3 1
+    3300166: switch3 2
+    3300168: tv3
+    3300170: vane3
+    3300172: ventilation1
+    3300174: ventilation1 1
+    3300176: washer1
+    3300178: Window07
+    3300180: Window07 1
+    3300182: Window07(1)
+    3300184: Window07(2)
+    3300186: Window11(2)
+    4300000: Foundation3(2)
+    4300002: Attic3
+    4300004: Frame6
+    4300006: Door01
+    4300008: Door03
+    4300010: Door03(1)
+    4300012: Door3
+    4300014: Door14
+    4300016: chair9
+    4300018: chair7
+    4300020: switch1
+    4300022: switch2
+    4300024: switch3
+    4300026: Door02
+    4300028: switch2
+    4300030: garbage4
+    4300032: switch1
+    4300034: switch3
+    4300036: lamp8
+    4300038: lamp7
+    4300040: lamp5
+    4300042: lamp4
+    4300044: lamp8
+    4300046: mattress1
+    4300048: mattress2
+    4300050: moss13
+    4300052: moss5
+    4300054: lamp7
+    4300056: switch3
+    4300058: blood4
+    4300060: Decal_brick1
+    4300062: Decal_brick3
+    4300064: drain4
+    4300066: washer1
+    4300068: tv3
+    4300070: sink5
+    4300072: carpet1
+    4300074: lamp7
+    4300076: Door14
+    4300078: aerial4
+    4300080: Window07(2)
+    4300082: Window07
+    4300084: Window07(1)
+    4300086: Window07
+    4300088: Window11(2)
+    4300090: Roof5
+    4300092: Corps3(2)
+    4300094: porch6
+    4300096: lamp4
+    4300098: sill1
+    4300100: sill2
+    4300102: sill1
+    4300104: sill1
+    4300106: sill1
+    4300108: sill003
+    4300110: chimney3
+    4300112: brick_oven4
+    4300114: moss7
+    4300116: moss8
+    4300118: moss9
+    4300120: moss11
+    4300122: moss1
+    4300124: moss4
+    4300126: ceiling2
+    4300128: moss7
+    4300130: garbage2
+    4300132: garbage3
+    4300134: garbage3
+    4300136: garbage5
+    4300138: garbage8
+    4300140: garbage11
+    4300142: moss4
+    4300144: masks1
+    4300146: masks2
+    4300148: masks5
+    4300150: plate2
+    4300152: poster5
+    4300154: rad2
+    4300156: stove9
+    4300158: vane3
+    4300160: blind6
+    4300162: blind6
+    4300164: moss5
+    4300166: piano1
+    4300168: socket1
+    4300170: socket2
+    4300172: socket3
+    4300174: socket4
+    4300176: socket3
+    4300178: socket1
+    4300180: socket2
+    4300182: chair1
+    4300184: ventilation1
+    4300186: ventilation1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
