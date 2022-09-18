@@ -1,0 +1,652 @@
+fileFormatVersion: 2
+guid: 9ab317ae2233500428620c341077f321
+timeCreated: 1431536331
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: aerial4
+    100002: ash2
+    100004: Attic1
+    100006: blind1
+    100008: blind1 1
+    100010: blind1 2
+    100012: blind2
+    100014: blind3
+    100016: cabinet1
+    100018: cabinet1(1)
+    100020: cabinet1(2)
+    100022: cabinet1(3)
+    100024: cabinet2
+    100026: cabinet2(1)
+    100028: cabinet2(2)
+    100030: cabinet2(3)
+    100032: cabinet2(4)
+    100034: cabinet2(5)
+    100036: cabinet2(6)
+    100038: cabinet2(7)
+    100040: cabinet3
+    100042: cabinet3(1)
+    100044: cabinet3(2)
+    100046: cabinet3(3)
+    100048: cabinet3(4)
+    100050: cabinet5
+    100052: cabinet5(1)
+    100054: cabinet5(2)
+    100056: cabinet6
+    100058: cabinet6(1)
+    100060: cabinet7
+    100062: cabinet7(1)
+    100064: cabinet7(2)
+    100066: cabinet8
+    100068: cabinet8(1)
+    100070: cabinet8(2)
+    100072: cabinet8(3)
+    100074: cabinet8(4)
+    100076: chair1
+    100078: chair2
+    100080: chair2 1
+    100082: chair7
+    100084: chair8
+    100086: chair9
+    100088: chimney3
+    100090: Corps4
+    100092: cupboard1
+    100094: Door01
+    100096: Door01(1)
+    100098: Door03
+    100100: Door05
+    100102: Door07
+    100104: Door07(1)
+    100106: Door09
+    100108: Door09(1)
+    100110: Door15
+    100112: Door15 1
+    100114: Door15(1)
+    100116: faze1
+    100118: flue1
+    100120: Foundation3
+    100122: Frame3
+    100124: fridge1
+    100126: garbage2
+    100128: garbage5
+    100130: garbage6
+    100132: garbage7
+    100134: garbage8
+    100136: //RootNode
+    100138: kitchen1
+    100140: lamp3
+    100142: lamp4
+    100144: lamp4 1
+    100146: lamp4 2
+    100148: lamp7
+    100150: lamp7 1
+    100152: lamp8
+    100154: lamp8 1
+    100156: porch1
+    100158: rad1
+    100160: rad2
+    100162: radio5
+    100164: radio6
+    100166: Roof1(1)
+    100168: sill1
+    100170: sink3
+    100172: small_window1
+    100174: socket1
+    100176: socket2
+    100178: socket3
+    100180: socket4
+    100182: socket4 1
+    100184: stove4
+    100186: switch1
+    100188: switch1 1
+    100190: switch2
+    100192: switch2 1
+    100194: switch3
+    100196: switch4
+    100198: table4
+    100200: table4(1)
+    100202: Time1
+    100204: tube2
+    100206: tube2(1)
+    100208: tube2(2)
+    100210: tube2(3)
+    100212: tube2(4)
+    100214: tv2
+    100216: tv3
+    100218: vane1
+    100220: ventilation5
+    100222: ventilation5 1
+    100224: Window13
+    100226: Window17
+    100228: Window17 1
+    100230: Window17(1)
+    100232: Window17(1) 1
+    100234: Window17(2)
+    400000: aerial4
+    400002: ash2
+    400004: Attic1
+    400006: blind1
+    400008: blind1 1
+    400010: blind1 2
+    400012: blind2
+    400014: blind3
+    400016: cabinet1
+    400018: cabinet1(1)
+    400020: cabinet1(2)
+    400022: cabinet1(3)
+    400024: cabinet2
+    400026: cabinet2(1)
+    400028: cabinet2(2)
+    400030: cabinet2(3)
+    400032: cabinet2(4)
+    400034: cabinet2(5)
+    400036: cabinet2(6)
+    400038: cabinet2(7)
+    400040: cabinet3
+    400042: cabinet3(1)
+    400044: cabinet3(2)
+    400046: cabinet3(3)
+    400048: cabinet3(4)
+    400050: cabinet5
+    400052: cabinet5(1)
+    400054: cabinet5(2)
+    400056: cabinet6
+    400058: cabinet6(1)
+    400060: cabinet7
+    400062: cabinet7(1)
+    400064: cabinet7(2)
+    400066: cabinet8
+    400068: cabinet8(1)
+    400070: cabinet8(2)
+    400072: cabinet8(3)
+    400074: cabinet8(4)
+    400076: chair1
+    400078: chair2
+    400080: chair2 1
+    400082: chair7
+    400084: chair8
+    400086: chair9
+    400088: chimney3
+    400090: Corps4
+    400092: cupboard1
+    400094: Door01
+    400096: Door01(1)
+    400098: Door03
+    400100: Door05
+    400102: Door07
+    400104: Door07(1)
+    400106: Door09
+    400108: Door09(1)
+    400110: Door15
+    400112: Door15 1
+    400114: Door15(1)
+    400116: faze1
+    400118: flue1
+    400120: Foundation3
+    400122: Frame3
+    400124: fridge1
+    400126: garbage2
+    400128: garbage5
+    400130: garbage6
+    400132: garbage7
+    400134: garbage8
+    400136: //RootNode
+    400138: kitchen1
+    400140: lamp3
+    400142: lamp4
+    400144: lamp4 1
+    400146: lamp4 2
+    400148: lamp7
+    400150: lamp7 1
+    400152: lamp8
+    400154: lamp8 1
+    400156: porch1
+    400158: rad1
+    400160: rad2
+    400162: radio5
+    400164: radio6
+    400166: Roof1(1)
+    400168: sill1
+    400170: sink3
+    400172: small_window1
+    400174: socket1
+    400176: socket2
+    400178: socket3
+    400180: socket4
+    400182: socket4 1
+    400184: stove4
+    400186: switch1
+    400188: switch1 1
+    400190: switch2
+    400192: switch2 1
+    400194: switch3
+    400196: switch4
+    400198: table4
+    400200: table4(1)
+    400202: Time1
+    400204: tube2
+    400206: tube2(1)
+    400208: tube2(2)
+    400210: tube2(3)
+    400212: tube2(4)
+    400214: tv2
+    400216: tv3
+    400218: vane1
+    400220: ventilation5
+    400222: ventilation5 1
+    400224: Window13
+    400226: Window17
+    400228: Window17 1
+    400230: Window17(1)
+    400232: Window17(1) 1
+    400234: Window17(2)
+    2300000: aerial4
+    2300002: ash2
+    2300004: Attic1
+    2300006: blind1
+    2300008: blind1 1
+    2300010: blind1 2
+    2300012: blind2
+    2300014: blind3
+    2300016: cabinet1
+    2300018: cabinet1(1)
+    2300020: cabinet1(2)
+    2300022: cabinet1(3)
+    2300024: cabinet2
+    2300026: cabinet2(1)
+    2300028: cabinet2(2)
+    2300030: cabinet2(3)
+    2300032: cabinet2(4)
+    2300034: cabinet2(5)
+    2300036: cabinet2(6)
+    2300038: cabinet2(7)
+    2300040: cabinet3
+    2300042: cabinet3(1)
+    2300044: cabinet3(2)
+    2300046: cabinet3(3)
+    2300048: cabinet3(4)
+    2300050: cabinet5
+    2300052: cabinet5(1)
+    2300054: cabinet5(2)
+    2300056: cabinet6
+    2300058: cabinet6(1)
+    2300060: cabinet7
+    2300062: cabinet7(1)
+    2300064: cabinet7(2)
+    2300066: cabinet8
+    2300068: cabinet8(1)
+    2300070: cabinet8(2)
+    2300072: cabinet8(3)
+    2300074: cabinet8(4)
+    2300076: chair1
+    2300078: chair2
+    2300080: chair2 1
+    2300082: chair7
+    2300084: chair8
+    2300086: chair9
+    2300088: chimney3
+    2300090: Corps4
+    2300092: cupboard1
+    2300094: Door01
+    2300096: Door01(1)
+    2300098: Door03
+    2300100: Door05
+    2300102: Door07
+    2300104: Door07(1)
+    2300106: Door09
+    2300108: Door09(1)
+    2300110: Door15
+    2300112: Door15 1
+    2300114: Door15(1)
+    2300116: faze1
+    2300118: flue1
+    2300120: Foundation3
+    2300122: Frame3
+    2300124: fridge1
+    2300126: garbage2
+    2300128: garbage5
+    2300130: garbage6
+    2300132: garbage7
+    2300134: garbage8
+    2300136: kitchen1
+    2300138: lamp3
+    2300140: lamp4
+    2300142: lamp4 1
+    2300144: lamp4 2
+    2300146: lamp7
+    2300148: lamp7 1
+    2300150: lamp8
+    2300152: lamp8 1
+    2300154: porch1
+    2300156: rad1
+    2300158: rad2
+    2300160: radio5
+    2300162: radio6
+    2300164: Roof1(1)
+    2300166: sill1
+    2300168: sink3
+    2300170: small_window1
+    2300172: socket1
+    2300174: socket2
+    2300176: socket3
+    2300178: socket4
+    2300180: socket4 1
+    2300182: stove4
+    2300184: switch1
+    2300186: switch1 1
+    2300188: switch2
+    2300190: switch2 1
+    2300192: switch3
+    2300194: switch4
+    2300196: table4
+    2300198: table4(1)
+    2300200: Time1
+    2300202: tube2
+    2300204: tube2(1)
+    2300206: tube2(2)
+    2300208: tube2(3)
+    2300210: tube2(4)
+    2300212: tv2
+    2300214: tv3
+    2300216: vane1
+    2300218: ventilation5
+    2300220: ventilation5 1
+    2300222: Window13
+    2300224: Window17
+    2300226: Window17 1
+    2300228: Window17(1)
+    2300230: Window17(1) 1
+    2300232: Window17(2)
+    3300000: aerial4
+    3300002: ash2
+    3300004: Attic1
+    3300006: blind1
+    3300008: blind1 1
+    3300010: blind1 2
+    3300012: blind2
+    3300014: blind3
+    3300016: cabinet1
+    3300018: cabinet1(1)
+    3300020: cabinet1(2)
+    3300022: cabinet1(3)
+    3300024: cabinet2
+    3300026: cabinet2(1)
+    3300028: cabinet2(2)
+    3300030: cabinet2(3)
+    3300032: cabinet2(4)
+    3300034: cabinet2(5)
+    3300036: cabinet2(6)
+    3300038: cabinet2(7)
+    3300040: cabinet3
+    3300042: cabinet3(1)
+    3300044: cabinet3(2)
+    3300046: cabinet3(3)
+    3300048: cabinet3(4)
+    3300050: cabinet5
+    3300052: cabinet5(1)
+    3300054: cabinet5(2)
+    3300056: cabinet6
+    3300058: cabinet6(1)
+    3300060: cabinet7
+    3300062: cabinet7(1)
+    3300064: cabinet7(2)
+    3300066: cabinet8
+    3300068: cabinet8(1)
+    3300070: cabinet8(2)
+    3300072: cabinet8(3)
+    3300074: cabinet8(4)
+    3300076: chair1
+    3300078: chair2
+    3300080: chair2 1
+    3300082: chair7
+    3300084: chair8
+    3300086: chair9
+    3300088: chimney3
+    3300090: Corps4
+    3300092: cupboard1
+    3300094: Door01
+    3300096: Door01(1)
+    3300098: Door03
+    3300100: Door05
+    3300102: Door07
+    3300104: Door07(1)
+    3300106: Door09
+    3300108: Door09(1)
+    3300110: Door15
+    3300112: Door15 1
+    3300114: Door15(1)
+    3300116: faze1
+    3300118: flue1
+    3300120: Foundation3
+    3300122: Frame3
+    3300124: fridge1
+    3300126: garbage2
+    3300128: garbage5
+    3300130: garbage6
+    3300132: garbage7
+    3300134: garbage8
+    3300136: kitchen1
+    3300138: lamp3
+    3300140: lamp4
+    3300142: lamp4 1
+    3300144: lamp4 2
+    3300146: lamp7
+    3300148: lamp7 1
+    3300150: lamp8
+    3300152: lamp8 1
+    3300154: porch1
+    3300156: rad1
+    3300158: rad2
+    3300160: radio5
+    3300162: radio6
+    3300164: Roof1(1)
+    3300166: sill1
+    3300168: sink3
+    3300170: small_window1
+    3300172: socket1
+    3300174: socket2
+    3300176: socket3
+    3300178: socket4
+    3300180: socket4 1
+    3300182: stove4
+    3300184: switch1
+    3300186: switch1 1
+    3300188: switch2
+    3300190: switch2 1
+    3300192: switch3
+    3300194: switch4
+    3300196: table4
+    3300198: table4(1)
+    3300200: Time1
+    3300202: tube2
+    3300204: tube2(1)
+    3300206: tube2(2)
+    3300208: tube2(3)
+    3300210: tube2(4)
+    3300212: tv2
+    3300214: tv3
+    3300216: vane1
+    3300218: ventilation5
+    3300220: ventilation5 1
+    3300222: Window13
+    3300224: Window17
+    3300226: Window17 1
+    3300228: Window17(1)
+    3300230: Window17(1) 1
+    3300232: Window17(2)
+    4300000: Corps4
+    4300002: Foundation3
+    4300004: sill1
+    4300006: aerial4
+    4300008: Door07(1)
+    4300010: Door07
+    4300012: Door03
+    4300014: Window13
+    4300016: Window17
+    4300018: Window17(1)
+    4300020: Window17(2)
+    4300022: Window17(1)
+    4300024: Window17
+    4300026: Frame3
+    4300028: Roof1(1)
+    4300030: small_window1
+    4300032: chimney3
+    4300034: Door09
+    4300036: Door09(1)
+    4300038: Attic1
+    4300040: porch1
+    4300042: Door05
+    4300044: ash2
+    4300046: blind1
+    4300048: blind1
+    4300050: blind1
+    4300052: blind2
+    4300054: blind3
+    4300056: cabinet1(1)
+    4300058: cabinet1
+    4300060: cabinet1(3)
+    4300062: cabinet1(2)
+    4300064: cabinet2(3)
+    4300066: cabinet2(2)
+    4300068: cabinet2(4)
+    4300070: cabinet2(6)
+    4300072: cabinet2(1)
+    4300074: cabinet2(7)
+    4300076: cabinet2(5)
+    4300078: cabinet2
+    4300080: cabinet3(2)
+    4300082: cabinet3(3)
+    4300084: cabinet3(4)
+    4300086: cabinet3
+    4300088: cabinet3(1)
+    4300090: cabinet5(2)
+    4300092: cabinet5(1)
+    4300094: cabinet5
+    4300096: cabinet6(1)
+    4300098: cabinet6
+    4300100: cabinet7(1)
+    4300102: cabinet7
+    4300104: cabinet7(2)
+    4300106: cabinet8
+    4300108: cabinet8(2)
+    4300110: cabinet8(3)
+    4300112: cabinet8(4)
+    4300114: cabinet8(1)
+    4300116: chair1
+    4300118: chair2
+    4300120: chair2
+    4300122: cupboard1
+    4300124: flue1
+    4300126: fridge1
+    4300128: kitchen1
+    4300130: radio6
+    4300132: radio5
+    4300134: sink3
+    4300136: stove4
+    4300138: table4
+    4300140: table4(1)
+    4300142: Time1
+    4300144: tv2
+    4300146: tv3
+    4300148: garbage5
+    4300150: garbage8
+    4300152: garbage2
+    4300154: lamp3
+    4300156: lamp4
+    4300158: lamp4
+    4300160: rad2
+    4300162: rad1
+    4300164: faze1
+    4300166: tube2(2)
+    4300168: tube2(4)
+    4300170: tube2(1)
+    4300172: tube2(3)
+    4300174: tube2
+    4300176: socket1
+    4300178: socket2
+    4300180: socket3
+    4300182: socket4
+    4300184: switch1
+    4300186: switch2
+    4300188: switch3
+    4300190: switch4
+    4300192: lamp7
+    4300194: lamp8
+    4300196: lamp7
+    4300198: lamp4
+    4300200: switch2
+    4300202: socket4
+    4300204: chair9
+    4300206: chair8
+    4300208: chair7
+    4300210: garbage6
+    4300212: garbage7
+    4300214: lamp8
+    4300216: vane1
+    4300218: Door15(1)
+    4300220: Door15
+    4300222: Door15
+    4300224: switch1
+    4300226: Door01
+    4300228: Door01(1)
+    4300230: ventilation5
+    4300232: ventilation5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
