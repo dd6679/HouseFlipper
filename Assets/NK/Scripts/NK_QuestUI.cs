@@ -10,6 +10,7 @@ public class NK_QuestUI : MonoBehaviour
     public Text questFactory;
     public Image questParent;
     public static Dictionary<string, List<string>> quests = new Dictionary<string, List<string>> {
+        {"현관", new List<string>{"먼지 닦기", "페인트 칠하기"} },
         {"방", new List<string>{"쓰레기 버리기", "먼지 닦기", "페인트 칠하기"} },
         { "거실", new List<string> { "쓰레기 버리기", "먼지 닦기", "벽 철거하기", "페인트 칠하기" } },
         {"주방", new List<string>{"쓰레기 버리기", "먼지 닦기" } },
