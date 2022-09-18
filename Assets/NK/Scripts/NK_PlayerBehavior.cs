@@ -70,6 +70,7 @@ public class NK_PlayerBehavior : MonoBehaviour
     }
 
     Outline outline;
+    GameObject go;
 
     private void Move()
     {
@@ -83,13 +84,14 @@ public class NK_PlayerBehavior : MonoBehaviour
             // ø¿∫Í¡ß∆Æ¿« ≈∏∞Ÿ √ÎµÊ
             if (hit.collider.gameObject.CompareTag("Furniture"))
             {
-                outline = hit.collider.gameObject.GetComponent<Outline>();
-                if (outline != null)
+                if (hit.collider.gameObject.GetComponent<Outline>() != null)
+                {
+                    outline = hit.collider.gameObject.GetComponent<Outline>();
                     outline.enabled = true;
-                GameObject go = hit.collider.gameObject;
-                //moveTarget.transform.SetParent(go.transform, true);
-                //moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
-                moveTarget.transform.localScale = go.transform.localScale;
+                }
+                go = hit.collider.gameObject;
+                moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
+                moveTarget.transform.localScale = go.transform.localScale / 2;
                 gridScript.target = moveTarget;
                 gridScript.structure = hit.collider.gameObject;
                 isWaiting = true;
@@ -102,6 +104,7 @@ public class NK_PlayerBehavior : MonoBehaviour
             }
             if (NK_UIController.isFinishWaiting)
             {
+                go.transform.parent = null;
                 moveTarget.SetActive(true);
                 isWaiting = false;
             }
