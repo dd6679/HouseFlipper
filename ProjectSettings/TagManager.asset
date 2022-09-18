@@ -9,6 +9,7 @@ TagManager:
   - UMAIgnore
   - Glass
   - Wall
+  - Trash
   - Dust
   layers:
   - Default
@@ -20,29 +21,29 @@ TagManager:
   - Floor
   - Furniture
   - House
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0
