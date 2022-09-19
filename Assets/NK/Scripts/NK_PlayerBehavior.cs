@@ -113,8 +113,8 @@ public class NK_PlayerBehavior : MonoBehaviour
             if (NK_UIController.isFinishWaiting)
             {
                 go.transform.parent = null;
-                moveTarget.SetActive(true);
-                //nK_Move.enabled = true;
+                //moveTarget.SetActive(true);
+                nK_Move.enabled = true;
                 isWaiting = false;
             }
             /*else
