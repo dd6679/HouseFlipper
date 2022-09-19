@@ -6,9 +6,12 @@ public class TrashDelete : MonoBehaviour
 {
     public GameObject sellUI;
     float currentTime = 0;
+
+    AudioSource audioSource;
+    public AudioClip deleteSound;
     void Start()
     {
-
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
 
@@ -37,6 +40,8 @@ public class TrashDelete : MonoBehaviour
                 if (hit.collider.gameObject.tag.Contains("Trash"))
                 {
                     tr = hit.collider.gameObject.transform;
+                    
+
                 }
 
                 if (hit.collider.gameObject.CompareTag("Furniture") && NK_ChangeTool.instance.index == (int)NK_ChangeTool.ToolState.SellTool && NK_ChangeTool.instance.isMoving)
@@ -52,6 +57,7 @@ public class TrashDelete : MonoBehaviour
             if (tr.localScale.x <= 0.1f)
             {
                 Destroy(tr.gameObject);
+                audioSource.PlayOneShot(deleteSound);
             }
         }
     }
