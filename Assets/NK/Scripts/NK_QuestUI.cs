@@ -14,7 +14,7 @@ public class NK_QuestUI : MonoBehaviour
     private void Start()
     {
         quests = new Dictionary<string, List<string>> {
-        {"현관", new List<string>{"먼지 닦기", "페인트 칠하기"} },
+        {"현관", new List<string>{"쓰레기 버리기", "먼지 닦기", "페인트 칠하기"} },
         {"방", new List<string>{"쓰레기 버리기", "먼지 닦기", "페인트 칠하기"} },
         { "거실", new List<string> { "쓰레기 버리기", "먼지 닦기", "벽 철거하기", "페인트 칠하기" } },
         {"주방", new List<string>{"쓰레기 버리기", "먼지 닦기" } },
@@ -22,6 +22,18 @@ public class NK_QuestUI : MonoBehaviour
         {"다용도실", new List<string>{"쓰레기 버리기", "벽 철거하기"} },
         { "밖", new List<string> { "쓰레기 버리기" } },
         {"차고", new List<string>{"쓰레기 버리기", "페인트 칠하기" } } };
+    }
+
+    private void Update()
+    {
+        Text[] allChild = questParent.GetComponentsInChildren<Text>();
+        foreach(Text child in allChild)
+        {
+            if (!quests[location.text].Contains(child.text))
+            {
+                child.enabled = false;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)

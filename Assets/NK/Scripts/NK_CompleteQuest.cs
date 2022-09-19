@@ -5,6 +5,7 @@ using UnityEngine;
 public class NK_CompleteQuest : MonoBehaviour
 {
     public string location;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class NK_CompleteQuest : MonoBehaviour
     {
         if (gameObject.transform.childCount == 0)
         {
-
+            NK_QuestUI.quests[location].Remove("쓰레기 버리기");
         }
     }
 }
