@@ -9,7 +9,11 @@ public class NK_QuestUI : MonoBehaviour
     public string locationName;
     public Text questFactory;
     public Image questParent;
-    public static Dictionary<string, List<string>> quests = new Dictionary<string, List<string>> {
+    public static Dictionary<string, List<string>> quests;
+
+    private void Start()
+    {
+        quests = new Dictionary<string, List<string>> {
         {"현관", new List<string>{"먼지 닦기", "페인트 칠하기"} },
         {"방", new List<string>{"쓰레기 버리기", "먼지 닦기", "페인트 칠하기"} },
         { "거실", new List<string> { "쓰레기 버리기", "먼지 닦기", "벽 철거하기", "페인트 칠하기" } },
@@ -18,6 +22,7 @@ public class NK_QuestUI : MonoBehaviour
         {"다용도실", new List<string>{"쓰레기 버리기", "벽 철거하기"} },
         { "밖", new List<string> { "쓰레기 버리기" } },
         {"차고", new List<string>{"쓰레기 버리기", "페인트 칠하기" } } };
+    }
 
     private void OnTriggerEnter(Collider other)
     {
