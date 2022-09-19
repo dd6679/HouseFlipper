@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TrashDelete : MonoBehaviour
 {
     public GameObject sellUI;
+    public Text income;
     float currentTime = 0;
     void Start()
     {
@@ -41,7 +44,13 @@ public class TrashDelete : MonoBehaviour
 
                 if (hit.collider.gameObject.CompareTag("Furniture") && NK_ChangeTool.instance.index == (int)NK_ChangeTool.ToolState.SellTool && NK_ChangeTool.instance.isMoving)
                 {
+                    int incomeNum;
                     sellUI.SetActive(true);
+                    if (int.TryParse(income.text, out incomeNum))
+                    {
+                        incomeNum += 1000;
+                        income.text = incomeNum.ToString();
+                    }
                     Destroy(hit.collider.gameObject);
                 }
             }
