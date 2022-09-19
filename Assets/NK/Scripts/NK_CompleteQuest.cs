@@ -15,9 +15,13 @@ public class NK_CompleteQuest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.childCount == 0)
+        if (gameObject.transform.childCount == 0 && gameObject.CompareTag("Trash"))
         {
             NK_QuestUI.quests[location].Remove("쓰레기 버리기");
+        }
+        if (gameObject.transform.childCount == 0 && gameObject.CompareTag("Dust"))
+        {
+            NK_QuestUI.quests[location].Remove("먼지 닦기");
         }
     }
 }
