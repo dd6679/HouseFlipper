@@ -31,12 +31,18 @@ public class NK_UIController : MonoBehaviour
             if (isCheckBehavior)
             {
                 isCheckBehavior = false;
+                
             }
             else
             {
                 isCheckBehavior = true;
             }
             behaviorUI.SetActive(isCheckBehavior);
+            if(isCheckBehavior == true)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -48,12 +54,18 @@ public class NK_UIController : MonoBehaviour
             else
             {
                 isCheckTask =true;
+                
             }
             taskUI.SetActive(isCheckTask);
+            if (isCheckTask == true)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = true;
+            }
         }
 
         if (Input.GetMouseButton(0) && NK_PlayerBehavior.isWaiting)
-        { 
+        {
             currentTime += Time.deltaTime;
             waitUI.transform.GetChild(1).GetComponent<Image>().fillAmount = currentTime;
             waitUI.SetActive(true);

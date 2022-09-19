@@ -135,6 +135,7 @@ public class NK_PlayerBehavior : MonoBehaviour
         // 마우스 클릭 중일 때 청소하는 모션을 적용시킨다
 
         // - 맵에서 지저분한 물체가 청소도구와 닿으면 Destroy
+
     }
 
     private void Paint()
@@ -159,6 +160,7 @@ public class NK_PlayerBehavior : MonoBehaviour
         NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.DemolishTool);
         // 부수는 모션을 적용시킨다
         // - 맵에서 망치와 닿으면 Demolish
+
     }
 
     // 상태 변화 관리 함수

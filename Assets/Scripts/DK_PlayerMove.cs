@@ -28,6 +28,12 @@ public class DK_PlayerMove : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal"); //A : -1, D : 1, 누르지 않으면 : 0
         float v = Input.GetAxisRaw("Vertical");
 
+        if(h != 0 || v != 0)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         Vector3 dir = transform.forward * v + transform.right * h; // new Vector3(h, 0, v);
                                                                    //방향의 크기를 1로한다.
         dir.Normalize();
@@ -51,8 +57,19 @@ public class DK_PlayerMove : MonoBehaviour
         cc.Move(dir * moveSpeed * Time.deltaTime);
         m_CollisionFlags = cc.Move(dir * Time.fixedDeltaTime);
 
+
+        //if (Input.GetKeyDown(KeyCode.Tab) || Input.GetMouseButton(1))
+        //{
+        //    Cursor.lockState = CursorLockMode.None;
+        //    Cursor.visible = true;
+        //}
+        //if (Input.GetMouseButton(0))
+        //{
+        //    Cursor.lockState = CursorLockMode.Locked;
+        //    Cursor.visible = false;
+        //}
         //transform.position += dir * moveSpeed * Time.deltaTime;
-    }
+    }   
 
     //private void OnControllerColliderHit(ControllerColliderHit hit)
     //{

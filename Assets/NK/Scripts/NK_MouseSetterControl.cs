@@ -19,7 +19,7 @@ public class NK_MouseSetterControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (NK_ChangeTool.instance.index == (int)NK_ChangeTool.ToolState.DemolishTool && NK_ChangeTool.instance.isMoving)
+        if (NK_ChangeTool.instance.index == (int)NK_ChangeTool.ToolState.DemolishTool)
         {
             mouseSetter.enabled = true;
         }
