@@ -58,7 +58,7 @@ public class NK_Move : MonoBehaviour
 
         int layerMask = 1 << LayerMask.NameToLayer("Floor");
 
-        if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask) && NK_UIController.isFinishWaiting)
         {
             float H = Camera.main.transform.position.y;
             float h = objectHitPosition.transform.position.y;

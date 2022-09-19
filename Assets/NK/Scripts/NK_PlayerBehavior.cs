@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class NK_PlayerBehavior : MonoBehaviour
 {
@@ -71,6 +72,7 @@ public class NK_PlayerBehavior : MonoBehaviour
 
     Outline outline;
     NK_Move nK_Move;
+    MeshCollider mesh;
     GameObject go;
 
     private void Move()
@@ -86,7 +88,12 @@ public class NK_PlayerBehavior : MonoBehaviour
         {
             // ø¿∫Í¡ß∆Æ¿« ≈∏∞Ÿ √ÎµÊ
             if (hit.collider.gameObject.CompareTag("Furniture"))
-            {
+            {                
+                if (hit.collider.gameObject.transform.GetComponent<MeshCollider>() != null)
+                {
+                    mesh = hit.collider.gameObject.transform.GetComponent<MeshCollider>();
+                    mesh.enabled = true;
+                }
                 if (hit.collider.gameObject.GetComponent<Outline>() != null)
                 {
                     outline = hit.collider.gameObject.GetComponent<Outline>();
@@ -97,11 +104,13 @@ public class NK_PlayerBehavior : MonoBehaviour
                 {
                     nK_Move = (NK_Move)hit.collider.gameObject.GetComponent<NK_Move>();
                 }
+
+
                 go = hit.collider.gameObject;
-                moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
+/*                moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
                 moveTarget.transform.localScale = go.transform.localScale / 2;
                 gridScript.target = moveTarget;
-                gridScript.structure = hit.collider.gameObject;
+                gridScript.structure = hit.collider.gameObject;*/
                 isWaiting = true;
             }
             else
@@ -109,22 +118,18 @@ public class NK_PlayerBehavior : MonoBehaviour
                 isWaiting = false;
                 if (outline != null)
                     outline.enabled = false;
+                if (nK_Move != null)
+                    nK_Move.enabled = false;
+                NK_UIController.isFinishWaiting = false;
             }
             if (NK_UIController.isFinishWaiting)
             {
-                go.transform.parent = null;
+                
+                //go.transform.parent = null;
                 //moveTarget.SetActive(true);
                 nK_Move.enabled = true;
                 isWaiting = false;
             }
-            /*else
-            {
-                gridScript.target = null;
-                gridScript.structure = null;
-                if (moveTarget != null)
-                    moveTarget.SetActive(false);
-            }*/
-
         }
     }
 

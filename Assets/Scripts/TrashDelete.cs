@@ -24,6 +24,11 @@ public class TrashDelete : MonoBehaviour
                 {
                     tr = hit.collider.gameObject.transform;
                 }
+
+                if (hit.collider.gameObject.CompareTag("Furniture") && NK_ChangeTool.instance.index == (int)NK_ChangeTool.ToolState.SellTool && NK_ChangeTool.instance.isMoving)
+                {
+                    Destroy(hit.collider.gameObject);
+                }
             }
         }
         if (tr != null)

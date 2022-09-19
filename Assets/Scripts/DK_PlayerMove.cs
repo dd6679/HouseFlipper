@@ -28,7 +28,8 @@ public class DK_PlayerMove : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal"); //A : -1, D : 1, 누르지 않으면 : 0
         float v = Input.GetAxisRaw("Vertical");
 
-        if(h != 0 || v != 0)
+
+        if (h != 0 || v != 0)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -69,7 +70,7 @@ public class DK_PlayerMove : MonoBehaviour
         //    Cursor.visible = false;
         //}
         //transform.position += dir * moveSpeed * Time.deltaTime;
-    }   
+    }
 
     //private void OnControllerColliderHit(ControllerColliderHit hit)
     //{
