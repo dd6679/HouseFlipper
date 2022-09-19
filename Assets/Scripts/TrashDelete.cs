@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class TrashDelete : MonoBehaviour
 {
+    public GameObject sellUI;
+    float currentTime = 0;
     void Start()
     {
-        
+
     }
 
 
@@ -15,6 +17,18 @@ public class TrashDelete : MonoBehaviour
 
     void Update()
     {
+        if (sellUI.activeSelf == true)
+        {
+            currentTime += Time.deltaTime;
+
+            if (currentTime > 1)
+            {
+                sellUI.SetActive(false);
+            }
+        }else
+        {
+            currentTime = 0;
+        }
         if (Input.GetMouseButton(0))
         {
 
@@ -27,6 +41,7 @@ public class TrashDelete : MonoBehaviour
 
                 if (hit.collider.gameObject.CompareTag("Furniture") && NK_ChangeTool.instance.index == (int)NK_ChangeTool.ToolState.SellTool && NK_ChangeTool.instance.isMoving)
                 {
+                    sellUI.SetActive(true);
                     Destroy(hit.collider.gameObject);
                 }
             }
@@ -41,5 +56,5 @@ public class TrashDelete : MonoBehaviour
         }
     }
 
-   
+
 }
