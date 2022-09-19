@@ -64,7 +64,7 @@ public class NK_UIController : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(0) && NK_PlayerBehavior.isWaiting)
+        if (Input.GetMouseButton(0) && NK_PlayerBehavior.isWaiting && NK_PlayerBehavior.behaviorState == NK_PlayerBehavior.PlayerBehaviorState.Move)
         {
             currentTime += Time.deltaTime;
             waitUI.transform.GetChild(1).GetComponent<Image>().fillAmount = currentTime;

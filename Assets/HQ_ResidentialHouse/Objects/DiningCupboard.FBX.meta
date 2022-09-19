@@ -1,94 +1,236 @@
 fileFormatVersion: 2
 guid: 0db97bc8a3f5fb244af2a6e54d48229e
-timeCreated: 1464768699
-licenseType: Store
 ModelImporter:
-  serializedVersion: 18
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: DiningCupboard
-    100004: DoorDown_L
-    100006: DoorDown_R
-    100008: DoorsDown
-    100010: DoorsUp
-    100012: DoorUp_L
-    100014: DoorUp_R
-    100016: Glass_L
-    100018: Glass_R
-    100020: DoorsDown_mesh
-    100022: DoorsUp_mesh
-    400000: //RootNode
-    400002: DiningCupboard
-    400004: DoorDown_L
-    400006: DoorDown_R
-    400008: DoorsDown
-    400010: DoorsUp
-    400012: DoorUp_L
-    400014: DoorUp_R
-    400016: Glass_L
-    400018: Glass_R
-    400020: DoorsDown_mesh
-    400022: DoorsUp_mesh
-    2300000: DiningCupboard
-    2300002: Glass_L
-    2300004: Glass_R
-    2300006: DoorsDown_mesh
-    2300008: DoorsUp_mesh
-    3300000: DiningCupboard
-    3300002: Glass_L
-    3300004: Glass_R
-    3300006: DoorsDown_mesh
-    3300008: DoorsUp_mesh
-    4300000: DiningCupboard
-    4300002: Glass_R
-    4300004: Glass_L
-    4300006: DoorsDown
-    4300008: DoorsUp
-    4300010: DoorsDown_mesh
-    4300012: DoorsUp_mesh
-    6400000: DiningCupboard
-    6400002: Glass_L
-    6400004: Glass_R
-    6400006: DoorsDown_mesh
-    6400008: DoorsUp_mesh
-    7400000: DiningCupboard_open
-    7400002: DiningCupboard_open //// DiningCupboard
-    9500000: //RootNode
-    11100000: //RootNode
-    11100002: DiningCupboard
-    11100004: DoorDown_L
-    11100006: DoorDown_R
-    11100008: DoorsDown
-    11100010: DoorsDown_mesh
-    11100012: DoorsUp
-    11100014: DoorsUp_mesh
-    11100016: DoorUp_L
-    11100018: DoorUp_R
-    11100020: Glass_L
-    11100022: Glass_R
-    13700000: DoorsDown
-    13700002: DoorsUp
-    13700004: DoorsDown_mesh
-    13700006: DoorsUp_mesh
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: DiningCupboard
+  - first:
+      1: 100004
+    second: DoorDown_L
+  - first:
+      1: 100006
+    second: DoorDown_R
+  - first:
+      1: 100008
+    second: DoorsDown
+  - first:
+      1: 100010
+    second: DoorsUp
+  - first:
+      1: 100012
+    second: DoorUp_L
+  - first:
+      1: 100014
+    second: DoorUp_R
+  - first:
+      1: 100016
+    second: Glass_L
+  - first:
+      1: 100018
+    second: Glass_R
+  - first:
+      1: 100020
+    second: DoorsDown_mesh
+  - first:
+      1: 100022
+    second: DoorsUp_mesh
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: DiningCupboard
+  - first:
+      4: 400004
+    second: DoorDown_L
+  - first:
+      4: 400006
+    second: DoorDown_R
+  - first:
+      4: 400008
+    second: DoorsDown
+  - first:
+      4: 400010
+    second: DoorsUp
+  - first:
+      4: 400012
+    second: DoorUp_L
+  - first:
+      4: 400014
+    second: DoorUp_R
+  - first:
+      4: 400016
+    second: Glass_L
+  - first:
+      4: 400018
+    second: Glass_R
+  - first:
+      4: 400020
+    second: DoorsDown_mesh
+  - first:
+      4: 400022
+    second: DoorsUp_mesh
+  - first:
+      23: 2300000
+    second: DiningCupboard
+  - first:
+      23: 2300002
+    second: Glass_L
+  - first:
+      23: 2300004
+    second: Glass_R
+  - first:
+      23: 2300006
+    second: DoorsDown_mesh
+  - first:
+      23: 2300008
+    second: DoorsUp_mesh
+  - first:
+      33: 3300000
+    second: DiningCupboard
+  - first:
+      33: 3300002
+    second: Glass_L
+  - first:
+      33: 3300004
+    second: Glass_R
+  - first:
+      33: 3300006
+    second: DoorsDown_mesh
+  - first:
+      33: 3300008
+    second: DoorsUp_mesh
+  - first:
+      43: 4300000
+    second: DiningCupboard
+  - first:
+      43: 4300002
+    second: Glass_R
+  - first:
+      43: 4300004
+    second: Glass_L
+  - first:
+      43: 4300006
+    second: DoorsDown
+  - first:
+      43: 4300008
+    second: DoorsUp
+  - first:
+      43: 4300010
+    second: DoorsDown_mesh
+  - first:
+      43: 4300012
+    second: DoorsUp_mesh
+  - first:
+      64: 6400000
+    second: DiningCupboard
+  - first:
+      64: 6400002
+    second: Glass_L
+  - first:
+      64: 6400004
+    second: Glass_R
+  - first:
+      64: 6400006
+    second: DoorsDown_mesh
+  - first:
+      64: 6400008
+    second: DoorsUp_mesh
+  - first:
+      74: 7400000
+    second: DiningCupboard_open
+  - first:
+      74: 7400002
+    second: DiningCupboard_open
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      111: 11100002
+    second: DiningCupboard
+  - first:
+      111: 11100004
+    second: DoorDown_L
+  - first:
+      111: 11100006
+    second: DoorDown_R
+  - first:
+      111: 11100008
+    second: DoorsDown
+  - first:
+      111: 11100010
+    second: DoorsDown_mesh
+  - first:
+      111: 11100012
+    second: DoorsUp
+  - first:
+      111: 11100014
+    second: DoorsUp_mesh
+  - first:
+      111: 11100016
+    second: DoorUp_L
+  - first:
+      111: 11100018
+    second: DoorUp_R
+  - first:
+      111: 11100020
+    second: Glass_L
+  - first:
+      111: 11100022
+    second: Glass_R
+  - first:
+      137: 13700000
+    second: DoorsDown
+  - first:
+      137: 13700002
+    second: DoorsUp
+  - first:
+      137: 13700004
+    second: DoorsDown_mesh
+  - first:
+      137: 13700006
+    second: DoorsUp_mesh
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 1
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: DiningCupboard_open
       takeName: Take 001
+      internalID: 0
       firstFrame: 0
       lastFrame: 103
       wrapMode: 0
@@ -96,6 +238,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -132,44 +275,75 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 1
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
