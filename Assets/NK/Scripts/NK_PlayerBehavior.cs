@@ -72,7 +72,6 @@ public class NK_PlayerBehavior : MonoBehaviour
 
     Outline outline;
     NK_Move nK_Move;
-    MeshCollider mesh;
     GameObject go;
 
     private void Move()
@@ -89,11 +88,6 @@ public class NK_PlayerBehavior : MonoBehaviour
             // ø¿∫Í¡ß∆Æ¿« ≈∏∞Ÿ √ÎµÊ
             if (hit.collider.gameObject.CompareTag("Furniture"))
             {                
-                if (hit.collider.gameObject.transform.GetComponent<MeshCollider>() != null)
-                {
-                    mesh = hit.collider.gameObject.transform.GetComponent<MeshCollider>();
-                    mesh.enabled = true;
-                }
                 if (hit.collider.gameObject.GetComponent<Outline>() != null)
                 {
                     outline = hit.collider.gameObject.GetComponent<Outline>();
