@@ -70,10 +70,13 @@ public class NK_PlayerBehavior : MonoBehaviour
     }
 
     Outline outline;
+    NK_Move nK_Move;
     GameObject go;
 
     private void Move()
     {
+        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.Move);
+
         // 마우스 포지션을 취득해서 대입
         Ray ray = Camera.main.ScreenPointToRay(ScreenCenter);
         NK_CustomGrid gridScript = customGrid.GetComponent<NK_CustomGrid>();
@@ -88,6 +91,11 @@ public class NK_PlayerBehavior : MonoBehaviour
                 {
                     outline = hit.collider.gameObject.GetComponent<Outline>();
                     outline.enabled = true;
+                }
+
+                if (hit.collider.gameObject.GetComponent<NK_Move>() != null)
+                {
+                    nK_Move = (NK_Move)hit.collider.gameObject.GetComponent<NK_Move>();
                 }
                 go = hit.collider.gameObject;
                 moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
@@ -106,6 +114,7 @@ public class NK_PlayerBehavior : MonoBehaviour
             {
                 go.transform.parent = null;
                 moveTarget.SetActive(true);
+                //nK_Move.enabled = true;
                 isWaiting = false;
             }
             /*else

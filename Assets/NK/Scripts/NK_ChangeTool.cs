@@ -11,6 +11,7 @@ public class NK_ChangeTool : MonoBehaviour
         PaintTool,
         SellTool,
         DemolishTool,
+        Move,
     }
 
     public GameObject[] tools;
@@ -35,16 +36,20 @@ public class NK_ChangeTool : MonoBehaviour
     {
         if (index >= 0)
         {
-            Animator anim = tools[index].GetComponent<Animator>();
-            if (Input.GetMouseButtonDown(0))
+            if (tools[index].GetComponent<Animator>() != null)
             {
-                anim.SetBool("isMove", true);
-                isMoving = true;
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                anim.SetBool("isMove", false);
-                isMoving = false;
+                Animator anim = tools[index].GetComponent<Animator>();
+                if (Input.GetMouseButtonDown(0))
+                {
+                    anim.SetBool("isMove", true);
+                    isMoving = true;
+                }
+                else if (Input.GetMouseButtonUp(0))
+                {
+                    anim.SetBool("isMove", false);
+                    isMoving = false;
+                }
+
             }
 
         }
