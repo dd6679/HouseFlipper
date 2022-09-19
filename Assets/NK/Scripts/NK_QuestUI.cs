@@ -47,9 +47,8 @@ public class NK_QuestUI : MonoBehaviour
         {
             if (!quests[location.text].Contains(child.text))
             {
-                child.enabled = false;
-                Destroy(child);
-                //questParent.rectTransform.sizeDelta = new Vector2(500, 55 * quests[location.text].Count);
+                Destroy(child.gameObject);
+                questParent.rectTransform.sizeDelta = new Vector2(500, 55 * quests[location.text].Count);
             }
         }
     }
