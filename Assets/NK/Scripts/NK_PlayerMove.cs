@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
+using static NK_PlayerBehavior;
 
 public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
 {
@@ -31,6 +32,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
 
     private CollisionFlags m_CollisionFlags;
 
+
     void Start()
     {
         //characterController ¸¦ ´ãÀÚ
@@ -42,6 +44,8 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
         GameManager.instance.AddPlayer(photonView);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+       
     }
 
     void Update()

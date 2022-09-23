@@ -355,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5903512935285039969
 Transform:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5903512935285039970}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
@@ -426,7 +426,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5903512935285039970}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &5903512935285039977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +510,7 @@ SphereCollider:
   m_GameObject: {fileID: 5903512935285039970}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 4090056788545767549}
   - component: {fileID: 2483261491441279515}
   - component: {fileID: 6259822073494617509}
-  - component: {fileID: 241728113614496451}
+  - component: {fileID: -5123134528817359992}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5903512936659402694}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f40a8310038c4042b0fec5cc96bdc07, type: 3}
   m_Name: 
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camPos: {fileID: 5903512935285039969}
   rotateSpeed: 200
---- !u!114 &241728113614496451
+--- !u!114 &-5123134528817359992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

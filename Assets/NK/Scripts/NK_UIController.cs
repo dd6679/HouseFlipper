@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static NK_PlayerBehavior;
 
 public class NK_UIController : MonoBehaviour
 {
@@ -81,5 +82,54 @@ public class NK_UIController : MonoBehaviour
             currentTime = 0;
             //isFinishWaiting = false;
         }
+    }
+
+
+    // 옮기기
+    public void OnClickMove()
+    {
+        GameManager.instance.myPlayerBehavior.OnClickMove();
+    }
+
+    // 청소하기
+    public void OnClickClean()
+    {
+        GameManager.instance.myPlayerBehavior.OnClickClean();
+    }
+
+    // 칠하기
+    public void OnClickPaint()
+    {
+        GameManager.instance.myPlayerBehavior.OnClickPaint();
+    }
+
+    // 팔기
+    public void OnClickSell()
+    {
+        GameManager.instance.myPlayerBehavior.OnClickSell();
+    }
+
+    // 벽 올리기
+    public void OnClickBuildWall()
+    {
+        GameManager.instance.myPlayerBehavior.OnClickBuildWall();
+    }
+
+    // 인방보 올리기
+    public void OnClickBuildLintel()
+    {
+        GameManager.instance.myPlayerBehavior.OnClickBuildLintel();
+    }
+
+    // 벽 철거하기
+    public void OnClickDemolishWall()
+    {
+        GameManager.instance.myPlayerBehavior.OnClickDemolishWall();
+    }
+
+    // 타일 및 패널작업하기
+    public void OnClickWorkTileAndPanel()
+    {
+        GameManager.instance.myPlayerBehavior.OnClickWorkTileAndPanel();
     }
 }

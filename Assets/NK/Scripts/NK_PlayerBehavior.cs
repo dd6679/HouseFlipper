@@ -14,6 +14,8 @@ public class NK_PlayerBehavior : MonoBehaviourPun
 
     Vector3 ScreenCenter;
 
+    NK_ChangeTool changeTool;
+
     // 플레이어 행동 상태
     public enum PlayerBehaviorState
     {
@@ -34,6 +36,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     void Start()
     {
         ScreenCenter = new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
+        changeTool = GetComponent<NK_ChangeTool>();
     }
 
     // Update is called once per frame
@@ -42,13 +45,14 @@ public class NK_PlayerBehavior : MonoBehaviourPun
 
     }
 
+
     Outline outline;
     NK_Move nK_Move;
     GameObject go;
 
     private void Move()
     {
-        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.Move);
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.Move);
 
         // 마우스 포지션을 취득해서 대입
         Ray ray = Camera.main.ScreenPointToRay(ScreenCenter);
@@ -96,7 +100,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     private void Clean()
     {
         // 청소도구를 플레이어에게 쥐게 한다
-        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.CleanTool);
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.CleanTool);
         // 마우스 클릭 중일 때 청소하는 모션을 적용시킨다
 
         // - 맵에서 지저분한 물체가 청소도구와 닿으면 Destroy
@@ -106,7 +110,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     private void Paint()
     {
         // 페인트롤을 플레이어에게 쥐게 한다
-        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.PaintTool);
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.PaintTool);
         // 페인트하는 모션을 적용시킨다
         // - 맵에서 페인트롤과 닿으면 벽의 색이 바뀐다
     }
@@ -114,7 +118,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     private void Sell()
     {
         // 가격 측정 기기를 플레이어에게 쥐게 한다
-        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.SellTool);
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.SellTool);
         // 기기를 가구에 댄다
         // 가격이 나온다
     }
@@ -122,7 +126,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     private void DemolishWall()
     {
         // 망치를 플레이어에게 쥐게 한다
-        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.DemolishTool);
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.DemolishTool);
         // 부수는 모션을 적용시킨다
         // - 맵에서 망치와 닿으면 Demolish
 
@@ -137,7 +141,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     }
 
     [PunRPC]
-    private void RpcChangeState(PlayerBehaviorState state)
+    public void RpcChangeState(PlayerBehaviorState state)
     {
         if (behaviorState == state) return;
 

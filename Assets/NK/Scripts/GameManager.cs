@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager instance;
 
-    
+
     void Awake()
     {
         instance = this;
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         PhotonNetwork.SendRate = 60;
 
         //플레이어를 생성한다.
-        PhotonNetwork.Instantiate("Player", new Vector3(0,1,10), Quaternion.identity);
+        PhotonNetwork.Instantiate("Player", new Vector3(0, 1, 10), Quaternion.identity);
     }
     /*    public static GameManager instance;
 
@@ -64,41 +64,48 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         }*/
 
-        //현재 방에 있는 Player를 담아놓자.
-        public List<PhotonView> players = new List<PhotonView>();
-        public void AddPlayer(PhotonView pv)
+    //현재 방에 있는 Player를 담아놓자.
+    public List<PhotonView> players = new List<PhotonView>();
+    public NK_ChangeTool myChangeTool;
+    public NK_PlayerBehavior myPlayerBehavior;
+    public void AddPlayer(PhotonView pv)
+    {
+        if (pv.IsMine)
         {
-            players.Add(pv);
-            //만약에 인원이 다들어왔으면
-            if (players.Count == PhotonNetwork.CurrentRoom.MaxPlayers)
-            {
-                //턴 변경
-                //ChangeTurn();
-            }
+            myChangeTool = pv.GetComponent<NK_ChangeTool>();
+            myPlayerBehavior = pv.GetComponent<NK_PlayerBehavior>();
         }
-
-        //턴 변경시 호출 해주는 함수
-        public int turnIdx = -1;
-        public void ChangeTurn()
+        players.Add(pv);
+        //만약에 인원이 다들어왔으면
+        if (players.Count == PhotonNetwork.CurrentRoom.MaxPlayers)
         {
-            //방장이 아니라면 함수를 나가라!
-            if (PhotonNetwork.IsMasterClient == false) return;
-
-            //이전 차례였던 애를 총을 쏘지 못하게!
-            if (turnIdx > -1)
-            {
-                players[turnIdx].RPC("SetMyTurn", RpcTarget.All, false);
-            }
-            //이번 너의 차례다
-            turnIdx++;
-            turnIdx %= players.Count;
-            players[turnIdx].RPC("SetMyTurn", RpcTarget.All, true);
+            //턴 변경
+            //ChangeTurn();
         }
+    }
 
-        //방에 플레이어가 참여 했을 때 호출해주는 함수
-        public override void OnPlayerEnteredRoom(Player newPlayer)
+    //턴 변경시 호출 해주는 함수
+    public int turnIdx = -1;
+    public void ChangeTurn()
+    {
+        //방장이 아니라면 함수를 나가라!
+        if (PhotonNetwork.IsMasterClient == false) return;
+
+        //이전 차례였던 애를 총을 쏘지 못하게!
+        if (turnIdx > -1)
         {
-            base.OnPlayerEnteredRoom(newPlayer);
-            print(newPlayer.NickName + "이 방에 들어왔습니다.");
+            players[turnIdx].RPC("SetMyTurn", RpcTarget.All, false);
         }
+        //이번 너의 차례다
+        turnIdx++;
+        turnIdx %= players.Count;
+        players[turnIdx].RPC("SetMyTurn", RpcTarget.All, true);
+    }
+
+    //방에 플레이어가 참여 했을 때 호출해주는 함수
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        base.OnPlayerEnteredRoom(newPlayer);
+        print(newPlayer.NickName + "이 방에 들어왔습니다.");
+    }
 }

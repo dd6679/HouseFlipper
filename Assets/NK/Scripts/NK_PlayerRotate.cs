@@ -17,7 +17,9 @@ public class NK_PlayerRotate : MonoBehaviourPun
     {
         if (photonView.IsMine)
         {
-            camPos.gameObject.SetActive(true);
+            camPos.GetComponent<Camera>().enabled = true;
+            camPos.GetComponent<AudioListener>().enabled = true;
+            camPos.GetComponent<SphereCollider>().enabled = true;
         }
     }
 
