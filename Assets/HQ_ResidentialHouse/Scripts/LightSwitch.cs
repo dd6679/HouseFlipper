@@ -34,17 +34,27 @@ public class LightSwitch : MonoBehaviour {
 	private Vector3 thisTransform;
 	private Transform player;
 
-
+	bool lightOn = false;
+	public bool LightOn
+    {
+		get { return lightOn; }
+		set
+        {
+			if (value != lightOn && value == true)
+            {
+				Light_StartOff();
+				DisableEmission();
+			}
+			lightOn = value;
+        }
+    }
 
 
 
 	void Start () 
 	{
 		//Light_StartOn();
-		if (TimeManager.instance.isNight == false)
-		{
-			Light_StartOff();
-		}
+		
 
 		if (GameObject.FindWithTag (PlayerHeadTag) != null) {
 			player = GameObject.FindWithTag (PlayerHeadTag).transform;
@@ -259,6 +269,7 @@ public class LightSwitch : MonoBehaviour {
 		*/
 	}
 	
+
 	// Update is called once per frame
 	void Update () {
 		if(inZone){
@@ -285,7 +296,11 @@ public class LightSwitch : MonoBehaviour {
 				TextObj.gameObject.SetActive (false);
 			}
 		}
+
+		LightOn = TimeManager.instance.isNight;
 	}
+
+
 	void OnTriggerEnter(Collider other){
 		if (other.tag != PlayerHeadTag) {
 			return;
