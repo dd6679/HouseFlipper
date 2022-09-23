@@ -1,18 +1,20 @@
+using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class NK_PlayerBehavior : MonoBehaviour
+public class NK_PlayerBehavior : MonoBehaviourPun
 {
     //public GameObject targetFactory;
-    public GameObject customGrid;
+    //public GameObject customGrid;
     public float waitTime = 0.5f;
     public static bool isWaiting = false;
 
-    //GameObject moveTarget;
     Vector3 ScreenCenter;
+
+    NK_ChangeTool changeTool;
 
     // 플레이어 행동 상태
     public enum PlayerBehaviorState
@@ -34,14 +36,15 @@ public class NK_PlayerBehavior : MonoBehaviour
     void Start()
     {
         ScreenCenter = new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
-        //moveTarget = Instantiate(targetFactory);
+        changeTool = GetComponent<NK_ChangeTool>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
 
     Outline outline;
     NK_Move nK_Move;
@@ -49,18 +52,18 @@ public class NK_PlayerBehavior : MonoBehaviour
 
     private void Move()
     {
-        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.Move);
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.Move);
 
         // 마우스 포지션을 취득해서 대입
         Ray ray = Camera.main.ScreenPointToRay(ScreenCenter);
-        NK_CustomGrid gridScript = customGrid.GetComponent<NK_CustomGrid>();
+        //NK_CustomGrid gridScript = customGrid.GetComponent<NK_CustomGrid>();
 
         // 마우스 포지션에서 레이를 던져 물체 감지 시 hit에 대입
         if (Physics.Raycast(ray, out var hit))
         {
             // 오브젝트의 타겟 취득
             if (hit.collider.gameObject.CompareTag("Furniture"))
-            {                
+            {
                 if (hit.collider.gameObject.GetComponent<Outline>() != null)
                 {
                     outline = hit.collider.gameObject.GetComponent<Outline>();
@@ -74,10 +77,6 @@ public class NK_PlayerBehavior : MonoBehaviour
 
 
                 go = hit.collider.gameObject;
-/*                moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
-                moveTarget.transform.localScale = go.transform.localScale / 2;
-                gridScript.target = moveTarget;
-                gridScript.structure = hit.collider.gameObject;*/
                 isWaiting = true;
             }
             else
@@ -89,11 +88,9 @@ public class NK_PlayerBehavior : MonoBehaviour
                     nK_Move.enabled = false;
                 NK_UIController.isFinishWaiting = false;
             }
+            // 게이지가 모두 차면 옮기기 기능 활성화
             if (NK_UIController.isFinishWaiting)
             {
-                
-                //go.transform.parent = null;
-                //moveTarget.SetActive(true);
                 nK_Move.enabled = true;
                 isWaiting = false;
             }
@@ -103,7 +100,7 @@ public class NK_PlayerBehavior : MonoBehaviour
     private void Clean()
     {
         // 청소도구를 플레이어에게 쥐게 한다
-        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.CleanTool);
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.CleanTool);
         // 마우스 클릭 중일 때 청소하는 모션을 적용시킨다
 
         // - 맵에서 지저분한 물체가 청소도구와 닿으면 Destroy
@@ -113,7 +110,7 @@ public class NK_PlayerBehavior : MonoBehaviour
     private void Paint()
     {
         // 페인트롤을 플레이어에게 쥐게 한다
-        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.PaintTool);
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.PaintTool);
         // 페인트하는 모션을 적용시킨다
         // - 맵에서 페인트롤과 닿으면 벽의 색이 바뀐다
     }
@@ -121,7 +118,7 @@ public class NK_PlayerBehavior : MonoBehaviour
     private void Sell()
     {
         // 가격 측정 기기를 플레이어에게 쥐게 한다
-        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.SellTool);
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.SellTool);
         // 기기를 가구에 댄다
         // 가격이 나온다
     }
@@ -129,7 +126,7 @@ public class NK_PlayerBehavior : MonoBehaviour
     private void DemolishWall()
     {
         // 망치를 플레이어에게 쥐게 한다
-        NK_ChangeTool.instance.SwitchTool((int)NK_ChangeTool.ToolState.DemolishTool);
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.DemolishTool);
         // 부수는 모션을 적용시킨다
         // - 맵에서 망치와 닿으면 Demolish
 
@@ -138,12 +135,18 @@ public class NK_PlayerBehavior : MonoBehaviour
     // 상태 변화 관리 함수
     void ChangeState(PlayerBehaviorState state)
     {
+        if (!photonView.IsMine)
+            return;
+        photonView.RPC("RpcChangeState", RpcTarget.All, state);
+    }
+
+    [PunRPC]
+    public void RpcChangeState(PlayerBehaviorState state)
+    {
+        if (behaviorState == state) return;
+
         behaviorState = state;
         print(behaviorState + " 상태입니다.");
-/*        if (moveTarget != null)
-        {
-            moveTarget.SetActive(false);
-        }*/
 
         switch (state)
         {

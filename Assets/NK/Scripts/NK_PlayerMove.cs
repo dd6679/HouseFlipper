@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
+using static NK_PlayerBehavior;
 
 public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
 {
@@ -31,6 +32,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
 
     private CollisionFlags m_CollisionFlags;
 
+
     void Start()
     {
         //characterController 를 담자
@@ -42,6 +44,8 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
         GameManager.instance.AddPlayer(photonView);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+       
     }
 
     void Update()
@@ -49,7 +53,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
         //만약에 내것이라면
         if (photonView.IsMine)
         {
-            if (Cursor.visible == false)
+            //if (Cursor.visible == false)
             {
                 // WSAD를 누르면 상,하,좌,우로 이동
                 //1. WSAD의 신호를 받자.

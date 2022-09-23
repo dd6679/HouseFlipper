@@ -19,7 +19,7 @@ public class NK_MouseSetterControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (NK_ChangeTool.instance.index == (int)NK_ChangeTool.ToolState.DemolishTool)
+        if (GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.DemolishTool)
         {
             mouseSetter.enabled = true;
         }
@@ -27,7 +27,7 @@ public class NK_MouseSetterControl : MonoBehaviour
         {
             mouseSetter.enabled = false;
         }
-        if (NK_ChangeTool.instance.index == (int)NK_ChangeTool.ToolState.CleanTool && NK_ChangeTool.instance.isMoving)
+        if (GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.CleanTool && GameManager.instance.myChangeTool.isMoving)
         {
             dustDelete.enabled = true;
         }

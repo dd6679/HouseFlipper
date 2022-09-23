@@ -18,13 +18,6 @@ public class NK_ChangeTool : MonoBehaviour
     public int index = -1;
     public bool isMoving = false;
 
-    public static NK_ChangeTool instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
     // Start is called before the first frame update
     void Start()
     {

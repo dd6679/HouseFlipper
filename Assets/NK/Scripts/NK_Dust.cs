@@ -15,10 +15,10 @@ public class NK_Dust : MonoBehaviour
     {
         if (CheckObjectIsCamera(gameObject))
         {
-            if (NK_ChangeTool.instance.index == (int)NK_ChangeTool.ToolState.CleanTool && NK_ChangeTool.instance.isMoving)
+/*            if (NK_ChangeTool.instance.index == (int)NK_ChangeTool.ToolState.CleanTool && NK_ChangeTool.instance.isMoving)
             {
                 Destroy(gameObject);
-            }
+            }*/
         }
     }
 
