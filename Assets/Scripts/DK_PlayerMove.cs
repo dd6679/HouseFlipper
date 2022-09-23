@@ -18,45 +18,43 @@ public class DK_PlayerMove : MonoBehaviour
     void Start()
     {
         cc = GetComponent<CharacterController>();
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxisRaw("Horizontal"); //A : -1, D : 1, 누르지 않으면 : 0
-        float v = Input.GetAxisRaw("Vertical");
 
-
-        if (h != 0 || v != 0)
+        if (Cursor.visible == false)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            float h = Input.GetAxisRaw("Horizontal"); //A : -1, D : 1, 누르지 않으면 : 0
+            float v = Input.GetAxisRaw("Vertical");
+
+            Vector3 dir = transform.forward * v + transform.right * h; // new Vector3(h, 0, v);
+                                                                       //방향의 크기를 1로한다.
+            dir.Normalize();
+
+            if (cc.isGrounded)
+            {
+                yVelocity = 0;
+            }
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                yVelocity = jumpPower;
+            }
+
+
+            yVelocity += gravity * Time.deltaTime;
+
+            dir.y = yVelocity;
+
+
+            cc.Move(dir * moveSpeed * Time.deltaTime);
+            m_CollisionFlags = cc.Move(dir * Time.fixedDeltaTime);
         }
 
-        Vector3 dir = transform.forward * v + transform.right * h; // new Vector3(h, 0, v);
-                                                                   //방향의 크기를 1로한다.
-        dir.Normalize();
-
-        if (cc.isGrounded)
-        {
-            yVelocity = 0;
-        }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            yVelocity = jumpPower;
-        }
-
-
-        yVelocity += gravity * Time.deltaTime;
-
-        dir.y = yVelocity;
-
-
-        cc.Move(dir * moveSpeed * Time.deltaTime);
-        m_CollisionFlags = cc.Move(dir * Time.fixedDeltaTime);
 
 
         //if (Input.GetKeyDown(KeyCode.Tab) || Input.GetMouseButton(1))

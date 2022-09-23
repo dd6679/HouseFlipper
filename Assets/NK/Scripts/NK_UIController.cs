@@ -30,38 +30,36 @@ public class NK_UIController : MonoBehaviour
         {
             if (isCheckBehavior)
             {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 isCheckBehavior = false;
-                
             }
             else
             {
-                isCheckBehavior = true;
-            }
-            behaviorUI.SetActive(isCheckBehavior);
-            if(isCheckBehavior == true)
-            {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                isCheckBehavior = true;
+                NK_PlayerBehavior.behaviorState = NK_PlayerBehavior.PlayerBehaviorState.Move;
             }
+            behaviorUI.SetActive(isCheckBehavior);
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if(isCheckTask)
             {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 isCheckTask = false;
             }
             else
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 isCheckTask =true;
                 
             }
             taskUI.SetActive(isCheckTask);
-            if (isCheckTask == true)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = true;
-            }
         }
 
         if (Input.GetMouseButton(0) && NK_PlayerBehavior.isWaiting && NK_PlayerBehavior.behaviorState == NK_PlayerBehavior.PlayerBehaviorState.Move)

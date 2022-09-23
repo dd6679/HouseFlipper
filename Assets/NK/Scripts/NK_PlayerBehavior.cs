@@ -6,12 +6,12 @@ using UnityEngine.XR;
 
 public class NK_PlayerBehavior : MonoBehaviour
 {
-    public GameObject targetFactory;
+    //public GameObject targetFactory;
     public GameObject customGrid;
     public float waitTime = 0.5f;
     public static bool isWaiting = false;
 
-    GameObject moveTarget;
+    //GameObject moveTarget;
     Vector3 ScreenCenter;
 
     // 플레이어 행동 상태
@@ -34,40 +34,13 @@ public class NK_PlayerBehavior : MonoBehaviour
     void Start()
     {
         ScreenCenter = new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
-        moveTarget = Instantiate(targetFactory);
+        //moveTarget = Instantiate(targetFactory);
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (behaviorState)
-        {
-            case PlayerBehaviorState.Idle:
-                break;
-            case PlayerBehaviorState.Move:
-                Move();
-                break;
-            case PlayerBehaviorState.Clean:
-                Clean();
-                break;
-            case PlayerBehaviorState.Paint:
-                Paint();
-                break;
-            case PlayerBehaviorState.Sell:
-                Sell();
-                break;
-            case PlayerBehaviorState.BuildWall:
-                break;
-            case PlayerBehaviorState.BuildLintel:
-                break;
-            case PlayerBehaviorState.DemolishWall:
-                DemolishWall();
-                break;
-            case PlayerBehaviorState.WorkTileAndPanel:
-                break;
-            default:
-                break;
-        }
+        
     }
 
     Outline outline;
@@ -167,9 +140,38 @@ public class NK_PlayerBehavior : MonoBehaviour
     {
         behaviorState = state;
         print(behaviorState + " 상태입니다.");
-        if (moveTarget != null)
+/*        if (moveTarget != null)
         {
             moveTarget.SetActive(false);
+        }*/
+
+        switch (state)
+        {
+            case PlayerBehaviorState.Idle:
+                break;
+            case PlayerBehaviorState.Move:
+                Move();
+                break;
+            case PlayerBehaviorState.Clean:
+                Clean();
+                break;
+            case PlayerBehaviorState.Paint:
+                Paint();
+                break;
+            case PlayerBehaviorState.Sell:
+                Sell();
+                break;
+            case PlayerBehaviorState.BuildWall:
+                break;
+            case PlayerBehaviorState.BuildLintel:
+                break;
+            case PlayerBehaviorState.DemolishWall:
+                DemolishWall();
+                break;
+            case PlayerBehaviorState.WorkTileAndPanel:
+                break;
+            default:
+                break;
         }
     }
 
