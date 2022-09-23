@@ -53,7 +53,7 @@ public class NK_Move : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+       Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 1000, Color.green);
 
         int layerMask = 1 << LayerMask.NameToLayer("Floor");

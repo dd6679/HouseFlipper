@@ -1,8 +1,9 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DustDelete : MonoBehaviour
+public class DustDelete : MonoBehaviourPun
 {
     // 삭제시간
     float currentTime = 1f;
@@ -30,7 +31,7 @@ public class DustDelete : MonoBehaviour
                     ren.material.color = color;
                     if(color.a < 0.55f)
                     {
-                        Destroy(hit.collider.gameObject);
+                        PhotonNetwork.Destroy(hit.collider.gameObject);
                         currentTime = 1;
                     }
                 }

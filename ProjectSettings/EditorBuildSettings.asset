@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LobbyScene.unity
     guid: 27f239571085baf4fabc2cc9f769b18c
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/NK_Test.unity
+    guid: 5fac0014bc7af6d43b57e0b74161a324
   m_configObjects: {}

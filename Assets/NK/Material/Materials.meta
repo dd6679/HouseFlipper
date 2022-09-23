@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/NK/Material/Materials.meta
 guid: 8b33ea2db4c07604790ee982abe0a33f
+========
+guid: 50c967cfc44e60a4786ad3e15ca38735
+>>>>>>>> 60a27fb434d38ff65d5ae8e105587f5cc834d549:Assets/Plugins.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

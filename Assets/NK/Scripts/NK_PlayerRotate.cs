@@ -6,11 +6,11 @@ using UnityEngine;
 public class NK_PlayerRotate : MonoBehaviourPun
 {
     public Transform camPos;
-    public float rotateSpeed = 500f;
+    public float rotateSpeed = 200f;
 
     // 회전값 누적 변수
-    float rotX, rotMoveX;
-    float rotY, rotMoveY;
+    float rotX;
+    float rotY;
 
     // Start is called before the first frame update
     void Start()
