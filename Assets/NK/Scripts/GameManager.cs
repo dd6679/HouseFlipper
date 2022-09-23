@@ -20,16 +20,9 @@ public class GameManager : MonoBehaviourPunCallbacks
         //플레이어를 생성한다.
         PhotonNetwork.Instantiate("Player", new Vector3(0, 1, 10), Quaternion.identity);
     }
-    /*    public static GameManager instance;
 
-        //SpawnPos 들
+      /*  //SpawnPos 들
         public Vector3[] spawnPos;
-
-        private void Awake()
-        {
-            instance = this;
-        }
-
         void Start()
         {
             //OnPhotonSerializeView 호출 빈도

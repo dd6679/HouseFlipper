@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class TrashDelete : MonoBehaviourPun
 {
     public AudioClip deleteSound;
+    static List<int> deletedTrash = new List<int>();
     AudioSource audioSource;
     RaycastHit hit;
     Transform tr;
@@ -15,6 +16,10 @@ public class TrashDelete : MonoBehaviourPun
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
+        for (int i = 0; i < deletedTrash.Count; i++)
+        {
+            photonView.RPC("RpcDestroyTrash", RpcTarget.All, deletedTrash[i]);
+        }
     }
 
     void Update()
@@ -52,6 +57,7 @@ public class TrashDelete : MonoBehaviourPun
         if (trash.transform.localScale.x <= 0.1f)
         {
             Destroy(trash);
+            deletedTrash.Add(viewId);
             audioSource.PlayOneShot(deleteSound);
         }
     }
