@@ -36,6 +36,5 @@ public class DustDelete : MonoBehaviour
                 }
             }
         }
-        print(currentTime);
     }
 }
