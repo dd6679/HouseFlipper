@@ -1,9 +1,10 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NK_QuestUI : MonoBehaviour
+public class NK_QuestUI : MonoBehaviourPun
 {
     public Text location;
     public string locationName;
@@ -66,7 +67,7 @@ public class NK_QuestUI : MonoBehaviour
 
             if (completeQuest[location.text].Contains(child.text))
             {
-                Destroy(child.gameObject);
+                PhotonNetwork.Destroy(child.gameObject);
             }
         }
         questParent.rectTransform.sizeDelta = new Vector2(500, 55 * allChild.Length);
@@ -82,7 +83,7 @@ public class NK_QuestUI : MonoBehaviour
             {
                 for (int i = 1; i < childList.Length; i++)
                 {
-                    Destroy(childList[i].gameObject);
+                    PhotonNetwork.Destroy(childList[i].gameObject);
                 }
             }
 
@@ -90,10 +91,11 @@ public class NK_QuestUI : MonoBehaviour
 
             for (int i = 0; i < quests[location.text].Count; i++)
             {
-                Text quest = Instantiate(questFactory);
+                GameObject quest = PhotonNetwork.Instantiate("quest", Vector3.zero, Quaternion.identity);
                 quest.transform.SetParent(questParent.transform);
-                quest.rectTransform.position = questParent.rectTransform.position + new Vector3(100, -12 + -50 * i, 0);
-                quest.text = quests[location.text][i];
+                Text questText = quest.GetComponent<Text>();
+                questText.rectTransform.position = questParent.rectTransform.position + new Vector3(100, -12 + -50 * i, 0);
+                questText.text = quests[location.text][i];
             }
 
             questParent.rectTransform.sizeDelta = new Vector2(500, 55 * quests[location.text].Count);

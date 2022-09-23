@@ -14,6 +14,8 @@ public class NK_UIController : MonoBehaviour
     public GameObject waitUI;
     private float currentTime;
 
+    public GameObject endUI;
+
     public static bool isFinishWaiting = false;
 
     // Start is called before the first frame update
@@ -81,6 +83,11 @@ public class NK_UIController : MonoBehaviour
             waitUI.SetActive(false);
             currentTime = 0;
             //isFinishWaiting = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            endUI.SetActive(true);
         }
     }
 
