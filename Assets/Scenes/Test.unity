@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 541489020}
-  m_IndirectSpecularColor: {r: 0.38490722, g: 0.39735287, b: 0.38355985, a: 1}
+  m_IndirectSpecularColor: {r: 0.44994593, g: 0.49732095, b: 0.5611294, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -1655,7 +1655,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243edc468e698354baf07759ced4812d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customGrid: {fileID: 426384177}
   waitTime: 0.5
 --- !u!114 &45223674
 MonoBehaviour:
@@ -5240,13 +5239,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160516028}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 555285568}
-  m_RootOrder: 2
+  m_Father: {fileID: 2032797207}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &160516030
 Light:
@@ -5260,7 +5259,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 45
   m_InnerSpotAngle: 21.80208
@@ -16903,14 +16902,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541489019}
-  m_LocalRotation: {x: 0.9999619, y: 0, z: 0, w: 0.008726652}
+  m_LocalRotation: {x: 0.9834136, y: 0, z: 0, w: 0.18137738}
   m_LocalPosition: {x: 0, y: 12.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 179, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 159.1, y: 0, z: 0}
 --- !u!114 &541489022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16925,6 +16924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   secondPerRealTimeSecond: 20
   isNight: 0
+  isLightOff: 0
   nightFogDensity: 0.2
   fogDensityCalc: 0.1
   nightLightDensity: 0.05
@@ -17337,6 +17337,7 @@ GameObject:
   - component: {fileID: 555285562}
   - component: {fileID: 555285561}
   - component: {fileID: 555285560}
+  - component: {fileID: 555285569}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -17351,7 +17352,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555285559}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f40a8310038c4042b0fec5cc96bdc07, type: 3}
   m_Name: 
@@ -17383,7 +17384,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555285559}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 465a48db3be914d44abca70ceed99381, type: 3}
   m_Name: 
@@ -17396,7 +17397,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555285559}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdac43ec8ebbabd46843b4504acd421d, type: 3}
   m_Name: 
@@ -17408,7 +17409,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555285559}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 188fad379d2e64091bce2ae05f42c2bb, type: 3}
   m_Name: 
@@ -17473,10 +17474,26 @@ Transform:
   m_Children:
   - {fileID: 2032797207}
   - {fileID: 1231122889}
-  - {fileID: 160516029}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -270, z: 0}
+--- !u!114 &555285569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555285559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161a5a74877bc444ea27d7ab09a4b56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material:
+  - {fileID: 2100000, guid: 9d60f5e9263e31044a71eb189689dc1f, type: 2}
+  - {fileID: 2100000, guid: 133a7132c5af60941855c63368db3be1, type: 2}
+  - {fileID: 2100000, guid: 62c6a9b45dae21e499f1264ea122d83f, type: 2}
+  x: 0
 --- !u!1001 &555590699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70815,6 +70832,7 @@ Transform:
   - {fileID: 84667237}
   - {fileID: 750273108}
   - {fileID: 1351816206}
+  - {fileID: 160516029}
   m_Father: {fileID: 555285568}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76074,7 +76092,7 @@ GameObject:
   - component: {fileID: 8153583298253403337}
   - component: {fileID: 8153583298253403336}
   - component: {fileID: 8153583298253403335}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-15
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -76268,9 +76286,9 @@ GameObject:
   - component: {fileID: 7468393342552015933}
   - component: {fileID: 8838133840635097270}
   - component: {fileID: 8838133840635097271}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-137
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76474,9 +76492,9 @@ GameObject:
   - component: {fileID: 5133702714333806077}
   - component: {fileID: 4140947900964522430}
   - component: {fileID: 5133702714333806078}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-145
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76818,9 +76836,9 @@ GameObject:
   - component: {fileID: 3562569386111394010}
   - component: {fileID: 4689606774701662085}
   - component: {fileID: 4689606774701662086}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-136
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77521,9 +77539,9 @@ GameObject:
   - component: {fileID: 439056334162336863}
   - component: {fileID: 555611755392419670}
   - component: {fileID: 6002988779826744130}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77872,9 +77890,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7858355904619516976}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "2\uCE35\uB0B4\uBCBD"
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78351,7 +78369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3451191297259028613}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "2\uCE35\uC678\uBCBD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78430,9 +78448,9 @@ GameObject:
   - component: {fileID: 7262386649622898080}
   - component: {fileID: 5552880692218173471}
   - component: {fileID: 7262386649622898081}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-5
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78544,9 +78562,9 @@ GameObject:
   - component: {fileID: 2459018917130862707}
   - component: {fileID: 4333743901441335538}
   - component: {fileID: 4333743901441335539}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78560,9 +78578,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1184497553003942160}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "1\uCE35 \uB0B4\uBCBD"
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79065,9 +79083,9 @@ GameObject:
   - component: {fileID: 1415394733968257222}
   - component: {fileID: 7754686650872009453}
   - component: {fileID: 7754686650872009454}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-143
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79595,9 +79613,9 @@ GameObject:
   - component: {fileID: 7741799500905046061}
   - component: {fileID: 1964223120868649294}
   - component: {fileID: 7741799500905046062}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-133
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79728,9 +79746,9 @@ GameObject:
   - component: {fileID: 9003996928031729195}
   - component: {fileID: 1755171954719049540}
   - component: {fileID: 9003996928031729196}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-146
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80109,7 +80127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 10129030832880098}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\uBCBD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80588,9 +80606,9 @@ GameObject:
   - component: {fileID: 8099665633505675027}
   - component: {fileID: 2162154503602985988}
   - component: {fileID: 8420985697955553679}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-142
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81816,7 +81834,7 @@ GameObject:
   - component: {fileID: 8635549714024644536}
   - component: {fileID: 8635549714024644535}
   - component: {fileID: 8635549714024644534}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-16
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -84331,9 +84349,9 @@ GameObject:
   - component: {fileID: 4475237587373440088}
   - component: {fileID: 5788273616731981648}
   - component: {fileID: 9105379876578597722}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-139
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84705,9 +84723,9 @@ GameObject:
   - component: {fileID: 6619384983720428370}
   - component: {fileID: 1490269855049915619}
   - component: {fileID: 7323202853196459401}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84904,9 +84922,9 @@ GameObject:
   - component: {fileID: 1416220171333379113}
   - component: {fileID: 7413048903461892953}
   - component: {fileID: 7413048903461892954}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-134
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85651,7 +85669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2815144286771796603}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "1\uCE35 \uC678\uBCBD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86009,9 +86027,9 @@ GameObject:
   - component: {fileID: 2232457402424608683}
   - component: {fileID: 1282044294331893854}
   - component: {fileID: 6761922430693604190}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-6
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86272,9 +86290,9 @@ GameObject:
   - component: {fileID: 1949744859464510061}
   - component: {fileID: 1558591962749360026}
   - component: {fileID: 6904489096811061176}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-144
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86719,9 +86737,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7607475304838819096}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\uC678\uBCBD"
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88237,9 +88255,9 @@ GameObject:
   - component: {fileID: 471138623315357501}
   - component: {fileID: 5960203446253447188}
   - component: {fileID: 8353060103994676272}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-8
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90097,9 +90115,9 @@ GameObject:
   - component: {fileID: 6677562114037207456}
   - component: {fileID: 59637086861535541}
   - component: {fileID: 7980826548262658380}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-140
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92061,9 +92079,9 @@ GameObject:
   - component: {fileID: 5178617514251227004}
   - component: {fileID: 6050596450781739838}
   - component: {fileID: 8495108819997717917}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-138
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92854,9 +92872,9 @@ GameObject:
   - component: {fileID: 6607236220273180544}
   - component: {fileID: 2157134084077436961}
   - component: {fileID: 8607451815464396315}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94859,9 +94877,9 @@ GameObject:
   - component: {fileID: 336933989703644376}
   - component: {fileID: 4555580277189049928}
   - component: {fileID: 8986469153257610162}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-141
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94991,9 +95009,9 @@ GameObject:
   - component: {fileID: 2283326108638774788}
   - component: {fileID: 4007483960922634750}
   - component: {fileID: 9030130870594000693}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-135
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95111,7 +95129,7 @@ GameObject:
   - component: {fileID: 9068899514569073964}
   - component: {fileID: 9068899514569073963}
   - component: {fileID: 9068899514569073962}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3DGeom-10
   m_TagString: Wall
   m_Icon: {fileID: 0}
