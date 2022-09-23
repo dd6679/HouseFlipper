@@ -42,6 +42,10 @@ MonoBehaviour:
   - CantHearYou
   - ChangeColour
   - HeresWhy
+  - RpcDestroyTrash
+  - RpcChangeState
+  - RpcDestoryDust
+  - RpcDestroyShatter
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

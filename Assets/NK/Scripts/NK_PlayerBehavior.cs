@@ -1,17 +1,17 @@
+using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class NK_PlayerBehavior : MonoBehaviour
+public class NK_PlayerBehavior : MonoBehaviourPun
 {
     //public GameObject targetFactory;
-    public GameObject customGrid;
+    //public GameObject customGrid;
     public float waitTime = 0.5f;
     public static bool isWaiting = false;
 
-    //GameObject moveTarget;
     Vector3 ScreenCenter;
 
     // 플레이어 행동 상태
@@ -34,13 +34,12 @@ public class NK_PlayerBehavior : MonoBehaviour
     void Start()
     {
         ScreenCenter = new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
-        //moveTarget = Instantiate(targetFactory);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     Outline outline;
@@ -53,14 +52,14 @@ public class NK_PlayerBehavior : MonoBehaviour
 
         // 마우스 포지션을 취득해서 대입
         Ray ray = Camera.main.ScreenPointToRay(ScreenCenter);
-        NK_CustomGrid gridScript = customGrid.GetComponent<NK_CustomGrid>();
+        //NK_CustomGrid gridScript = customGrid.GetComponent<NK_CustomGrid>();
 
         // 마우스 포지션에서 레이를 던져 물체 감지 시 hit에 대입
         if (Physics.Raycast(ray, out var hit))
         {
             // 오브젝트의 타겟 취득
             if (hit.collider.gameObject.CompareTag("Furniture"))
-            {                
+            {
                 if (hit.collider.gameObject.GetComponent<Outline>() != null)
                 {
                     outline = hit.collider.gameObject.GetComponent<Outline>();
@@ -74,10 +73,6 @@ public class NK_PlayerBehavior : MonoBehaviour
 
 
                 go = hit.collider.gameObject;
-/*                moveTarget.transform.position = new Vector3(hit.transform.position.x, moveTarget.transform.position.y, hit.transform.position.z);
-                moveTarget.transform.localScale = go.transform.localScale / 2;
-                gridScript.target = moveTarget;
-                gridScript.structure = hit.collider.gameObject;*/
                 isWaiting = true;
             }
             else
@@ -89,11 +84,9 @@ public class NK_PlayerBehavior : MonoBehaviour
                     nK_Move.enabled = false;
                 NK_UIController.isFinishWaiting = false;
             }
+            // 게이지가 모두 차면 옮기기 기능 활성화
             if (NK_UIController.isFinishWaiting)
             {
-                
-                //go.transform.parent = null;
-                //moveTarget.SetActive(true);
                 nK_Move.enabled = true;
                 isWaiting = false;
             }
@@ -138,12 +131,18 @@ public class NK_PlayerBehavior : MonoBehaviour
     // 상태 변화 관리 함수
     void ChangeState(PlayerBehaviorState state)
     {
+        if (!photonView.IsMine)
+            return;
+        photonView.RPC("RpcChangeState", RpcTarget.All, state);
+    }
+
+    [PunRPC]
+    private void RpcChangeState(PlayerBehaviorState state)
+    {
+        if (behaviorState == state) return;
+
         behaviorState = state;
         print(behaviorState + " 상태입니다.");
-/*        if (moveTarget != null)
-        {
-            moveTarget.SetActive(false);
-        }*/
 
         switch (state)
         {

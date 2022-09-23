@@ -7,40 +7,52 @@ using UnityEngine.UI;
 
 public class TrashDelete : MonoBehaviourPun
 {
-    AudioSource audioSource;
     public AudioClip deleteSound;
+    AudioSource audioSource;
+    RaycastHit hit;
+    Transform tr;
 
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-
-    RaycastHit hit;
-    Transform tr;
-
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (photonView.IsMine)
         {
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            if (Input.GetMouseButton(0))
             {
-                if (hit.collider.gameObject.tag.Contains("Trash"))
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
-                    tr = hit.collider.gameObject.transform;
+                    if (hit.collider.gameObject.tag.Contains("Trash"))
+                    {
+                        tr = hit.collider.gameObject.transform;
+                    }
                 }
             }
-        }
-        if (tr != null)
-        {
-            tr.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
-            if (tr.localScale.x <= 0.1f)
+            if (tr != null)
             {
-                PhotonNetwork.Destroy(tr.gameObject);
-                audioSource.PlayOneShot(deleteSound);
+                DestroyTrash(tr.GetComponent<PhotonView>().ViewID);
             }
         }
+
     }
 
+    private void DestroyTrash(int viewId)
+    {
+        photonView.RPC("RpcDestroyTrash", RpcTarget.All, viewId);
+    }
 
+    [PunRPC]
+    private void RpcDestroyTrash(int viewId)
+    {
+        GameObject trash = PhotonView.Find(viewId).gameObject;
+        trash.transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
+        if (trash.transform.localScale.x <= 0.1f)
+        {
+            Destroy(trash);
+            audioSource.PlayOneShot(deleteSound);
+        }
+    }
 }
