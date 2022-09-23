@@ -17,26 +17,42 @@ public class DustDelete : MonoBehaviourPun
 
     void Update()
     {
-        
+        if (!photonView.IsMine)
+            return;
+
         if (Input.GetMouseButton(0))
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 if (hit.collider.gameObject.tag.Contains("Dust"))
                 {
-                    Renderer ren = hit.collider.gameObject.GetComponent<Renderer>();
-                    currentTime -= Time.deltaTime * 1/2;
-                    Color color = ren.material.color;
-                    color.a = currentTime;
-                    ren.material.color = color;
-                    if(color.a < 0.55f)
-                    {
-                        PhotonNetwork.Destroy(hit.collider.gameObject);
-                        currentTime = 1;
-                    }
+                    DestroyDust(hit.collider.gameObject.GetComponent<PhotonView>().ViewID);
                 }
             }
         }
-        print(currentTime);
+    }
+
+    private void DestroyDust(int viewId)
+    {
+        photonView.RPC("RpcDestoryDust", RpcTarget.All, viewId);
+    }
+
+    [PunRPC]
+    private void RpcDestoryDust(int viewId)
+    {
+        GameObject dust = PhotonView.Find(viewId).gameObject;
+        if (dust != null)
+        {
+            Renderer ren = dust.GetComponent<Renderer>();
+            currentTime -= Time.deltaTime * 1 / 2;
+            Color color = ren.material.color;
+            color.a = currentTime;
+            ren.material.color = color;
+            if (color.a < 0.55f)
+            {
+                Destroy(dust);
+                currentTime = 1;
+            }
+        }
     }
 }

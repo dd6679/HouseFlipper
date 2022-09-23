@@ -49,7 +49,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
         //만약에 내것이라면
         if (photonView.IsMine)
         {
-            if (Cursor.visible == false)
+            //if (Cursor.visible == false)
             {
                 // WSAD를 누르면 상,하,좌,우로 이동
                 //1. WSAD의 신호를 받자.
