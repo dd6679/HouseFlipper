@@ -33,8 +33,19 @@ public class LightSwitch : MonoBehaviour {
 	private Vector3 forward;
 	private Vector3 thisTransform;
 	private Transform player;
-	
-	void Start () {
+
+
+
+
+
+	void Start () 
+	{
+		//Light_StartOn();
+		if (TimeManager.instance.isNight == false)
+		{
+			Light_StartOff();
+		}
+
 		if (GameObject.FindWithTag (PlayerHeadTag) != null) {
 			player = GameObject.FindWithTag (PlayerHeadTag).transform;
 		} 
@@ -148,6 +159,28 @@ public class LightSwitch : MonoBehaviour {
 			}
 		}
 	}
+
+	void Light_StartOff()
+	{
+		foreach (GameObject _light in Lights)
+		{
+			if (_light)
+			{
+				_light.SetActive(false);
+			}
+		}
+		LightsON = false;
+		
+
+		Invoke("BakeProbes", _timer);
+		/*
+		foreach (ReflectionProbe _probe in ReflectionProbes) {
+			if (_probe) {
+				Invoke("BakeProbes", _timer);
+			}
+		}
+		*/
+	}
 	void Light_Off(){
 		foreach (GameObject _light in Lights) {
 			if(_light){
@@ -172,8 +205,34 @@ public class LightSwitch : MonoBehaviour {
 			}
 		}
 		*/
-
 	}
+
+	void Light_StartOn()
+	{
+		foreach (GameObject _light in Lights)
+		{
+			if (_light)
+			{
+				_light.SetActive(true);
+			}
+		}
+		LightsON = true;
+		
+		
+
+		Invoke("BakeProbes", _timer);
+		/*
+		foreach (ReflectionProbe _probe in ReflectionProbes) {
+			if (_probe) {
+				Invoke("BakeProbes", _timer);
+			}
+		}
+		*/
+	}
+
+
+
+
 	void Light_On(){
 		foreach (GameObject _light in Lights) {
 			if(_light){
@@ -225,9 +284,6 @@ public class LightSwitch : MonoBehaviour {
 			else if(TextPrefab != null){
 				TextObj.gameObject.SetActive (false);
 			}
-
-
-
 		}
 	}
 	void OnTriggerEnter(Collider other){

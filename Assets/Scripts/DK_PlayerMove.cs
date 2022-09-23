@@ -18,15 +18,15 @@ public class DK_PlayerMove : MonoBehaviour
     void Start()
     {
         cc = GetComponent<CharacterController>();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Cursor.visible == false)
+        //if (Cursor.visible == false)
         {
             float h = Input.GetAxisRaw("Horizontal"); //A : -1, D : 1, 누르지 않으면 : 0
             float v = Input.GetAxisRaw("Vertical");
