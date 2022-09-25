@@ -15,13 +15,17 @@ public class NK_ChangeTool : MonoBehaviour
     }
 
     public GameObject[] tools;
+    public GameObject[] graps;
     public int index = -1;
     public bool isMoving = false;
+
+    NK_IKControl iKControl;
 
     // Start is called before the first frame update
     void Start()
     {
         InitializeTool();
+        iKControl = transform.GetChild(0).GetComponent<NK_IKControl>();
     }
 
     // Update is called once per frame
@@ -67,6 +71,14 @@ public class NK_ChangeTool : MonoBehaviour
         {
             tools[(i)].SetActive(false);
         }
-        tools[(index)].SetActive(true);
+        tools[index].SetActive(true);
+        iKControl.lookObj = tools[index].transform;
+        if (index != 4)
+        {
+            iKControl.ikActive = true;
+            iKControl.rightHandObj = graps[index].transform;
+        }
+        else
+            iKControl.ikActive = false;
     }
 }

@@ -1,9 +1,10 @@
+using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NK_Move : MonoBehaviour
+public class NK_Move : MonoBehaviourPun
 {
     public Transform camPos;
     public float speed = 5f;
@@ -45,10 +46,16 @@ public class NK_Move : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hitRay))
         {
-            objectHitPosition = new GameObject("HitPosition");
-            objectHitPosition.transform.position = hitRay.point;
-            transform.SetParent(objectHitPosition.transform);
+            photonView.RPC("RpcCreateHitPosition", RpcTarget.All, hitRay.point);
         }
+    }
+
+    [PunRPC]
+    private void RpcCreateHitPosition(Vector3 point)
+    {
+        objectHitPosition = new GameObject("HitPosition");
+        objectHitPosition.transform.position = point;
+        transform.SetParent(objectHitPosition.transform);
     }
 
     private void OnMouseDrag()
@@ -58,14 +65,19 @@ public class NK_Move : MonoBehaviour
 
         int layerMask = 1 << LayerMask.NameToLayer("Floor");
 
-        if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask) && NK_UIController.isFinishWaiting)
+        if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask) /*&& NK_UIController.isFinishWaiting*/)
         {
             float H = Camera.main.transform.position.y;
             float h = objectHitPosition.transform.position.y;
 
             Vector3 newPos = (hitLayerMask.point * (H - h) + Camera.main.transform.position * h) / H;
-
-            objectHitPosition.transform.position = newPos;
+            photonView.RPC("RpcMove", RpcTarget.All, newPos);
         }
+    }
+
+    [PunRPC]
+    private void RpcMove(Vector3 newPos)
+    {
+        objectHitPosition.transform.position = newPos;
     }
 }
