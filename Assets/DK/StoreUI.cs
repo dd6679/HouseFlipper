@@ -3,93 +3,96 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClickTest : MonoBehaviour
+public class StoreUI : MonoBehaviour
 {
     public GameObject[] go;
-    int i;
-    public ScrollRect UI;
+    int size;
 
-    Vector3 ScreenCenter;
+    GameObject UI;
     RaycastHit hit;
 
     void Start()
     {
+       UI = GameObject.Find("StoreUI");
 
+        //UI = gameObject.GetComponentInParent<Image>();
 
-        UI = GetComponentInParent<ScrollRect>();
-        //ScreenCenter = new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2);
     }
 
     void Update()
     {
+        //for (int i = 0; i < size; i++)
+
+        //{
+        //    go[i] = (GameObject)Instantiate(go[size]);
+        //}
 
     }
 
 
-    //public void UiRock()
-    //{
-        
-    //    FGo(i);
-    //}
 
-    public void FGo1()
+    public void Go0()
     {
-        i = 0;
+        print("11");
 
-        //Vector3 mos = Input.mousePosition;
-        //mos.z = camera.farClipPlane; // 카메라가 보는 방향과, 시야를 가져온다.
+        size = 0;
+
 
         //Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Locked;
+
+
         //UI.gameObject.SetActive(false);
 
-
-        GameObject gogo = Instantiate(go[i]);
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        if (Physics.Raycast(ray, out hit))
-        {
-
-                gogo.transform.position = hit.point;
-        }
-    }
-    public void FGo2()
-    {
-        i = 1;
-
-        //Vector3 mos = Input.mousePosition;
-        //mos.z = camera.farClipPlane; // 카메라가 보는 방향과, 시야를 가져온다.
-
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
-        //UI.gameObject.SetActive(false);
-
-
-        GameObject gogo = Instantiate(go[i]);
+        GameObject gogo = Instantiate(go[size]);
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out hit))
         {
                 gogo.transform.position = hit.point;
         }
     }
-    public void FGo3()
+    public void Go1()
     {
-        i = 2;
+        size = 1;
 
-        //Vector3 mos = Input.mousePosition;
-        //mos.z = camera.farClipPlane; // 카메라가 보는 방향과, 시야를 가져온다.
+
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+
+
+        GameObject gogo  = Instantiate(go[size]);
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        if (Physics.Raycast(ray, out hit))
+        {
+                gogo.transform.position = hit.point;
+        }
+    }
+    public void Go2()
+    {
+        size = 2;
+
 
         //Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Locked;
         //UI.gameObject.SetActive(false);
 
 
-        GameObject gogo = Instantiate(go[i]);
+        GameObject gogo = Instantiate(go[size]);
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out hit))
         {
-            //if(hit = null)
-                
             gogo.transform.position = hit.point;
         }
     }
+    
+    //public void Instantiate(int i)
+    //{
+    //    i = size;
+    //    GameObject gogo = Instantiate(go[i]);
+    //    Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+    //    if (Physics.Raycast(ray, out hit))
+    //    {
+    //        gogo.transform.position = hit.point;
+    //    }
+    //}
 }

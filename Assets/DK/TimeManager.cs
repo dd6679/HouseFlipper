@@ -29,8 +29,9 @@ public class TimeManager : MonoBehaviour
         dayFogDensity = RenderSettings.fogDensity;
         dayLightDensity = RenderSettings.ambientIntensity;
 
-    }        
-    
+
+    }
+
     float x = 139;
 
 
@@ -40,8 +41,9 @@ public class TimeManager : MonoBehaviour
         // 계속 태양을 X 축 중심으로 회전. 현실시간 1초에  0.1f * secondPerRealTimeSecond 각도만큼 회전
         //transform.Rotate(Vector3.right, 0.1f * secondPerRealTimeSecond * Time.deltaTime);
 
+
         x += 0.1f * secondPerRealTimeSecond * Time.deltaTime;
-        transform.rotation = Quaternion.Euler(x, 0, 0);
+        transform.rotation = Quaternion.Euler(x - 50, 0, 0);
 
             print(transform.localEulerAngles.x);
 
@@ -50,35 +52,30 @@ public class TimeManager : MonoBehaviour
         //    isLightOff = true; // x 축 회전값 170 이상이면 밤이라고 하겠음
         //}
 
-        if (transform.localEulerAngles.x >= 140)
+        if (transform.localEulerAngles.x >= 170)
         {
             isNight = true;
 
         }
-        // x 축 회전값 170 이상이면 밤이라고 하겠음
 
-        if (transform.localEulerAngles.x >= 160 && transform.localEulerAngles.x < 170)
+        // x 축 회전값 170 이상이면 밤이라고 하겠음
+        if (transform.localEulerAngles.x >= 345 && transform.localEulerAngles.x < 350)
         {
             isLightOff = true;
-
+            Invoke("Lightoff", 3f);
         }
-
+        //if(transform.localEulerAngles.x >= 310)
+        //{
+        //    isLightOff = false;
+        //}
+        
 
         else if (transform.eulerAngles.x <= 10)  // x 축 회전값 10 이하면 낮이라고 하겠음
             isNight = false;
 
         if (isNight)
         {
-            //if (currentFogDensity <= nightFogDensity)
-            //{
-            //    currentFogDensity += 0.1f * fogDensityCalc * Time.deltaTime;
-            //    RenderSettings.fogDensity = currentFogDensity;
-
-            //gameObject.GetComponent<LightSwitch>().LightsON = false
-            //}
-
-
-
+            
             if (currentLightDensity >= nightLightDensity)
             {
                 currentLightDensity -= 0.5f * fogDensityCalc * Time.deltaTime;
@@ -87,18 +84,17 @@ public class TimeManager : MonoBehaviour
         }
         if(!isNight)
         {
-            //if (currentFogDensity >= dayFogDensity)
-            //{
-            //    currentFogDensity -= 0.1f * fogDensityCalc * Time.deltaTime;
-            //    RenderSettings.fogDensity = currentFogDensity;
-            //}
-
-
             if (currentLightDensity <= dayLightDensity)
             {
                 currentLightDensity += 0.5f * fogDensityCalc * Time.deltaTime;
                 RenderSettings.ambientIntensity = currentLightDensity;
             }
         }
+    }
+
+    public void Lightoff()
+    {
+        isLightOff = false;
+
     }
 }

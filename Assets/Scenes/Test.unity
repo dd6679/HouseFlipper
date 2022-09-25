@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 541489020}
-  m_IndirectSpecularColor: {r: 0.44994593, g: 0.49732095, b: 0.5611294, a: 1}
+  m_IndirectSpecularColor: {r: 0.43749017, g: 0.4853112, b: 0.56558603, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -1671,6 +1671,7 @@ MonoBehaviour:
   behaviorUI: {fileID: 853988119}
   taskUI: {fileID: 1727496655}
   waitUI: {fileID: 2066093668}
+  endUI: {fileID: 0}
 --- !u!114 &45223675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14146,7 +14147,6 @@ MonoBehaviour:
   - {fileID: 6778286004580974858, guid: 31702ea76a547ce4bbe044170c53f606, type: 3}
   - {fileID: 1231795955347227441, guid: 21b45f27b0c6d114a940d5910dd00f25, type: 3}
   - {fileID: 6019561991475255186, guid: 6639a60b902e4ad4e8474bed352456a4, type: 3}
-  UI: {fileID: 0}
 --- !u!114 &447134442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16902,14 +16902,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541489019}
-  m_LocalRotation: {x: 0.9834136, y: 0, z: 0, w: 0.18137738}
+  m_LocalRotation: {x: 0.76604444, y: 0, z: 0, w: 0.64278764}
   m_LocalPosition: {x: 0, y: 12.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 159.1, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 100, y: 0, z: 0}
 --- !u!114 &541489022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48892,7 +48892,6 @@ MonoBehaviour:
   - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
   - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
   - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
-  UI: {fileID: 0}
 --- !u!114 &1444865315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57919,7 +57918,6 @@ MonoBehaviour:
   - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
   - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
   - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
-  UI: {fileID: 0}
 --- !u!114 &1720099651
 MonoBehaviour:
   m_ObjectHideFlags: 0
