@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class StoreUI : MonoBehaviour
 {
-    public GameObject[] go;
-    int size;
+    public GameObject[] Bt;
+    public GameObject[] Fur;
+    public int index = -1;
 
     GameObject UI;
     RaycastHit hit;
@@ -16,26 +18,31 @@ public class StoreUI : MonoBehaviour
        UI = GameObject.Find("StoreUI");
 
         //UI = gameObject.GetComponentInParent<Image>();
-
     }
 
     void Update()
     {
-        //for (int i = 0; i < size; i++)
-
-        //{
-        //    go[i] = (GameObject)Instantiate(go[size]);
-        //}
-
+        print(index);
     }
 
+    public void Onclick()
+    {
+        GameObject clickObject = EventSystem.current.currentSelectedGameObject;
+        for (int i = 0; i < Bt.Length; i++)
+        {
+            if(Bt[i] == clickObject)
+            {
+                index = i;
+            }
+        }
+    }
 
 
     public void Go0()
     {
         print("11");
 
-        size = 0;
+        index = 0;
 
 
         //Cursor.visible = false;
@@ -44,55 +51,22 @@ public class StoreUI : MonoBehaviour
 
         //UI.gameObject.SetActive(false);
 
-        GameObject gogo = Instantiate(go[size]);
+        GameObject gogo = Instantiate(Fur[index]);
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out hit))
         {
                 gogo.transform.position = hit.point;
         }
     }
-    public void Go1()
+    
+
+    public void Instantiate(int i)
     {
-        size = 1;
-
-
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
-
-
-        GameObject gogo  = Instantiate(go[size]);
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        if (Physics.Raycast(ray, out hit))
-        {
-                gogo.transform.position = hit.point;
-        }
-    }
-    public void Go2()
-    {
-        size = 2;
-
-
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
-        //UI.gameObject.SetActive(false);
-
-
-        GameObject gogo = Instantiate(go[size]);
+        GameObject gogo = Instantiate(Fur[index]);
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out hit))
         {
             gogo.transform.position = hit.point;
         }
     }
-    
-    //public void Instantiate(int i)
-    //{
-    //    i = size;
-    //    GameObject gogo = Instantiate(go[i]);
-    //    Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-    //    if (Physics.Raycast(ray, out hit))
-    //    {
-    //        gogo.transform.position = hit.point;
-    //    }
-    //}
 }
