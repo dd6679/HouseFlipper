@@ -48,6 +48,10 @@ MonoBehaviour:
   - RpcDestroyShatter
   - RpcMove
   - RpcCreateHitPosition
+  - RpcOpenDoor
+  - RpcCloseDoor
+  - RpcMoveTool
+  - RpcStopTool
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

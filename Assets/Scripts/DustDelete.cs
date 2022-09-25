@@ -45,9 +45,11 @@ public class DustDelete : MonoBehaviourPun
     [PunRPC]
     private void RpcDestoryDust(int viewId)
     {
-        GameObject dust = PhotonView.Find(viewId).gameObject;
-        if (dust != null)
+        PhotonView view = PhotonView.Find(viewId);
+
+        if (view != null)
         {
+            GameObject dust = view.gameObject;
             Renderer ren = dust.GetComponent<Renderer>();
             currentTime -= Time.deltaTime * 1 / 2;
             Color color = ren.material.color;

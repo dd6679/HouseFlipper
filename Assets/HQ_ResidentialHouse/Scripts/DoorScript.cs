@@ -8,8 +8,9 @@ using System;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class DoorScript : MonoBehaviour {
+public class DoorScript : MonoBehaviourPun {
 	private Transform[] Childs;
 	private Transform Joint01;
 	private Transform Joint02;
@@ -399,43 +400,55 @@ public class DoorScript : MonoBehaviour {
 	
 	void OpenDoor()
 	{
+		photonView.RPC("RpcOpenDoor", RpcTarget.All);
+	}
+
+	[PunRPC]
+	private void RpcOpenDoor()
+	{
 		doorAnimation.Play(AnimationNames.OpeningAnim);
 		doorAnimation[AnimationNames.OpeningAnim].speed = controls.openingSpeed;
-		doorAnimation [AnimationNames.OpeningAnim].normalizedTime = doorAnimation [AnimationNames.OpeningAnim].normalizedTime;
+		doorAnimation[AnimationNames.OpeningAnim].normalizedTime = doorAnimation[AnimationNames.OpeningAnim].normalizedTime;
 
-		if(doorSounds.open != null)
+		if (doorSounds.open != null)
 			PlaySFX(doorSounds.open);
-		
+
 		Opened = true;
-		if (controls.openMethod == OpenStyle.BUTTON) 
+		if (controls.openMethod == OpenStyle.BUTTON)
 			HideText();
 
 		keySystem.enabled = false;
 	}
-	
+
 	void CloseDoor()
 	{
-		if (doorAnimation[AnimationNames.OpeningAnim].normalizedTime < 0.98f && doorAnimation [AnimationNames.OpeningAnim].normalizedTime > 0) 
+        photonView.RPC("RpcCloseDoor", RpcTarget.All);
+	}
+
+	[PunRPC]
+	private void RpcCloseDoor()
+	{
+		if (doorAnimation[AnimationNames.OpeningAnim].normalizedTime < 0.98f && doorAnimation[AnimationNames.OpeningAnim].normalizedTime > 0)
 		{
 			doorAnimation[AnimationNames.OpeningAnim].speed = -controls.closingSpeed;
-			doorAnimation[AnimationNames.OpeningAnim].normalizedTime = doorAnimation [AnimationNames.OpeningAnim].normalizedTime;
-			doorAnimation.Play (AnimationNames.OpeningAnim);
-		} 
-		else 
-		{
-			doorAnimation[AnimationNames.OpeningAnim].speed = -controls.closingSpeed;
-			doorAnimation[AnimationNames.OpeningAnim].normalizedTime = controls.closeStartFrom;
-			doorAnimation.Play (AnimationNames.OpeningAnim);
+			doorAnimation[AnimationNames.OpeningAnim].normalizedTime = doorAnimation[AnimationNames.OpeningAnim].normalizedTime;
+			doorAnimation.Play(AnimationNames.OpeningAnim);
 		}
-		if(doorAnimation[AnimationNames.OpeningAnim].normalizedTime > controls.closeStartFrom){
+		else
+		{
 			doorAnimation[AnimationNames.OpeningAnim].speed = -controls.closingSpeed;
 			doorAnimation[AnimationNames.OpeningAnim].normalizedTime = controls.closeStartFrom;
-			doorAnimation.Play (AnimationNames.OpeningAnim);
+			doorAnimation.Play(AnimationNames.OpeningAnim);
+		}
+		if (doorAnimation[AnimationNames.OpeningAnim].normalizedTime > controls.closeStartFrom)
+		{
+			doorAnimation[AnimationNames.OpeningAnim].speed = -controls.closingSpeed;
+			doorAnimation[AnimationNames.OpeningAnim].normalizedTime = controls.closeStartFrom;
+			doorAnimation.Play(AnimationNames.OpeningAnim);
 		}
 		Opened = false;
 
-		if (controls.openMethod == OpenStyle.BUTTON && !controls.autoClose) 
+		if (controls.openMethod == OpenStyle.BUTTON && !controls.autoClose)
 			HideText();
 	}
-	
 }
