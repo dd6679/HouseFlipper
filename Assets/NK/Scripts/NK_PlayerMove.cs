@@ -12,6 +12,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
     public float moveSpeed = 5;
     //characterController 담을 변수
     CharacterController cc;
+    Animator anim;
 
     //중력
     float gravity = -9.81f;
@@ -37,6 +38,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
     {
         //characterController 를 담자
         cc = GetComponent<CharacterController>();
+        anim = transform.GetChild(0).GetComponent<Animator>(); 
         //현재체력을 최대체력으로 셋팅
         //닉네임 설정
         nickName.text = photonView.Owner.NickName;
@@ -59,6 +61,8 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
                 //1. WSAD의 신호를 받자.
                 float h = Input.GetAxisRaw("Horizontal"); //A : -1, D : 1, 누르지 않으면 : 0
                 float v = Input.GetAxisRaw("Vertical");
+
+                anim.SetTrigger("Walk");
 
                 //2. 받은 신호로 방향을 만든다.
                 Vector3 dir = transform.forward * v + transform.right * h; // new Vector3(h, 0, v);

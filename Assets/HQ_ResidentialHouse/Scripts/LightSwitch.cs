@@ -35,19 +35,19 @@ public class LightSwitch : MonoBehaviour {
 	private Transform player;
 
 	bool lightOn = false;
-	//public bool LightOn
- //   {
-	//	get { return lightOn; }
-	//	set
- //       {
-	//		if (value != lightOn && value == true)
- //           {
-	//			Light_StartOff();
-	//			DisableEmission();
-	//		}
-	//		lightOn = value;
- //       }
- //   }
+	public bool LightOn
+    {
+		get { return lightOn; }
+		set
+        {
+			if (value != lightOn && value == true)
+            {
+				Light_StartOff();
+				DisableEmission();
+			}
+			lightOn = value;
+        }
+    }
 
 
 
@@ -217,6 +217,28 @@ public class LightSwitch : MonoBehaviour {
 		*/
 	}
 
+	void Light_StartOn()
+	{
+		foreach (GameObject _light in Lights)
+		{
+			if (_light)
+			{
+				_light.SetActive(true);
+			}
+		}
+		LightsON = true;
+		
+		
+
+		Invoke("BakeProbes", _timer);
+		/*
+		foreach (ReflectionProbe _probe in ReflectionProbes) {
+			if (_probe) {
+				Invoke("BakeProbes", _timer);
+			}
+		}
+		*/
+	}
 
 
 
@@ -274,13 +296,8 @@ public class LightSwitch : MonoBehaviour {
 				TextObj.gameObject.SetActive (false);
 			}
 		}
-		//LightOn = TimeManager.instance.isLightOff;
 
-		//if(TimeManager.instance.isLightOff == true)
-  //      {
-		//	Light_StartOff();
-		//	DisableEmission();
-		//}
+		//LightOn = TimeManager.instance.isNight;
 	}
 
 

@@ -27,24 +27,25 @@ public class NK_ChangeTool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (index >= 0)
+        if (Cursor.visible == false)
         {
-            if (tools[index].GetComponent<Animator>() != null)
+            if (index >= 0)
             {
-                Animator anim = tools[index].GetComponent<Animator>();
-                if (Input.GetMouseButtonDown(0))
+                if (tools[index].GetComponent<Animator>() != null)
                 {
-                    anim.SetBool("isMove", true);
-                    isMoving = true;
+                    Animator anim = tools[index].GetComponent<Animator>();
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        anim.SetBool("isMove", true);
+                        isMoving = true;
+                    }
+                    else if (Input.GetMouseButtonUp(0))
+                    {
+                        anim.SetBool("isMove", false);
+                        isMoving = false;
+                    }
                 }
-                else if (Input.GetMouseButtonUp(0))
-                {
-                    anim.SetBool("isMove", false);
-                    isMoving = false;
-                }
-
             }
-
         }
     }
     private void InitializeTool()
