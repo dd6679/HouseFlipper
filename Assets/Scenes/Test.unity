@@ -1656,6 +1656,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 0.5
+  isWaiting: 0
+  behaviorState: 0
 --- !u!114 &45223674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,6 +1674,8 @@ MonoBehaviour:
   taskUI: {fileID: 1727496655}
   waitUI: {fileID: 2066093668}
   endUI: {fileID: 0}
+  behaviorText: {fileID: 0}
+  behaviorThumbs: []
 --- !u!114 &45223675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14143,10 +14147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d78549bc4f1f8428d6c67ac5409765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go:
-  - {fileID: 6778286004580974858, guid: 31702ea76a547ce4bbe044170c53f606, type: 3}
-  - {fileID: 1231795955347227441, guid: 21b45f27b0c6d114a940d5910dd00f25, type: 3}
-  - {fileID: 6019561991475255186, guid: 6639a60b902e4ad4e8474bed352456a4, type: 3}
+  Bt: []
+  Fur: []
+  index: -1
 --- !u!114 &447134442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17375,6 +17378,7 @@ MonoBehaviour:
   - {fileID: 750273107}
   - {fileID: 1351816202}
   - {fileID: 1231122888}
+  graps: []
   index: -1
   isMoving: 0
 --- !u!114 &555285562
@@ -18383,7 +18387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &579242051
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48888,10 +48892,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d78549bc4f1f8428d6c67ac5409765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go:
-  - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
-  - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
-  - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
+  Bt: []
+  Fur: []
+  index: -1
 --- !u!114 &1444865315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55313,7 +55316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1657196984
 Transform:
   m_ObjectHideFlags: 0
@@ -57914,10 +57917,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d78549bc4f1f8428d6c67ac5409765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go:
-  - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
-  - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
-  - {fileID: 1205757578531682212, guid: 40d8ee7f116490741b08309bb10b51a2, type: 3}
+  Bt: []
+  Fur: []
+  index: -1
 --- !u!114 &1720099651
 MonoBehaviour:
   m_ObjectHideFlags: 0
