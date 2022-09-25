@@ -30,7 +30,8 @@ public class DustDelete : MonoBehaviourPun
             {
                 if (hit.collider.gameObject.tag.Contains("Dust"))
                 {
-                    DestroyDust(hit.collider.gameObject.GetComponent<PhotonView>().ViewID);
+                    if(hit.collider.gameObject.GetComponent<PhotonView>() != null)
+                        DestroyDust(hit.collider.gameObject.GetComponent<PhotonView>().ViewID);
                 }
             }
         }

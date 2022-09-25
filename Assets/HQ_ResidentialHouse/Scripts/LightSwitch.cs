@@ -297,7 +297,7 @@ public class LightSwitch : MonoBehaviour {
 			}
 		}
 
-		LightOn = TimeManager.instance.isNight;
+		//LightOn = TimeManager.instance.isNight;
 	}
 
 

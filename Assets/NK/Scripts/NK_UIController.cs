@@ -7,6 +7,7 @@ using static NK_PlayerBehavior;
 public class NK_UIController : MonoBehaviour
 {
     public GameObject behaviorUI;
+    bool isCheckBehavior = false;
 
     public GameObject taskUI;
     bool isCheckTask = false;
@@ -16,12 +17,16 @@ public class NK_UIController : MonoBehaviour
 
     public GameObject endUI;
 
+    public Text behaviorText;
+    public GameObject[] behaviorThumbs;
     public static bool isFinishWaiting = false;
+
+    int prevBehaviorId = -1;
 
     // Start is called before the first frame update
     void Start()
     {
-        behaviorUI.SetActive(false);
+        behaviorUI.SetActive(isCheckBehavior);
         taskUI.SetActive(isCheckTask);
     }
 
@@ -38,7 +43,21 @@ public class NK_UIController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            Cursor.lockState = CursorLockMode.None;
+            if (isCheckBehavior)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                isCheckBehavior = false;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                isCheckBehavior = true;
+                GameManager.instance.myPlayerBehavior.behaviorState = NK_PlayerBehavior.PlayerBehaviorState.Idle;
+            }
+            behaviorUI.SetActive(isCheckBehavior);
+ /*           Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             NK_PlayerBehavior.behaviorState = NK_PlayerBehavior.PlayerBehaviorState.Move;
             behaviorUI.SetActive(true);
@@ -47,7 +66,7 @@ public class NK_UIController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            behaviorUI.SetActive(false);
+            behaviorUI.SetActive(false);*/
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -68,7 +87,7 @@ public class NK_UIController : MonoBehaviour
             taskUI.SetActive(isCheckTask);
         }
 
-        if (Input.GetMouseButton(0) && NK_PlayerBehavior.isWaiting && NK_PlayerBehavior.behaviorState == NK_PlayerBehavior.PlayerBehaviorState.Move)
+        if (Input.GetMouseButton(0) && GameManager.instance.myPlayerBehavior.isWaiting)
         {
             currentTime += Time.deltaTime;
             waitUI.transform.GetChild(1).GetComponent<Image>().fillAmount = currentTime;
@@ -96,47 +115,70 @@ public class NK_UIController : MonoBehaviour
     public void OnClickMove()
     {
         GameManager.instance.myPlayerBehavior.OnClickMove();
+        SetBehaviorName("옮기기", 0);
+
     }
 
     // 청소하기
     public void OnClickClean()
     {
         GameManager.instance.myPlayerBehavior.OnClickClean();
+        SetBehaviorName("청소하기", 1);
     }
 
     // 칠하기
     public void OnClickPaint()
     {
         GameManager.instance.myPlayerBehavior.OnClickPaint();
+        SetBehaviorName("칠하기", 2);
     }
 
     // 팔기
     public void OnClickSell()
     {
         GameManager.instance.myPlayerBehavior.OnClickSell();
+        SetBehaviorName("팔기", 3);
     }
 
     // 벽 올리기
     public void OnClickBuildWall()
     {
         GameManager.instance.myPlayerBehavior.OnClickBuildWall();
+        //SetBehaviorName("벽 올리기", 4);
     }
 
     // 인방보 올리기
     public void OnClickBuildLintel()
     {
         GameManager.instance.myPlayerBehavior.OnClickBuildLintel();
+        //SetBehaviorName("인방보 올리기", 5);
     }
 
     // 벽 철거하기
     public void OnClickDemolishWall()
     {
         GameManager.instance.myPlayerBehavior.OnClickDemolishWall();
+        SetBehaviorName("철거하기", 4);
     }
 
     // 타일 및 패널작업하기
     public void OnClickWorkTileAndPanel()
     {
         GameManager.instance.myPlayerBehavior.OnClickWorkTileAndPanel();
+        SetBehaviorName("패널 및 타일 작업하기", 5);
+    }
+
+    void SetBehaviorName(string name, int id)
+    {
+        behaviorText.text = name;
+
+        if (prevBehaviorId > -1)
+        {
+            behaviorThumbs[prevBehaviorId].SetActive(false);
+        }
+
+        behaviorThumbs[id].SetActive(true);
+
+        prevBehaviorId = id;
     }
 }

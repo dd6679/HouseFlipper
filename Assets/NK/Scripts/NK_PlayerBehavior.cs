@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
 public class NK_PlayerBehavior : MonoBehaviourPun
@@ -10,7 +11,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     //public GameObject targetFactory;
     //public GameObject customGrid;
     public float waitTime = 0.5f;
-    public static bool isWaiting = false;
+    public bool isWaiting = false;
 
     Vector3 ScreenCenter;
 
@@ -30,7 +31,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
         WorkTileAndPanel,
     }
 
-    public static PlayerBehaviorState behaviorState = PlayerBehaviorState.Idle;
+    public PlayerBehaviorState behaviorState = PlayerBehaviorState.Idle;
 
     // Start is called before the first frame update
     void Start()
@@ -42,59 +43,68 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+        if (behaviorState == NK_PlayerBehavior.PlayerBehaviorState.Move)
+        {
+            // 마우스 포지션을 취득해서 대입
+            Ray ray = Camera.main.ScreenPointToRay(ScreenCenter);
+            //NK_CustomGrid gridScript = customGrid.GetComponent<NK_CustomGrid>();
 
+            // 마우스 포지션에서 레이를 던져 물체 감지 시 hit에 대입
+            if (Physics.Raycast(ray, out var hit))
+            {
+                // 오브젝트의 타겟 취득
+                if (hit.collider.gameObject.CompareTag("Furniture"))
+                {
+                    if (hit.collider.gameObject.GetComponent<Outline>() != null)
+                    {
+                        outline = hit.collider.gameObject.GetComponent<Outline>();
+                        outline.enabled = true;
+                    }
+
+                    if (hit.collider.gameObject.GetComponent<NK_Move>() != null)
+                    {
+                        nK_Move = (NK_Move)hit.collider.gameObject.GetComponent<NK_Move>();
+                    }
+
+                    isWaiting = true;
+                }
+                else
+                {
+                    InitializationMove();
+                }
+                // 게이지가 모두 차면 옮기기 기능 활성화
+                if (NK_UIController.isFinishWaiting)
+                {
+                    nK_Move.enabled = true;
+                    isWaiting = false;
+                }
+            }
+
+        }
+        else
+        {
+            InitializationMove();
+        }
     }
 
+    private void InitializationMove()
+    {
+        isWaiting = false;
+        if (outline != null)
+            outline.enabled = false;
+        if (nK_Move != null)
+            nK_Move.enabled = false;
+        NK_UIController.isFinishWaiting = false;
+    }
 
     Outline outline;
     NK_Move nK_Move;
-    GameObject go;
 
     private void Move()
     {
         changeTool.SwitchTool((int)NK_ChangeTool.ToolState.Move);
 
-        // 마우스 포지션을 취득해서 대입
-        Ray ray = Camera.main.ScreenPointToRay(ScreenCenter);
-        //NK_CustomGrid gridScript = customGrid.GetComponent<NK_CustomGrid>();
 
-        // 마우스 포지션에서 레이를 던져 물체 감지 시 hit에 대입
-        if (Physics.Raycast(ray, out var hit))
-        {
-            // 오브젝트의 타겟 취득
-            if (hit.collider.gameObject.CompareTag("Furniture"))
-            {
-                if (hit.collider.gameObject.GetComponent<Outline>() != null)
-                {
-                    outline = hit.collider.gameObject.GetComponent<Outline>();
-                    outline.enabled = true;
-                }
-
-                if (hit.collider.gameObject.GetComponent<NK_Move>() != null)
-                {
-                    nK_Move = (NK_Move)hit.collider.gameObject.GetComponent<NK_Move>();
-                }
-
-
-                go = hit.collider.gameObject;
-                isWaiting = true;
-            }
-            else
-            {
-                isWaiting = false;
-                if (outline != null)
-                    outline.enabled = false;
-                if (nK_Move != null)
-                    nK_Move.enabled = false;
-                NK_UIController.isFinishWaiting = false;
-            }
-            // 게이지가 모두 차면 옮기기 기능 활성화
-            if (NK_UIController.isFinishWaiting)
-            {
-                nK_Move.enabled = true;
-                isWaiting = false;
-            }
-        }
     }
 
     private void Clean()
