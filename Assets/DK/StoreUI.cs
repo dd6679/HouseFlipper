@@ -100,6 +100,7 @@ public class StoreUI : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             gogo.transform.position = hit.point;
+            UI.SetActive(false);
         }
     }
 }

@@ -17,6 +17,10 @@ public class NK_UIController : MonoBehaviour
 
     public GameObject endUI;
 
+    public GameObject StoreUI;
+    bool isCheckStore = false;
+
+
     public Text behaviorText;
     public GameObject[] behaviorThumbs;
     public static bool isFinishWaiting = false;
@@ -67,6 +71,24 @@ public class NK_UIController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             behaviorUI.SetActive(false);*/
+        }
+
+        if (Input.GetKeyDown(KeyCode.CapsLock))
+        {
+            if (isCheckStore)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                isCheckStore = false;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                isCheckStore = true;
+                //GameManager.instance.myPlayerBehavior.behaviorState = NK_PlayerBehavior.PlayerBehaviorState.Idle;
+            }
+            StoreUI.SetActive(isCheckStore);
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
