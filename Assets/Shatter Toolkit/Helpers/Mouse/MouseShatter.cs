@@ -15,7 +15,7 @@ namespace ShatterToolkit.Helpers
             if (Input.GetMouseButtonDown(0))
             {
                 RaycastHit hit;
-                
+
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
                     if (Vector3.Distance(hit.collider.gameObject.transform.position, transform.position) <= 1.8f && hit.collider.gameObject.tag.Contains("Wall"))
@@ -35,10 +35,14 @@ namespace ShatterToolkit.Helpers
         [PunRPC]
         private void RpcDestroyShatter(int viewId, Vector3 point)
         {
-            GameObject shatter = PhotonView.Find(viewId).gameObject;
-            Rigidbody rig = shatter.GetComponent<Rigidbody>();
-            rig.isKinematic = false;
-            shatter.SendMessage("Shatter", point, SendMessageOptions.DontRequireReceiver);
+            PhotonView view = PhotonView.Find(viewId);
+            if (view != null)
+            {
+                GameObject shatter = view.gameObject;
+                Rigidbody rig = shatter.GetComponent<Rigidbody>();
+                rig.isKinematic = false;
+                shatter.SendMessage("Shatter", point, SendMessageOptions.DontRequireReceiver);
+            }
         }
     }
 }

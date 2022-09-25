@@ -52,13 +52,18 @@ public class TrashDelete : MonoBehaviourPun
     [PunRPC]
     private void RpcDestroyTrash(int viewId)
     {
-        GameObject trash = PhotonView.Find(viewId).gameObject;
-        trash.transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
-        if (trash.transform.localScale.x <= 0.1f)
+        PhotonView view = PhotonView.Find(viewId);
+        if (view != null)
         {
-            Destroy(trash);
-            deletedTrash.Add(viewId);
-            audioSource.PlayOneShot(deleteSound);
+            GameObject trash = view.gameObject;
+            trash.transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
+            if (trash.transform.localScale.x <= 0.1f)
+            {
+                Destroy(trash);
+                deletedTrash.Add(viewId);
+                audioSource.PlayOneShot(deleteSound);
+            }
+
         }
     }
 }

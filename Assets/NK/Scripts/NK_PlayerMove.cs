@@ -62,7 +62,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
                 float h = Input.GetAxisRaw("Horizontal"); //A : -1, D : 1, 누르지 않으면 : 0
                 float v = Input.GetAxisRaw("Vertical");
 
-                anim.SetTrigger("Walk");
+                //anim.SetTrigger("Walk");
 
                 //2. 받은 신호로 방향을 만든다.
                 Vector3 dir = transform.forward * v + transform.right * h; // new Vector3(h, 0, v);

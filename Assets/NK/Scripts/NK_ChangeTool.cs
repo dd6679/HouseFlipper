@@ -1,9 +1,11 @@
+using Photon.Pun;
+using Photon.Voice.PUN;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NK_ChangeTool : MonoBehaviour
+public class NK_ChangeTool : MonoBehaviourPun
 {
     public enum ToolState
     {
@@ -20,6 +22,7 @@ public class NK_ChangeTool : MonoBehaviour
     public bool isMoving = false;
 
     NK_IKControl iKControl;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -31,27 +34,45 @@ public class NK_ChangeTool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!photonView.IsMine)
+            return;
+
         if (Cursor.visible == false)
         {
             if (index >= 0)
             {
                 if (tools[index].GetComponent<Animator>() != null)
                 {
-                    Animator anim = tools[index].GetComponent<Animator>();
                     if (Input.GetMouseButtonDown(0))
                     {
-                        anim.SetBool("isMove", true);
+                        photonView.RPC("RpcMoveTool", RpcTarget.All, index);
                         isMoving = true;
                     }
                     else if (Input.GetMouseButtonUp(0))
                     {
-                        anim.SetBool("isMove", false);
+                        photonView.RPC("RpcStopTool", RpcTarget.All, index);
                         isMoving = false;
                     }
+                    
                 }
             }
         }
     }
+
+    [PunRPC]
+    private void RpcMoveTool(int index)
+    {
+        anim = tools[index].GetComponent<Animator>();
+        anim.SetBool("isMove", true);
+    }
+
+    [PunRPC]
+    private void RpcStopTool(int index)
+    {
+        anim = tools[index].GetComponent<Animator>();
+        anim.SetBool("isMove", false);
+    }
+
     private void InitializeTool()
     {
         for (int i = 0; i < tools.Length; i++)
