@@ -276,11 +276,11 @@ public class LightSwitch : MonoBehaviour {
 		}
 		//LightOn = TimeManager.instance.isLightOff;
 
-		if(TimeManager.instance.isLightOff == true)
-        {
-			Light_StartOff();
-			DisableEmission();
-		}
+		//if(TimeManager.instance.isLightOff == true)
+  //      {
+		//	Light_StartOff();
+		//	DisableEmission();
+		//}
 	}
 
 
