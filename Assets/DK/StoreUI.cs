@@ -51,7 +51,7 @@ public class StoreUI : MonoBehaviourPun
         GameObject clickObject = EventSystem.current.currentSelectedGameObject;
         for (int i = 0; i < Bt.Length; i++)
         {
-            if(Bt[i] == clickObject)
+            if (Bt[i] == clickObject)
             {
                 print(index);
                 index = i;
@@ -59,7 +59,7 @@ public class StoreUI : MonoBehaviourPun
         }
     }
 
-    
+
 
     public void FurBt()
     {
@@ -75,7 +75,7 @@ public class StoreUI : MonoBehaviourPun
     public void BathBt()
     {
         Bath.SetActive(true);
-        
+
         Furni.SetActive(false);
         Paint.SetActive(false);
         instBt.onClick.SetPersistentListenerState(0, UnityEngine.Events.UnityEventCallState.Off);
@@ -97,11 +97,11 @@ public class StoreUI : MonoBehaviourPun
     public void Instantiate(int i)
     {
         string furName = Fur[index].name;
-        GameObject gogo = PhotonNetwork.Instantiate(furName, Vector3.zero, Quaternion.identity);
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out hit))
         {
-            gogo.transform.position = hit.point;
+            GameObject gogo = PhotonNetwork.Instantiate(furName, hit.point, Quaternion.identity);
+            //gogo.transform.position = hit.point;
             UI.SetActive(false);
         }
     }
