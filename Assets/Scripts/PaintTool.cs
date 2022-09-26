@@ -1,13 +1,11 @@
+using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PaintTool : MonoBehaviour
+public class PaintTool : MonoBehaviourPun
 {
-    
-
-
     RaycastHit hit;
 
     public Material[] material;
@@ -31,7 +29,7 @@ public class PaintTool : MonoBehaviour
                     x = index - 1;
                 }
 
-                if (hit.collider.gameObject.tag.Contains("Wall"))
+                if (hit.collider.gameObject.tag.Contains("Wall") && GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.PaintTool && GameManager.instance.myChangeTool.isMoving)
                 {
                     //클릭한 오브젝트의 재질 가져오기
                     Renderer ren = hit.collider.gameObject.GetComponent<Renderer>();
@@ -49,12 +47,9 @@ public class PaintTool : MonoBehaviour
         }
     }
 
-    //public void ChangeColor()
-    //{
-    //        if (x < 2)
-    //        {
-    //            x++;
-    //        }
-    //        else x = 0;
-    //}
+    [PunRPC]
+    private void RpcChangeColor()
+    {
+
+    }
 }
