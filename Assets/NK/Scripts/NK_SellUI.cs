@@ -38,7 +38,7 @@ public class NK_SellUI : MonoBehaviourPun
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                if (hit.collider.gameObject.CompareTag("Furniture") && GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.SellTool && GameManager.instance.myChangeTool.isMoving)
+                if (hit.collider.gameObject.CompareTag("Paint") || hit.collider.gameObject.CompareTag("Furniture") && GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.SellTool && GameManager.instance.myChangeTool.isMoving)
                 {
                     int incomeNum;
                     sellUI.SetActive(true);
