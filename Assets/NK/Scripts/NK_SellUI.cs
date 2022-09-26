@@ -26,7 +26,7 @@ public class NK_SellUI : MonoBehaviourPun
 
             if (currentTime > 1)
             {
-                sellUI.SetActive(false);
+                sellUI.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
         else
@@ -38,10 +38,10 @@ public class NK_SellUI : MonoBehaviourPun
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                if (hit.collider.gameObject.CompareTag("Paint") || hit.collider.gameObject.CompareTag("Furniture") && GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.SellTool && GameManager.instance.myChangeTool.isMoving)
+                if ((hit.collider.gameObject.CompareTag("Paint") || hit.collider.gameObject.CompareTag("Furniture")) && GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.SellTool && GameManager.instance.myChangeTool.isMoving)
                 {
                     int incomeNum;
-                    sellUI.SetActive(true);
+                    sellUI.transform.GetChild(0).gameObject.SetActive(true);
                     if (int.TryParse(income.text, out incomeNum))
                     {
                         incomeNum += 1000;
