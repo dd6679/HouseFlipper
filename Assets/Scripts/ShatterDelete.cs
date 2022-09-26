@@ -18,7 +18,7 @@ public class ShatterDelete : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Contains("Clone"))
+        if (other.gameObject.name.Contains("Wall(Clone)"))
         {
             Destroy(other.gameObject,2f);
         }
