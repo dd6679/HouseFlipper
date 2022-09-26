@@ -35,6 +35,8 @@ public class NK_PlayerRotate : MonoBehaviourPun
             float mx = Input.GetAxis("Mouse X");
             float my = Input.GetAxis("Mouse Y");
 
+            rotY = Mathf.Clamp(rotY, -70, 70);
+
             //2. 마우스이 움직임값으로 회전값을 누적시킨다.
             rotX += mx * rotateSpeed * Time.deltaTime;
             rotY += my * rotateSpeed * Time.deltaTime;

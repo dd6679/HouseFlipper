@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33000013951407972}
   - component: {fileID: 23000013132270394}
   - component: {fileID: 64000011582497246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DiningChair_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,9 +109,13 @@ GameObject:
   - component: {fileID: 4000010979909374}
   - component: {fileID: 205000013016686942}
   - component: {fileID: 2500370733412780045}
-  m_Layer: 0
+  - component: {fileID: 5582621807569035313}
+  - component: {fileID: 1912351156832326826}
+  - component: {fileID: 3558098360062186755}
+  - component: {fileID: -3072883342119654171}
+  m_Layer: 8
   m_Name: DiningChair
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,6 +181,72 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &5582621807569035313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011313168318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1912351156832326826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011313168318}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551aee1958a39dc4c8ee0bc93ad69d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camPos: {fileID: 0}
+  speed: 5
+--- !u!114 &3558098360062186755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011313168318}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &-3072883342119654171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011313168318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fadda4036c43fb40b7a68506e05c27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000013311258206
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +258,7 @@ GameObject:
   - component: {fileID: 4000012610711118}
   - component: {fileID: 33000014225276696}
   - component: {fileID: 23000013068814494}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DiningChair_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +341,7 @@ GameObject:
   - component: {fileID: 4000012660552988}
   - component: {fileID: 33000014203491996}
   - component: {fileID: 23000010659111262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DiningChair_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

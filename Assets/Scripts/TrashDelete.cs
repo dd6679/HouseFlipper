@@ -56,7 +56,7 @@ public class TrashDelete : MonoBehaviourPun
         if (view != null)
         {
             GameObject trash = view.gameObject;
-            trash.transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
+            trash.transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
             if (trash.transform.localScale.x <= 0.1f)
             {
                 Destroy(trash);
