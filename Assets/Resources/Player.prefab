@@ -1186,6 +1186,7 @@ MonoBehaviour:
   nickName: {fileID: 569852760499857022}
   lerpSpeed: 100
   Light: {fileID: 8116926859611440865}
+  isWalk: 0
 --- !u!114 &6259822073494617509
 MonoBehaviour:
   m_ObjectHideFlags: 0
