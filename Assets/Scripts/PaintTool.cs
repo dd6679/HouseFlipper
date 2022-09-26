@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PaintTool : MonoBehaviour
 {
+    
+
 
     RaycastHit hit;
 
@@ -23,7 +26,9 @@ public class PaintTool : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag.Contains("Paint"))
                 {
-                  
+                    int index;
+                    Int32.TryParse(hit.collider.gameObject.name.Replace("(Clone)", String.Empty), out index);
+                    x = index - 1;
                 }
 
                 if (hit.collider.gameObject.tag.Contains("Wall"))
