@@ -1,9 +1,10 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NK_SellUI : MonoBehaviour
+public class NK_SellUI : MonoBehaviourPun
 {
     public GameObject sellUI;
     public Text income;
@@ -12,13 +13,14 @@ public class NK_SellUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sellUI = GameObject.Find("SellUI");
+        income = GameObject.Find("income").gameObject.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (sellUI.activeSelf == true)
+        if (sellUI.transform.GetChild(0).gameObject.activeSelf == true)
         {
             currentTime += Time.deltaTime;
 
@@ -45,9 +47,21 @@ public class NK_SellUI : MonoBehaviour
                         incomeNum += 1000;
                         income.text = incomeNum.ToString();
                     }
-                    Destroy(hit.collider.gameObject);
+                    if (hit.collider.gameObject.GetComponent<PhotonView>() != null)
+                        photonView.RPC("RpcSell", RpcTarget.All, hit.collider.gameObject.GetComponent<PhotonView>().ViewID);
                 }
             }
+        }
+    }
+
+    [PunRPC]
+    private void RpcSell(int viewId)
+    {
+        PhotonView view = PhotonView.Find(viewId);
+
+        if (view != null)
+        {
+            Destroy(view.gameObject);
         }
     }
 
