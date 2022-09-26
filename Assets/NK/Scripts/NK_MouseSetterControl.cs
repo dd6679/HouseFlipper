@@ -37,7 +37,7 @@ public class NK_MouseSetterControl : MonoBehaviour
         {
             dustDelete.enabled = false;
         }
-        if(GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.PaintTool && GameManager.instance.myChangeTool.isMoving)
+        if(GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.PaintTool)
         {
             paintTool.enabled = true;
         }
