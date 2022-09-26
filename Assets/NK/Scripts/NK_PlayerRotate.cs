@@ -20,6 +20,7 @@ public class NK_PlayerRotate : MonoBehaviourPun
             camPos.GetComponent<Camera>().enabled = true;
             camPos.GetComponent<AudioListener>().enabled = true;
             camPos.GetComponent<SphereCollider>().enabled = true;
+            camPos.GetComponent<AudioSource>().enabled = true;
         }
     }
 
