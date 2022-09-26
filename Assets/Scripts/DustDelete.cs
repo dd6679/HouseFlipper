@@ -39,11 +39,11 @@ public class DustDelete : MonoBehaviourPun
 
     private void DestroyDust(int viewId)
     {
-        photonView.RPC("RpcDestoryDust", RpcTarget.All, viewId);
+        photonView.RPC("RpcDestroyDust", RpcTarget.All, viewId);
     }
 
     [PunRPC]
-    private void RpcDestoryDust(int viewId)
+    private void RpcDestroyDust(int viewId)
     {
         PhotonView view = PhotonView.Find(viewId);
 
