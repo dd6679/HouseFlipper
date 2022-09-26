@@ -33,6 +33,8 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
 
     private CollisionFlags m_CollisionFlags;
 
+    public GameObject Light;
+    bool isCheckLight = false;
 
     void Start()
     {
@@ -91,6 +93,18 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
                 //3. 그 방향으로 움직이자.
                 //P = P0 + vt
                 cc.Move(dir * moveSpeed * Time.deltaTime);
+                
+                //손전등 키고끄기
+                if (Input.GetKeyDown(KeyCode.Y))
+                {
+                    if (isCheckLight)
+                    {
+                        isCheckLight = false;
+                    }
+                    else isCheckLight = true;
+
+                    Light.SetActive(isCheckLight);
+                }
             }
         }
         //내것이 아니라면

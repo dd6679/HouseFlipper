@@ -1674,6 +1674,7 @@ MonoBehaviour:
   taskUI: {fileID: 1727496655}
   waitUI: {fileID: 2066093668}
   endUI: {fileID: 0}
+  StoreUI: {fileID: 0}
   behaviorText: {fileID: 0}
   behaviorThumbs: []
 --- !u!114 &45223675
@@ -4600,6 +4601,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -5782412614545692955, guid: f96ea7449a324c74c9e0e51718d434e2, type: 3}
+      propertyPath: sceneViewId
+      value: 68
+      objectReference: {fileID: 0}
     - target: {fileID: 155608, guid: f96ea7449a324c74c9e0e51718d434e2, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -6065,6 +6070,10 @@ PrefabInstance:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 1320203795}
+    - target: {fileID: 9001721531046852, guid: f38c661e1ca78ab409eda72d74c6e797, type: 3}
+      propertyPath: sceneViewId
+      value: 67
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38c661e1ca78ab409eda72d74c6e797, type: 3}
 --- !u!1001 &172562443
@@ -6907,6 +6916,10 @@ PrefabInstance:
     - target: {fileID: 11429534, guid: b764bf58dea07cf4f979ff73785488a7, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092792922492909470, guid: b764bf58dea07cf4f979ff73785488a7, type: 3}
+      propertyPath: sceneViewId
+      value: 66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b764bf58dea07cf4f979ff73785488a7, type: 3}
@@ -8384,6 +8397,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1591119879}
     m_Modifications:
+    - target: {fileID: -6010102364010434664, guid: 5f5564c7388b7f4408d10831be3e7459, type: 3}
+      propertyPath: sceneViewId
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 120218, guid: 5f5564c7388b7f4408d10831be3e7459, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -8782,6 +8799,10 @@ PrefabInstance:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 1352613268}
+    - target: {fileID: 3189880890543588186, guid: e489021bb0233b7438cf0c8ad022362b, type: 3}
+      propertyPath: sceneViewId
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e489021bb0233b7438cf0c8ad022362b, type: 3}
 --- !u!1 &262755133 stripped
@@ -9914,6 +9935,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -3111174680177437995, guid: e3fbe21702669064da513233adb30969, type: 3}
+      propertyPath: sceneViewId
+      value: 63
+      objectReference: {fileID: 0}
     - target: {fileID: 172272, guid: e3fbe21702669064da513233adb30969, type: 3}
       propertyPath: m_Name
       value: Armchair (2)
@@ -10394,6 +10419,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -578229680103283676, guid: 96c65826eb13eb745b113c4e50363d68, type: 3}
+      propertyPath: sceneViewId
+      value: 62
+      objectReference: {fileID: 0}
     - target: {fileID: 1000011036257552, guid: 96c65826eb13eb745b113c4e50363d68, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -12459,6 +12488,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -3111174680177437995, guid: e3fbe21702669064da513233adb30969, type: 3}
+      propertyPath: sceneViewId
+      value: 61
+      objectReference: {fileID: 0}
     - target: {fileID: 172272, guid: e3fbe21702669064da513233adb30969, type: 3}
       propertyPath: m_Name
       value: Armchair (1)
@@ -12787,6 +12820,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -758407415912152469, guid: 867af09accd1c74419963bd900ebf984, type: 3}
+      propertyPath: sceneViewId
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 113632, guid: 867af09accd1c74419963bd900ebf984, type: 3}
       propertyPath: m_Name
       value: Closets_door 3
@@ -14149,7 +14186,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bt: []
   Fur: []
-  index: -1
 --- !u!114 &447134442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14336,6 +14372,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2032797207}
     m_Modifications:
+    - target: {fileID: -7351637016445050009, guid: 79550e046dfe6b143aa1595e5e881507, type: 3}
+      propertyPath: sceneViewId
+      value: 59
+      objectReference: {fileID: 0}
     - target: {fileID: 136700458719827940, guid: 79550e046dfe6b143aa1595e5e881507, type: 3}
       propertyPath: m_Name
       value: CleanTool
@@ -15660,6 +15700,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -758407415912152469, guid: 867af09accd1c74419963bd900ebf984, type: 3}
+      propertyPath: sceneViewId
+      value: 58
+      objectReference: {fileID: 0}
     - target: {fileID: 113632, guid: 867af09accd1c74419963bd900ebf984, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -19639,6 +19683,10 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.17
       objectReference: {fileID: 0}
+    - target: {fileID: 5529797420074786082, guid: 0b2cd981521c4034fac46674e0fdafdc, type: 3}
+      propertyPath: sceneViewId
+      value: 57
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b2cd981521c4034fac46674e0fdafdc, type: 3}
 --- !u!1 &610596796 stripped
@@ -20320,6 +20368,10 @@ PrefabInstance:
     - target: {fileID: 4000013717677142, guid: a0663be6382ff3548a70e4940fe7f785, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763035614044819111, guid: a0663be6382ff3548a70e4940fe7f785, type: 3}
+      propertyPath: sceneViewId
+      value: 56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0663be6382ff3548a70e4940fe7f785, type: 3}
@@ -21492,6 +21544,10 @@ PrefabInstance:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 288942497}
+    - target: {fileID: 9001721531046852, guid: f38c661e1ca78ab409eda72d74c6e797, type: 3}
+      propertyPath: sceneViewId
+      value: 55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38c661e1ca78ab409eda72d74c6e797, type: 3}
 --- !u!4 &677517621 stripped
@@ -24316,6 +24372,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -2466912002370308972, guid: a519d040a26ad394b8f43622d2216bda, type: 3}
+      propertyPath: sceneViewId
+      value: 54
+      objectReference: {fileID: 0}
     - target: {fileID: 129070, guid: a519d040a26ad394b8f43622d2216bda, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -25786,6 +25846,10 @@ PrefabInstance:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 598786309}
+    - target: {fileID: 3189880890543588186, guid: e489021bb0233b7438cf0c8ad022362b, type: 3}
+      propertyPath: sceneViewId
+      value: 53
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e489021bb0233b7438cf0c8ad022362b, type: 3}
 --- !u!4 &812974737 stripped
@@ -26419,6 +26483,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -3111174680177437995, guid: e3fbe21702669064da513233adb30969, type: 3}
+      propertyPath: sceneViewId
+      value: 52
+      objectReference: {fileID: 0}
     - target: {fileID: 172272, guid: e3fbe21702669064da513233adb30969, type: 3}
       propertyPath: m_Name
       value: Armchair 1
@@ -27405,6 +27473,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -2466912002370308972, guid: a519d040a26ad394b8f43622d2216bda, type: 3}
+      propertyPath: sceneViewId
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 129070, guid: a519d040a26ad394b8f43622d2216bda, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -35182,6 +35254,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1591119879}
     m_Modifications:
+    - target: {fileID: -6010102364010434664, guid: 5f5564c7388b7f4408d10831be3e7459, type: 3}
+      propertyPath: sceneViewId
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 120218, guid: 5f5564c7388b7f4408d10831be3e7459, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -36500,6 +36576,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -758407415912152469, guid: 867af09accd1c74419963bd900ebf984, type: 3}
+      propertyPath: sceneViewId
+      value: 49
+      objectReference: {fileID: 0}
     - target: {fileID: 113632, guid: 867af09accd1c74419963bd900ebf984, type: 3}
       propertyPath: m_Name
       value: Closets_door 2
@@ -37534,6 +37614,10 @@ PrefabInstance:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 1320203795}
+    - target: {fileID: 9001721531046852, guid: f38c661e1ca78ab409eda72d74c6e797, type: 3}
+      propertyPath: sceneViewId
+      value: 48
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38c661e1ca78ab409eda72d74c6e797, type: 3}
 --- !u!4 &1150449123 stripped
@@ -39544,6 +39628,10 @@ PrefabInstance:
     - target: {fileID: 3021301179069741680, guid: 37d06c27fa1c83149b716553b06682b7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117293372342363674, guid: 37d06c27fa1c83149b716553b06682b7, type: 3}
+      propertyPath: sceneViewId
+      value: 47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d06c27fa1c83149b716553b06682b7, type: 3}
@@ -41750,6 +41838,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -3155303548183275809, guid: 2766f71428030d8458ddd235526760e1, type: 3}
+      propertyPath: sceneViewId
+      value: 46
+      objectReference: {fileID: 0}
     - target: {fileID: 1000011899507248, guid: 2766f71428030d8458ddd235526760e1, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -43257,6 +43349,10 @@ PrefabInstance:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 1444780022}
+    - target: {fileID: 3189880890543588186, guid: e489021bb0233b7438cf0c8ad022362b, type: 3}
+      propertyPath: sceneViewId
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e489021bb0233b7438cf0c8ad022362b, type: 3}
 --- !u!4 &1304825443 stripped
@@ -44703,6 +44799,10 @@ PrefabInstance:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 748548526}
+    - target: {fileID: 3189880890543588186, guid: e489021bb0233b7438cf0c8ad022362b, type: 3}
+      propertyPath: sceneViewId
+      value: 44
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e489021bb0233b7438cf0c8ad022362b, type: 3}
 --- !u!4 &1339809346 stripped
@@ -44881,6 +44981,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -758407415912152469, guid: 867af09accd1c74419963bd900ebf984, type: 3}
+      propertyPath: sceneViewId
+      value: 43
+      objectReference: {fileID: 0}
     - target: {fileID: 113632, guid: 867af09accd1c74419963bd900ebf984, type: 3}
       propertyPath: m_Name
       value: Closets_door 4
@@ -46078,6 +46182,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2032797207}
     m_Modifications:
+    - target: {fileID: -385154968520653175, guid: 5d6e061f396426f4a9734aa5f4237c6a, type: 3}
+      propertyPath: sceneViewId
+      value: 42
+      objectReference: {fileID: 0}
     - target: {fileID: 6122775889130403954, guid: 5d6e061f396426f4a9734aa5f4237c6a, type: 3}
       propertyPath: m_Name
       value: PaintTool
@@ -47431,6 +47539,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2032797207}
     m_Modifications:
+    - target: {fileID: -3629328807338587550, guid: d4bcde2fc5d71cc4ab9505f61a0967ac, type: 3}
+      propertyPath: sceneViewId
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 4036384607673444032, guid: d4bcde2fc5d71cc4ab9505f61a0967ac, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -48894,7 +49006,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bt: []
   Fur: []
-  index: -1
 --- !u!114 &1444865315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57919,7 +58030,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bt: []
   Fur: []
-  index: -1
 --- !u!114 &1720099651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58323,6 +58433,10 @@ PrefabInstance:
     - target: {fileID: 4000011762496824, guid: 2534a13b13afe324d81baf63d5279c88, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.00000001545431
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333438771602148658, guid: 2534a13b13afe324d81baf63d5279c88, type: 3}
+      propertyPath: sceneViewId
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2534a13b13afe324d81baf63d5279c88, type: 3}
@@ -59361,6 +59475,10 @@ PrefabInstance:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 708049539}
+    - target: {fileID: 9001721531046852, guid: f38c661e1ca78ab409eda72d74c6e797, type: 3}
+      propertyPath: sceneViewId
+      value: 39
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38c661e1ca78ab409eda72d74c6e797, type: 3}
 --- !u!4 &1753600335 stripped
@@ -66142,6 +66260,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -5782412614545692955, guid: f96ea7449a324c74c9e0e51718d434e2, type: 3}
+      propertyPath: sceneViewId
+      value: 38
+      objectReference: {fileID: 0}
     - target: {fileID: 155608, guid: f96ea7449a324c74c9e0e51718d434e2, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -66931,6 +67053,10 @@ PrefabInstance:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 1842606854}
+    - target: {fileID: 9001721531046852, guid: f38c661e1ca78ab409eda72d74c6e797, type: 3}
+      propertyPath: sceneViewId
+      value: 37
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38c661e1ca78ab409eda72d74c6e797, type: 3}
 --- !u!4 &1946292857 stripped
@@ -67932,6 +68058,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 133927217}
     m_Modifications:
+    - target: {fileID: -758407415912152469, guid: 867af09accd1c74419963bd900ebf984, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 113632, guid: 867af09accd1c74419963bd900ebf984, type: 3}
       propertyPath: m_Name
       value: Closets_door 1

@@ -6,14 +6,13 @@ public class PaintTool : MonoBehaviour
 {
 
     RaycastHit hit;
-    private float currentTime =255f;
 
     public Material[] material;
     public int x;
     Renderer ren;
     void Start()
     {
-        x = 0;
+        x = -1;
     }
 
     void Update()
@@ -22,6 +21,11 @@ public class PaintTool : MonoBehaviour
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
+                if (hit.collider.gameObject.tag.Contains("Paint"))
+                {
+
+                }
+
                 if (hit.collider.gameObject.tag.Contains("Wall"))
                 {
                     //클릭한 오브젝트의 재질 가져오기
@@ -40,12 +44,12 @@ public class PaintTool : MonoBehaviour
         }
     }
 
-    public void ChangeColor()
-    {
-            if (x < 2)
-            {
-                x++;
-            }
-            else x = 0;
-    }
+    //public void ChangeColor()
+    //{
+    //        if (x < 2)
+    //        {
+    //            x++;
+    //        }
+    //        else x = 0;
+    //}
 }
