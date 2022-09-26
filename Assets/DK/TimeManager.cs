@@ -45,7 +45,6 @@ public class TimeManager : MonoBehaviour
         x += 0.1f * secondPerRealTimeSecond * Time.deltaTime;
         transform.rotation = Quaternion.Euler(x - 50, 0, 0);
 
-            print(transform.localEulerAngles.x);
 
         //if (transform.eulerAngles.x >= 160/* && transform.eulerAngles.x < 170*/)
         //{

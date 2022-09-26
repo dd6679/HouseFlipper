@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 432730}
   - component: {fileID: 13786624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorsUp_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 474544}
   - component: {fileID: 6552954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorDown_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 11183716}
   - component: {fileID: 6507574}
   - component: {fileID: 11441632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorsUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 3398778}
   - component: {fileID: 2310418}
   - component: {fileID: 6477028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DiningCupboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433330}
   - component: {fileID: 6531172}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorDown_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 409062}
   - component: {fileID: 13705756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorsDown_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 412742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ProbeAnchorOverride
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 3321232}
   - component: {fileID: 2311032}
   - component: {fileID: 6493154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Glass_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 3302988}
   - component: {fileID: 2302886}
   - component: {fileID: 6448476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Glass_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,9 +708,13 @@ GameObject:
   m_Component:
   - component: {fileID: 461912}
   - component: {fileID: 5600365865225943923}
-  m_Layer: 0
+  - component: {fileID: 9181944394113247144}
+  - component: {fileID: 2942240924810893061}
+  - component: {fileID: -7484731329952476859}
+  - component: {fileID: -1765891578004923329}
+  m_Layer: 8
   m_Name: DiningCupboard
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -749,6 +753,72 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &9181944394113247144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2942240924810893061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150472}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551aee1958a39dc4c8ee0bc93ad69d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camPos: {fileID: 0}
+  speed: 5
+--- !u!114 &-7484731329952476859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150472}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &-1765891578004923329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fadda4036c43fb40b7a68506e05c27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171002
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 448168}
   - component: {fileID: 6568160}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorUp_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -807,7 +877,7 @@ GameObject:
   - component: {fileID: 11172744}
   - component: {fileID: 6589000}
   - component: {fileID: 11412602}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorsDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 425888}
   - component: {fileID: 6555866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorUp_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}

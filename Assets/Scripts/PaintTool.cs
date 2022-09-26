@@ -23,7 +23,7 @@ public class PaintTool : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag.Contains("Paint"))
                 {
-
+                  
                 }
 
                 if (hit.collider.gameObject.tag.Contains("Wall"))

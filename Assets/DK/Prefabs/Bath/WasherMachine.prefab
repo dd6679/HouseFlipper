@@ -11,9 +11,13 @@ GameObject:
   - component: {fileID: 4000011453605860}
   - component: {fileID: 205000013567975096}
   - component: {fileID: 6761926096143960699}
-  m_Layer: 0
+  - component: {fileID: 9177843119757382954}
+  - component: {fileID: -3478116224565703884}
+  - component: {fileID: 7047156091859297318}
+  - component: {fileID: -6525170684896640374}
+  m_Layer: 8
   m_Name: WasherMachine
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,6 +78,72 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &9177843119757382954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011418084254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fadda4036c43fb40b7a68506e05c27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3478116224565703884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011418084254}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7047156091859297318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011418084254}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551aee1958a39dc4c8ee0bc93ad69d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camPos: {fileID: 0}
+  speed: 5
+--- !u!114 &-6525170684896640374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011418084254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1000012808420128
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +155,7 @@ GameObject:
   - component: {fileID: 4000010909138440}
   - component: {fileID: 33000011165140944}
   - component: {fileID: 23000011370924800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WasherMachine_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +240,7 @@ GameObject:
   - component: {fileID: 23000012757093300}
   - component: {fileID: 65000011928561966}
   - component: {fileID: 65000010187617266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WasherMachine_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
