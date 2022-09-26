@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class StoreUI : MonoBehaviour
+
+public class StoreUI : MonoBehaviourPun
 {
     public GameObject[] Bt;
     public GameObject[] Fur;
@@ -92,10 +94,10 @@ public class StoreUI : MonoBehaviour
         instBt.onClick.SetPersistentListenerState(2, UnityEngine.Events.UnityEventCallState.RuntimeOnly);
     }
 
-
     public void Instantiate(int i)
     {
-        GameObject gogo = Instantiate(Fur[index]);
+        string furName = Fur[index].name;
+        GameObject gogo = PhotonNetwork.Instantiate(furName, Vector3.zero, Quaternion.identity);
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out hit))
         {
