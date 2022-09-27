@@ -12,7 +12,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
     public float moveSpeed = 5;
     //characterController 담을 변수
     CharacterController cc;
-    Animator anim;
+    public Animator anim;
 
     //중력
     float gravity = -9.81f;
@@ -41,7 +41,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
     {
         //characterController 를 담자
         cc = GetComponent<CharacterController>();
-        anim = transform.GetChild(0).GetComponent<Animator>(); 
+        //anim = transform.GetChild(0).GetComponent<Animator>(); 
         //현재체력을 최대체력으로 셋팅
         //닉네임 설정
         nickName.text = photonView.Owner.NickName;
@@ -68,9 +68,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
                 if (v != 0) isWalk = true;
                 else isWalk = false;
 
-                if (isWalk)
-                    anim.SetBool("isWalk", true);
-                else anim.SetBool("isWalk", false);
+                photonView.RPC("RpcWalk", RpcTarget.All, isWalk);
 
 
                 //2. 받은 신호로 방향을 만든다.
@@ -100,7 +98,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
                 //3. 그 방향으로 움직이자.
                 //P = P0 + vt
                 cc.Move(dir * moveSpeed * Time.deltaTime);
-                
+
                 //손전등 키고끄기
                 if (Input.GetKeyDown(KeyCode.Y))
                 {
@@ -121,6 +119,14 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
             transform.position = Vector3.Lerp(transform.position, receivePos, lerpSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, receiveRot, lerpSpeed * Time.deltaTime);
         }
+    }
+
+    [PunRPC]
+    private void RpcWalk(bool isWalk)
+    {
+        if (isWalk)
+            anim.SetBool("isWalk", true);
+        else anim.SetBool("isWalk", false);
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

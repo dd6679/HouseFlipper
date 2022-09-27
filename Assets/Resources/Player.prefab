@@ -1183,6 +1183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  anim: {fileID: 4988028603289116313}
   jumpPower: 1
   nickName: {fileID: 569852760499857022}
   lerpSpeed: 100
@@ -1560,6 +1561,11 @@ MonoBehaviour:
   ikActive: 0
   rightHandObj: {fileID: 1828590498842388096}
   lookObj: {fileID: 5767094530189951247}
+--- !u!95 &4988028603289116313 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8340921455869514200, guid: da1203547328fdb41974e0b5334e799a, type: 3}
+  m_PrefabInstance: {fileID: 3961459346562371393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5903512935881842798
 PrefabInstance:
   m_ObjectHideFlags: 0
