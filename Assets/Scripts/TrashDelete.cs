@@ -18,7 +18,7 @@ public class TrashDelete : MonoBehaviourPun
         audioSource = gameObject.AddComponent<AudioSource>();
         for (int i = 0; i < deletedTrash.Count; i++)
         {
-            photonView.RPC("RpcDestroyTrash", RpcTarget.All, deletedTrash[i]);
+            photonView.RPC("RpcDestroyTrash", RpcTarget.AllBuffered, deletedTrash[i]);
         }
     }
 
@@ -46,7 +46,7 @@ public class TrashDelete : MonoBehaviourPun
 
     private void DestroyTrash(int viewId)
     {
-        photonView.RPC("RpcDestroyTrash", RpcTarget.All, viewId);
+        photonView.RPC("RpcDestroyTrash", RpcTarget.AllBuffered, viewId);
     }
 
     [PunRPC]
