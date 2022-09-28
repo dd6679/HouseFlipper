@@ -26,7 +26,7 @@ public class TrashDelete : MonoBehaviourPun
     {
         if (photonView.IsMine)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
