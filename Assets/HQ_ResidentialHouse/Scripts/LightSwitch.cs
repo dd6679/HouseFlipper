@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class LightSwitch : MonoBehaviour
+public class LightSwitch : MonoBehaviourPun
 {
     public GameObject[] Lights;
     [Tooltip("Reflection probes, which will be refreshed after ON/OFF light.")]
@@ -291,14 +292,12 @@ public class LightSwitch : MonoBehaviour
                 {
                     if (LightsON)
                     {
-                        Light_Off();
-                        DisableEmission();
+                        photonView.RPC("RpcLightOff", RpcTarget.AllBuffered);
                         //Debug.Log("OFF");
                     }
                     else
                     {
-                        Light_On();
-                        EnableEmission();
+                        photonView.RPC("RpcLightOn", RpcTarget.AllBuffered);
                         //Debug.Log("ON");
                     }
                 }
@@ -316,6 +315,19 @@ public class LightSwitch : MonoBehaviour
         }
     }
 
+    [PunRPC]
+    private void RpcLightOff()
+    {
+        Light_Off();
+        DisableEmission();
+    }
+
+    [PunRPC]
+    private void RpcLightOn()
+    {
+        Light_On();
+        EnableEmission();
+    }
 
     void OnTriggerEnter(Collider other)
     {

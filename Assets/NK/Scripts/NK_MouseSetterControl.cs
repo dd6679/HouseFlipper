@@ -9,6 +9,7 @@ public class NK_MouseSetterControl : MonoBehaviour
     DustDelete dustDelete;
     TrashDelete trashDelete;
     PaintTool paintTool;
+    FireTool fireTool;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class NK_MouseSetterControl : MonoBehaviour
         dustDelete = GetComponent<DustDelete>();
         trashDelete = GetComponent<TrashDelete>();  
         paintTool = GetComponent<PaintTool>();
+        fireTool = GetComponent<FireTool>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,14 @@ public class NK_MouseSetterControl : MonoBehaviour
         else
         {
             paintTool.enabled = false;
+        }
+        if(GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.FlameTool)
+        {
+            fireTool.enabled = true;
+        }
+        else
+        {
+            fireTool.enabled = false;
         }
     }
 }
