@@ -14,6 +14,7 @@ public class NK_ChangeTool : MonoBehaviourPun
         SellTool,
         DemolishTool,
         Move,
+        FlameTool
     }
 
     public GameObject[] tools;
@@ -93,7 +94,6 @@ public class NK_ChangeTool : MonoBehaviourPun
             tools[(i)].SetActive(false);
         }
         tools[index].SetActive(true);
-        iKControl.lookObj = tools[index].transform;
         if (index != 4)
         {
             iKControl.ikActive = true;

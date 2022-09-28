@@ -11,7 +11,6 @@ public class NK_IKControl : MonoBehaviour
 
     public bool ikActive = false;
     public Transform rightHandObj = null;
-    public Transform lookObj = null;
 
     void Start()
     {
@@ -27,14 +26,6 @@ public class NK_IKControl : MonoBehaviour
             //if the IK is active, set the position and rotation directly to the goal. 
             if (ikActive)
             {
-
-                // Set the look target position, if one has been assigned
-                if (lookObj != null)
-                {
-                    animator.SetLookAtWeight(1);
-                    animator.SetLookAtPosition(lookObj.position);
-                }
-
                 // Set the right hand target position and rotation, if one has been assigned
                 if (rightHandObj != null)
                 {

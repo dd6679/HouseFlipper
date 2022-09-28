@@ -169,12 +169,6 @@ public class NK_UIController : MonoBehaviour
         //SetBehaviorName("벽 올리기", 4);
     }
 
-    // 인방보 올리기
-    public void OnClickBuildLintel()
-    {
-        GameManager.instance.myPlayerBehavior.OnClickBuildLintel();
-        //SetBehaviorName("인방보 올리기", 5);
-    }
 
     // 벽 철거하기
     public void OnClickDemolishWall()
@@ -190,6 +184,12 @@ public class NK_UIController : MonoBehaviour
         SetBehaviorName("패널 및 타일 작업하기", 5);
     }
 
+    // 화염방사기
+    public void OnClickFlame()
+    {
+        GameManager.instance.myPlayerBehavior.OnClickFlame();
+        SetBehaviorName("화염방사기", 6);
+    }
     void SetBehaviorName(string name, int id)
     {
         behaviorText.text = name;
