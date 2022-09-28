@@ -94,12 +94,14 @@ public class NK_ChangeTool : MonoBehaviourPun
             tools[(i)].SetActive(false);
         }
         tools[index].SetActive(true);
-        if (index != 4)
+        iKControl.ikActive = true;
+        iKControl.rightHandObj = graps[index].transform;
+/*        if (index != 4)
         {
             iKControl.ikActive = true;
             iKControl.rightHandObj = graps[index].transform;
         }
         else
-            iKControl.ikActive = false;
+            iKControl.ikActive = false;*/
     }
 }
