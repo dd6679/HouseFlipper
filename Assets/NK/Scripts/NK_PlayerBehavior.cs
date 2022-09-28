@@ -26,9 +26,9 @@ public class NK_PlayerBehavior : MonoBehaviourPun
         Paint,
         Sell,
         BuildWall,
-        BuildLintel,
         DemolishWall,
         WorkTileAndPanel,
+        Flame
     }
 
     public PlayerBehaviorState behaviorState = PlayerBehaviorState.Idle;
@@ -139,7 +139,11 @@ public class NK_PlayerBehavior : MonoBehaviourPun
         changeTool.SwitchTool((int)NK_ChangeTool.ToolState.DemolishTool);
         // 부수는 모션을 적용시킨다
         // - 맵에서 망치와 닿으면 Demolish
+    }
 
+    private void Flame()
+    {
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.FlameTool);
     }
 
     // 상태 변화 관리 함수
@@ -176,7 +180,8 @@ public class NK_PlayerBehavior : MonoBehaviourPun
                 break;
             case PlayerBehaviorState.BuildWall:
                 break;
-            case PlayerBehaviorState.BuildLintel:
+            case PlayerBehaviorState.Flame:
+                Flame();
                 break;
             case PlayerBehaviorState.DemolishWall:
                 DemolishWall();
@@ -218,10 +223,10 @@ public class NK_PlayerBehavior : MonoBehaviourPun
         ChangeState(PlayerBehaviorState.BuildWall);
     }
 
-    // 인방보 올리기
-    public void OnClickBuildLintel()
+    // 화염방사기
+    public void OnClickFlame()
     {
-        ChangeState(PlayerBehaviorState.BuildLintel);
+        ChangeState(PlayerBehaviorState.Flame);
     }
 
     // 벽 철거하기
