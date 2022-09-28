@@ -55,6 +55,8 @@ MonoBehaviour:
   - RpcDestroyDust
   - RpcSell
   - RpcChangeColor
+  - RpcRotate
+  - RpcWalk
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

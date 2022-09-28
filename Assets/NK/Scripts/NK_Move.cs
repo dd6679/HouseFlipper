@@ -21,6 +21,13 @@ public class NK_Move : MonoBehaviourPun
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel") * speed;
         yScroll += scroll;
+
+        photonView.RPC("RpcRotate", RpcTarget.All, yScroll);
+    }
+
+    [PunRPC]
+    private void RpcRotate(float yScroll)
+    {
         gameObject.transform.localEulerAngles = new Vector3(0, yScroll, 0);
 
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
