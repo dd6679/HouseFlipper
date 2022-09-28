@@ -29,7 +29,7 @@ namespace ShatterToolkit.Helpers
 
         private void DestroyShatter(int viewId, Vector3 point)
         {
-            photonView.RPC("RpcDestroyShatter", RpcTarget.All, viewId, point);
+            photonView.RPC("RpcDestroyShatter", RpcTarget.AllBuffered, viewId, point);
         }
 
         [PunRPC]

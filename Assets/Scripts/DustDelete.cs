@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DustDelete : MonoBehaviourPun
 {
-    // �����ð�
     static List<int> deletedDust = new List<int>();
     float currentTime = 1f;
     RaycastHit hit;
@@ -14,7 +13,7 @@ public class DustDelete : MonoBehaviourPun
     {
         for (int i = 0; i < deletedDust.Count; i++)
         {
-            photonView.RPC("RpcDestoryDust", RpcTarget.All, deletedDust[i]);
+            photonView.RPC("RpcDestoryDust", RpcTarget.AllBuffered, deletedDust[i]);
         }
     }
 
@@ -39,7 +38,7 @@ public class DustDelete : MonoBehaviourPun
 
     private void DestroyDust(int viewId)
     {
-        photonView.RPC("RpcDestoryDust", RpcTarget.All, viewId);
+        photonView.RPC("RpcDestoryDust", RpcTarget.AllBuffered, viewId);
     }
 
     [PunRPC]
