@@ -1222,6 +1222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 0.5
   isWaiting: 0
+  Wall: {fileID: 3470757786837117936, guid: 1897ea1f78b25e946b68eac3224f449f, type: 3}
   behaviorState: 0
 --- !u!114 &-3435722704153841241
 MonoBehaviour:

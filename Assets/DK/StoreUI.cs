@@ -37,8 +37,6 @@ public class StoreUI : MonoBehaviourPun
         //UI = gameObject.GetComponentInParent<Image>();
         Paint.SetActive(false);
         Bath.SetActive(false);
-
-
     }
 
     void Update()
