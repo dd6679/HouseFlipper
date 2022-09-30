@@ -29,7 +29,7 @@ public class NK_QuestUI : MonoBehaviourPun
         {"욕실 13㎡", new List<string>{"먼지 닦기", "벽 철거하기"} },
         {"욕실 8㎡", new List<string>{"먼지 닦기", "벽 철거하기"} },
         {"다용도실 8㎡", new List<string>{"쓰레기 버리기", "벽 철거하기"} },
-        { "밖", new List<string> { "쓰레기 버리기", "먼지 닦기" } },
+        { "밖", new List<string> { "쓰레기 버리기", "먼지 닦기", "잔디 제거하기" } },
         { "복도 12㎡", new List<string> { "벽 철거하기", "먼지 닦기" } },
         {"차고 42㎡", new List<string>{"쓰레기 버리기", "페인트 칠하기" } }
         };
