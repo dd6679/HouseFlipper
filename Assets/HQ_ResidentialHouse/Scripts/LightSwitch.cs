@@ -218,7 +218,8 @@ public class LightSwitch : MonoBehaviourPun
         {
             if (_light)
             {
-                _light.SetActive(false);
+                photonView.RPC("RpcLightOff", RpcTarget.AllBuffered, _light.GetPhotonView().ViewID);
+                //_light.SetActive(false);
             }
         }
         LightsON = false;
@@ -249,7 +250,8 @@ public class LightSwitch : MonoBehaviourPun
         {
             if (_light)
             {
-                _light.SetActive(true);
+                photonView.RPC("RpcLightOn", RpcTarget.AllBuffered, _light.GetPhotonView().ViewID);
+                //_light.SetActive(true);
             }
         }
         LightsON = true;
@@ -292,12 +294,14 @@ public class LightSwitch : MonoBehaviourPun
                 {
                     if (LightsON)
                     {
-                        photonView.RPC("RpcLightOff", RpcTarget.AllBuffered);
+                        Light_Off();
+                        DisableEmission();
                         //Debug.Log("OFF");
                     }
                     else
                     {
-                        photonView.RPC("RpcLightOn", RpcTarget.AllBuffered);
+                        Light_On();
+                        EnableEmission();
                         //Debug.Log("ON");
                     }
                 }
@@ -316,17 +320,17 @@ public class LightSwitch : MonoBehaviourPun
     }
 
     [PunRPC]
-    private void RpcLightOff()
+    private void RpcLightOff(int viewId)
     {
-        Light_Off();
-        DisableEmission();
+        PhotonView view = PhotonView.Find(viewId);
+        view.gameObject.SetActive(false);
     }
 
     [PunRPC]
-    private void RpcLightOn()
+    private void RpcLightOn(int viewId)
     {
-        Light_On();
-        EnableEmission();
+        PhotonView view = PhotonView.Find(viewId);
+        view.gameObject.SetActive(true);
     }
 
     void OnTriggerEnter(Collider other)
