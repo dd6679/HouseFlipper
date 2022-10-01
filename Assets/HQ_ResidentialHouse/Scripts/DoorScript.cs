@@ -400,7 +400,7 @@ public class DoorScript : MonoBehaviourPun {
 	
 	void OpenDoor()
 	{
-		photonView.RPC("RpcOpenDoor", RpcTarget.All);
+		photonView.RPC("RpcOpenDoor", RpcTarget.AllBuffered);
 	}
 
 	[PunRPC]
@@ -422,7 +422,7 @@ public class DoorScript : MonoBehaviourPun {
 
 	void CloseDoor()
 	{
-        photonView.RPC("RpcCloseDoor", RpcTarget.All);
+        photonView.RPC("RpcCloseDoor", RpcTarget.AllBuffered);
 	}
 
 	[PunRPC]

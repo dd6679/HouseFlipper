@@ -94,6 +94,7 @@ public class NK_ChangeTool : MonoBehaviourPun
             tools[(i)].SetActive(false);
         }
         tools[index].SetActive(true);
+
         if (index != 4)
         {
             iKControl.ikActive = true;

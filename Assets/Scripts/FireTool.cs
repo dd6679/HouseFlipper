@@ -30,7 +30,7 @@ public class FireTool : MonoBehaviour
             Light.SetActive(true);
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                if (Vector3.Distance(hit.collider.gameObject.transform.position, transform.position) <= 4f && hit.collider.gameObject.tag.Contains("Weed"))
+                if (Vector3.Distance(hit.collider.gameObject.transform.position, transform.position) <= 5.5f && hit.collider.gameObject.tag.Contains("Weed"))
                 {
                     //hit.collider.gameObject.SetActive(false);
                     Destroy(hit.collider.gameObject,0.1f);

@@ -13,6 +13,7 @@ TagManager:
   - Dust
   - Paint
   - Weed
+  - Floor
   layers:
   - Default
   - TransparentFX

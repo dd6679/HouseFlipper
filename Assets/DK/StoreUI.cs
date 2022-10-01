@@ -37,8 +37,6 @@ public class StoreUI : MonoBehaviourPun
         //UI = gameObject.GetComponentInParent<Image>();
         Paint.SetActive(false);
         Bath.SetActive(false);
-
-
     }
 
     void Update()
@@ -53,7 +51,6 @@ public class StoreUI : MonoBehaviourPun
         {
             if (Bt[i] == clickObject)
             {
-                print(index);
                 index = i;
             }
         }
@@ -94,15 +91,18 @@ public class StoreUI : MonoBehaviourPun
         instBt.onClick.SetPersistentListenerState(2, UnityEngine.Events.UnityEventCallState.RuntimeOnly);
     }
 
-    public void Instantiate(int i)
+    public void Instantiate()
     {
         string furName = Fur[index].name;
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out hit))
         {
-            GameObject gogo = PhotonNetwork.Instantiate(furName, hit.point, Quaternion.identity);
-            //gogo.transform.position = hit.point;
-            UI.SetActive(false);
+            if (hit.collider.gameObject.tag.Contains("Floor"))
+            {
+                GameObject gogo = PhotonNetwork.Instantiate(furName, hit.point, Quaternion.identity);
+                //gogo.transform.position = hit.point;
+                UI.SetActive(false);
+            }
         }
     }
 }

@@ -12,6 +12,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     //public GameObject customGrid;
     public float waitTime = 0.5f;
     public bool isWaiting = false;
+    public GameObject Wall;
 
     Vector3 ScreenCenter;
 
@@ -104,7 +105,6 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     {
         changeTool.SwitchTool((int)NK_ChangeTool.ToolState.Move);
 
-
     }
 
     private void Clean()
@@ -139,6 +139,23 @@ public class NK_PlayerBehavior : MonoBehaviourPun
         changeTool.SwitchTool((int)NK_ChangeTool.ToolState.DemolishTool);
         // 부수는 모션을 적용시킨다
         // - 맵에서 망치와 닿으면 Demolish
+    }
+    RaycastHit hit;
+    private void BuildWall()
+    {
+        changeTool.SwitchTool((int)NK_ChangeTool.ToolState.Move);
+        
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.gameObject.tag.Contains("Floor"))
+            {
+                GameObject gogo = PhotonNetwork.Instantiate("Build", hit.point, Quaternion.identity);
+                gogo.transform.position = hit.point;
+                //UI.SetActive(false);
+            }
+        }
+
     }
 
     private void Flame()
@@ -179,6 +196,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
                 Sell();
                 break;
             case PlayerBehaviorState.BuildWall:
+                BuildWall();
                 break;
             case PlayerBehaviorState.Flame:
                 Flame();

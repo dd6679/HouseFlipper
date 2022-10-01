@@ -29,5 +29,10 @@ public class NK_CompleteQuest : MonoBehaviour
             NK_QuestUI.completeQuest[location].Add("먼지 닦기");
             totalDustPercent += (100 / questCount);
         }
+        if(gameObject.transform.childCount == 0 && gameObject.CompareTag("Weed"))
+        {
+            NK_QuestUI.completeQuest[location].Add("잔디 제거하기");
+            totalDustPercent -= (100 / questCount);
+        }
     }
 }
