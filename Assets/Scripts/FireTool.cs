@@ -24,33 +24,37 @@ public class FireTool : MonoBehaviourPun
 
     void FireShot()
     {
-        if (Cursor.visible == false && Input.GetMouseButton(0))
+        if (photonView.IsMine)
         {
-            Flames.SetActive(true);
-            Sound.SetActive(true);
-            Light.SetActive(true);
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            if (Cursor.visible == false && Input.GetMouseButton(0))
             {
-                if (Vector3.Distance(hit.collider.gameObject.transform.position, transform.position) <= 5.5f && hit.collider.gameObject.tag.Contains("Weed"))
+                Flames.SetActive(true);
+                Sound.SetActive(true);
+                Light.SetActive(true);
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
-                    if (hit.collider.gameObject.GetComponent<PhotonView>() != null)
-                        photonView.RPC("RpcDestroyWeed", RpcTarget.AllBuffered, hit.collider.gameObject.GetComponent<PhotonView>().ViewID);
+                    if (Vector3.Distance(hit.collider.gameObject.transform.position, transform.position) <= 5.5f && hit.collider.gameObject.tag.Contains("Weed"))
+                    {
+                        if (hit.collider.gameObject.GetComponent<PhotonView>() != null)
+                            photonView.RPC("RpcDestroyWeed", RpcTarget.AllBuffered, hit.collider.gameObject.GetComponent<PhotonView>().ViewID);
+                    }
                 }
             }
-        }
             else
             {
                 Flames.SetActive(false);
                 Sound.SetActive(false);
                 Light.SetActive(false);
             }
+
+        }
     }
 
     [PunRPC]
     private void RpcDestroyWeed(int viewId)
     {
         PhotonView view = PhotonView.Find(viewId);
-        if(view != null)
+        if (view != null)
         {
             Destroy(view.gameObject, 0.1f);
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Photon.Pun;
+using static UnityEditor.FilePathAttribute;
 
 
 public class StoreUI : MonoBehaviourPun
@@ -21,6 +22,8 @@ public class StoreUI : MonoBehaviourPun
     GameObject Paint;
     Button instBt;
 
+    Text location;
+
 
     private void Awake()
     {
@@ -29,6 +32,7 @@ public class StoreUI : MonoBehaviourPun
         Bath = GameObject.Find("Bath");
         Paint = GameObject.Find("Paint");
         instBt = GameObject.Find("instBt").GetComponent<Button>();
+        location = GameObject.Find("location").GetComponent<Text>();
     }
 
     void Start()
@@ -100,9 +104,21 @@ public class StoreUI : MonoBehaviourPun
             if (hit.collider.gameObject.tag.Contains("Floor"))
             {
                 GameObject gogo = PhotonNetwork.Instantiate(furName, hit.point, Quaternion.identity);
+                CompleteStoreQuest(furName);
                 //gogo.transform.position = hit.point;
                 UI.SetActive(false);
             }
+        }
+    }
+
+    void CompleteStoreQuest(string furName)
+    {
+        if (furName.Contains("DiningCupboard"))
+        {
+            NK_QuestUI.completeQuest[location.text].Add("ÂþÀå ³õ±â");
+            NK_QuestUI.quests[location.text]["ÂþÀå ³õ±â"] = 100;
+
+            print(NK_QuestUI.completeQuest[location.text]);
         }
     }
 }
