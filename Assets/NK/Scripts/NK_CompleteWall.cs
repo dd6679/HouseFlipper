@@ -31,9 +31,9 @@ public class NK_CompleteWall : MonoBehaviour
                 {
                     int count = 0;
 
-                    foreach (GameObject go in walls)
+                    foreach (GameObject wall in walls)
                     {
-                        MeshRenderer mesh = go.GetComponent<MeshRenderer>();
+                        MeshRenderer mesh = wall.GetComponent<MeshRenderer>();
                         if (mesh.material.name.Contains(colorCode))
                         {
                             count++;
