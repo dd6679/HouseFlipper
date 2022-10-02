@@ -72,13 +72,13 @@ public class NK_Move : MonoBehaviourPun
 
         int layerMask = 1 << LayerMask.NameToLayer("Floor");
 
-        if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask) /*&& NK_UIController.isFinishWaiting*/)
+        if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask) && NK_UIController.isFinishWaiting)
         {
             float H = Camera.main.transform.position.y;
             float h = objectHitPosition.transform.position.y;
 
             Vector3 newPos = (hitLayerMask.point * (H - h) + Camera.main.transform.position * h) / H;
-            photonView.RPC("RpcMove", RpcTarget.AllBuffered, newPos);
+            photonView.RPC("RpcMove", RpcTarget.All, newPos);
         }
     }
 

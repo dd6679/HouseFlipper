@@ -104,7 +104,6 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     private void Move()
     {
         changeTool.SwitchTool((int)NK_ChangeTool.ToolState.Move);
-
     }
 
     private void Clean()
@@ -112,9 +111,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
         // 청소도구를 플레이어에게 쥐게 한다
         changeTool.SwitchTool((int)NK_ChangeTool.ToolState.CleanTool);
         // 마우스 클릭 중일 때 청소하는 모션을 적용시킨다
-
         // - 맵에서 지저분한 물체가 청소도구와 닿으면 Destroy
-
     }
 
     private void Paint()

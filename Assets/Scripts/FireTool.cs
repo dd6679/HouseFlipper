@@ -28,19 +28,19 @@ public class FireTool : MonoBehaviourPun
         {
             if (Cursor.visible == false && Input.GetMouseButton(0))
             {
-                photonView.RPC("RpcFlameOn", RpcTarget.AllBuffered);
+                photonView.RPC("RpcFlameOn", RpcTarget.All);
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
                     if (Vector3.Distance(hit.collider.gameObject.transform.position, transform.position) <= 5.5f && hit.collider.gameObject.tag.Contains("Weed"))
                     {
                         if (hit.collider.gameObject.GetComponent<PhotonView>() != null)
-                            photonView.RPC("RpcDestroyWeed", RpcTarget.AllBuffered, hit.collider.gameObject.GetComponent<PhotonView>().ViewID);
+                            photonView.RPC("RpcDestroyWeed", RpcTarget.All, hit.collider.gameObject.GetComponent<PhotonView>().ViewID);
                     }
                 }
             }
             else
             {
-                photonView.RPC("RpcFlameOff", RpcTarget.AllBuffered);
+                photonView.RPC("RpcFlameOff", RpcTarget.All);
             }
         }
     }

@@ -62,7 +62,6 @@ public class NK_QuestUI : MonoBehaviourPun
         {
             if (kList.Contains(child.text))
             {
-                print(child.text + " " + quests[location.text][child.text].ToString());
                 child.transform.GetChild(0).GetComponent<Text>().text = quests[location.text][child.text].ToString() + "%";
             }
 
@@ -71,12 +70,6 @@ public class NK_QuestUI : MonoBehaviourPun
                 Destroy(child.gameObject);
             }
         }
-
-        foreach(var i in completeQuest["°Å½Ç 45§³"])
-        {
-            print(i);
-        }
-
 
         questParent.rectTransform.sizeDelta = new Vector2(500, 55 * allChild.Length / 2);
     }

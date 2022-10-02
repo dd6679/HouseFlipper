@@ -37,6 +37,7 @@ public class NK_UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(isFinishWaiting);
         // Test¿ë
         if (Input.GetKeyDown(KeyCode.Escape))
         {
