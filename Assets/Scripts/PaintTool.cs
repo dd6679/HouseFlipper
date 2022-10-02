@@ -31,7 +31,7 @@ public class PaintTool : MonoBehaviourPun
 
                 if (hit.collider.gameObject.tag.Contains("Wall") && GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.PaintTool && GameManager.instance.myChangeTool.isMoving)
                 {
-                    photonView.RPC("RpcChangeColor", RpcTarget.AllBuffered, hit.collider.gameObject.GetComponent<PhotonView>().ViewID, x);
+                    photonView.RPC("RpcChangeColor", RpcTarget.All, hit.collider.gameObject.GetComponent<PhotonView>().ViewID, x);
                 }
             }
         }
