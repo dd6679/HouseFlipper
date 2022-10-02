@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.FilePathAttribute;
 
 public class NK_TaskUI : MonoBehaviour
 {
@@ -38,12 +39,15 @@ public class NK_TaskUI : MonoBehaviour
 
         GameObject clickBtn = EventSystem.current.currentSelectedGameObject;
         locationName = clickBtn.GetComponentInChildren<Text>();
+
+        var kList = new List<string>(NK_QuestUI.quests[locationName.text].Keys);
+        
         for (int i = 0; i < NK_QuestUI.quests[locationName.text].Count; i++)
         {
             GameObject task = Instantiate(taskFactory);
             task.transform.SetParent(GameObject.Find("Tasks").transform);
             taskName = task.GetComponentInChildren<Text>();
-            taskName.text = NK_QuestUI.quests[locationName.text][i];
+            taskName.text = kList[i];
         }
     }
 }
