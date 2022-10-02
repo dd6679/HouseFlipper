@@ -38,13 +38,21 @@ public class NK_CompleteQuest : MonoBehaviourPun
         {
             if (gameObject.transform.childCount == 0 && !NK_QuestUI.completeQuest[location].Contains("먼지 닦기"))
                 NK_QuestUI.completeQuest[location].Add("먼지 닦기");
-            NK_QuestUI.quests[location]["먼지 닦기"] = 100 / questCount * (questCount - gameObject.transform.childCount);
+            if (childCount != gameObject.transform.childCount)
+            {
+                childCount = gameObject.transform.childCount;
+                NK_QuestUI.quests[location]["먼지 닦기"] = 100 / questCount * (questCount - gameObject.transform.childCount);
+            }
         }
         if (gameObject.CompareTag("Weed"))
         {
             if (gameObject.transform.childCount == 0 && !NK_QuestUI.completeQuest[location].Contains("잔디 제거하기"))
                 NK_QuestUI.completeQuest[location].Add("잔디 제거하기");
-            NK_QuestUI.quests[location]["잔디 제거하기"] = 100 / questCount * (questCount - gameObject.transform.childCount);
+            if (childCount != gameObject.transform.childCount)
+            {
+                childCount = gameObject.transform.childCount;
+                NK_QuestUI.quests[location]["잔디 제거하기"] = 100 / questCount * (questCount - gameObject.transform.childCount);
+            }
         }
     }
 }
