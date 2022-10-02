@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3191742006834274088}
   - component: {fileID: 7370247858571147696}
   - component: {fileID: 4199950280139998521}
+  - component: {fileID: 1628652770512153174}
   m_Layer: 3
   m_Name: Build
   m_TagString: Wall
@@ -172,3 +173,17 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &1628652770512153174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3470757786837117936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551aee1958a39dc4c8ee0bc93ad69d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camPos: {fileID: 0}
+  speed: 5
