@@ -2,6 +2,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Vehicles.Ball;
 //using static UnityEditor.FilePathAttribute;
 
@@ -29,23 +30,28 @@ public class NK_CompleteWall : MonoBehaviourPun
         if (isComplete)
             return;
         int count = 0;
-        for (int i = 0; i < walls.Length; i++)
+
+        if (location == GameObject.Find("location").GetComponent<Text>().text)
         {
-            MeshRenderer mesh = walls[i].GetComponent<MeshRenderer>();
-            if (mesh.material.name.Contains(colorCode))
+            for (int i = 0; i < walls.Length; i++)
             {
-                count++;
-            }
-            if (i == walls.Length - 1)
-            {
-                currentCount = count;
-                if (count == walls.Length && !NK_QuestUI.completeQuest[location].Contains(color + "으로 페인트 칠하기"))
+                MeshRenderer mesh = walls[i].GetComponent<MeshRenderer>();
+                if (mesh.material.name.Contains(colorCode))
                 {
-                    NK_QuestUI.completeQuest[location].Add(color + "으로 페인트 칠하기");
-                    isComplete = true;
+                    count++;
+                }
+                if (i == walls.Length - 1)
+                {
+                    currentCount = count;
+                    if (count == walls.Length && !NK_QuestUI.completeQuest[location].Contains(color + "으로 페인트 칠하기"))
+                    {
+                        NK_QuestUI.completeQuest[location].Add(color + "으로 페인트 칠하기");
+                        isComplete = true;
+                    }
                 }
             }
+            NK_QuestUI.quests[location][color + "으로 페인트 칠하기"] = 100 / walls.Length * currentCount;
+
         }
-        NK_QuestUI.quests[location][color + "으로 페인트 칠하기"] = 100 / walls.Length * currentCount;
     }
 }
