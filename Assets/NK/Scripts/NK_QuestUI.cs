@@ -93,19 +93,14 @@ public class NK_QuestUI : MonoBehaviourPun
 
             for (int i = 0; i < quests[location.text].Count; i++)
             {
-                Text quest = Instantiate(questFactory);
+                GameObject quest = PhotonNetwork.Instantiate("quest", Vector3.zero, Quaternion.identity);
                 quest.transform.SetParent(questParent.transform);
-                quest.rectTransform.position = questParent.rectTransform.position + new Vector3(100, -12 + -50 * i, 0);
-                quest.text = kList[i];
+                Text questText = quest.GetComponent<Text>();
+                questText.rectTransform.position = questParent.rectTransform.position + new Vector3(100, -12 + -50 * i, 0);
+                questText.text = kList[i];
             }
 
             //questParent.rectTransform.sizeDelta = new Vector2(500, 55 * quests[location.text].Count);
         }
-    }
-
-    [PunRPC]
-    private void RpcUpdatePercent(string percent)
-    {
-
     }
 }
