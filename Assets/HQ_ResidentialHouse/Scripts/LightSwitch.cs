@@ -308,11 +308,11 @@ public class LightSwitch : MonoBehaviourPun
             }
         }
         
-        if (TimeManager.instance.isLightOff == true)
-        {
-            Light_StartOff();
-            DisableEmission();
-        }
+        //if (TimeManager.instance.isLightOff == true)
+        //{
+        //    Light_StartOff();
+        //    DisableEmission();
+        //}
     }
 
     [PunRPC]

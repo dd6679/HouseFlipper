@@ -42,8 +42,13 @@ public class TimeManager : MonoBehaviour
         //transform.Rotate(Vector3.right, 0.1f * secondPerRealTimeSecond * Time.deltaTime);
 
 
-        x += 0.1f * secondPerRealTimeSecond * Time.deltaTime;
         transform.rotation = Quaternion.Euler(x - 50, 0, 0);
+        if (isNight)
+        {
+            x += 0.5f * secondPerRealTimeSecond * Time.deltaTime;
+        }
+        else
+            x += 0.1f * secondPerRealTimeSecond * Time.deltaTime;
 
 
         //if (transform.eulerAngles.x >= 160/* && transform.eulerAngles.x < 170*/)
@@ -77,7 +82,7 @@ public class TimeManager : MonoBehaviour
             
             if (currentLightDensity >= nightLightDensity)
             {
-                currentLightDensity -= 0.5f * fogDensityCalc * Time.deltaTime;
+                currentLightDensity -= 5f * fogDensityCalc * Time.deltaTime;
                 RenderSettings.ambientIntensity = currentLightDensity;
             }
         }
