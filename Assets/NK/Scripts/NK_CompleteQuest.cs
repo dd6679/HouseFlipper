@@ -7,10 +7,8 @@ using UnityEngine.UI;
 public class NK_CompleteQuest : MonoBehaviourPun
 {
     public string location;
-    public Image questParent;
     int questCount;
     int childCount;
-    int count = 0;
 
     PhotonView photonView;
 
