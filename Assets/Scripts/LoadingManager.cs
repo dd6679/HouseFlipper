@@ -2,9 +2,10 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking.Types;
 using UnityEngine.UI;
 
-public class LoadingManager : MonoBehaviourPunCallbacks
+public class LoadingManager : MonoBehaviour
 {
     public Slider loadSlider;
 
@@ -14,7 +15,7 @@ public class LoadingManager : MonoBehaviourPunCallbacks
     public GameObject imbage1;
     public GameObject imbage2;
 
-    bool isCheck =false;
+    public static bool isCheck =false;
 
 
     void Start()
@@ -39,9 +40,8 @@ public class LoadingManager : MonoBehaviourPunCallbacks
         }
         if(loadSlider.value > 8)
         {
-            PhotonNetwork.LoadLevel(3);
+            
             isCheck = true;
-        }
-
+        } 
     }
 }
