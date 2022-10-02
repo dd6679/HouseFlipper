@@ -78,7 +78,7 @@ public class NK_Move : MonoBehaviourPun
             float h = objectHitPosition.transform.position.y;
 
             Vector3 newPos = (hitLayerMask.point * (H - h) + Camera.main.transform.position * h) / H;
-            photonView.RPC("RpcMove", RpcTarget.All, newPos);
+            photonView.RPC("RpcMove", RpcTarget.AllBuffered, newPos);
         }
     }
 

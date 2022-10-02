@@ -7,6 +7,8 @@ namespace ShatterToolkit.Helpers
 {
     public class MouseShatter : MonoBehaviourPun
     {
+        //public GameObject[] walls;
+
         public void Update()
         {
             if (!photonView.IsMine)
@@ -25,6 +27,14 @@ namespace ShatterToolkit.Helpers
                     }
                 }
             }
+
+/*            foreach(GameObject wall in walls)
+            {
+                if(wall == null)
+                {
+
+                }
+            }*/
         }
 
         private void DestroyShatter(int viewId, Vector3 point)

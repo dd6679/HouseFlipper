@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Photon.Pun;
-using static UnityEditor.FilePathAttribute;
 
 
 public class StoreUI : MonoBehaviourPun
@@ -117,8 +116,21 @@ public class StoreUI : MonoBehaviourPun
         {
             NK_QuestUI.completeQuest[location.text].Add("찻장 놓기");
             NK_QuestUI.quests[location.text]["찻장 놓기"] = 100;
-
-            print(NK_QuestUI.completeQuest[location.text]);
+        }
+        if (furName.Contains("DiningChair"))
+        {
+            NK_QuestUI.completeQuest[location.text].Add("의자 놓기");
+            NK_QuestUI.quests[location.text]["의자 놓기"] = 100;
+        }
+        if (furName.Contains("DiningTable"))
+        {
+            NK_QuestUI.completeQuest[location.text].Add("식탁 놓기");
+            NK_QuestUI.quests[location.text]["식탁 놓기"] = 100;
+        }
+        if (furName.Contains("SofaSmall"))
+        {
+            NK_QuestUI.completeQuest[location.text].Add("작은 소파 놓기");
+            NK_QuestUI.quests[location.text]["작은 소파 놓기"] = 100;
         }
     }
 }

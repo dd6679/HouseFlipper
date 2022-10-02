@@ -28,9 +28,7 @@ public class FireTool : MonoBehaviourPun
         {
             if (Cursor.visible == false && Input.GetMouseButton(0))
             {
-                Flames.SetActive(true);
-                Sound.SetActive(true);
-                Light.SetActive(true);
+                photonView.RPC("RpcFlameOn", RpcTarget.AllBuffered);
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
                     if (Vector3.Distance(hit.collider.gameObject.transform.position, transform.position) <= 5.5f && hit.collider.gameObject.tag.Contains("Weed"))
@@ -42,12 +40,25 @@ public class FireTool : MonoBehaviourPun
             }
             else
             {
-                Flames.SetActive(false);
-                Sound.SetActive(false);
-                Light.SetActive(false);
+                photonView.RPC("RpcFlameOff", RpcTarget.AllBuffered);
             }
-
         }
+    }
+
+    [PunRPC]
+    private void RpcFlameOff()
+    {
+        Flames.SetActive(false);
+        Sound.SetActive(false);
+        Light.SetActive(false);
+    }
+
+    [PunRPC]
+    private void RpcFlameOn()
+    {
+        Flames.SetActive(true);
+        Sound.SetActive(true);
+        Light.SetActive(true);
     }
 
     [PunRPC]
