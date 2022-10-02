@@ -13,8 +13,8 @@ public class LoadingManager : MonoBehaviourPunCallbacks
 
     public GameObject imbage1;
     public GameObject imbage2;
-    
 
+    bool isCheck =false;
 
 
     void Start()
@@ -25,6 +25,9 @@ public class LoadingManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
+        if (isCheck)
+            return;
+
         loadSlider.value += Time.deltaTime;
 
         if(loadSlider.value > 5)
@@ -37,12 +40,8 @@ public class LoadingManager : MonoBehaviourPunCallbacks
         if(loadSlider.value > 8)
         {
             PhotonNetwork.LoadLevel(3);
+            isCheck = true;
         }
 
-    }
-
-    public void OnClick()
-    {
-        PhotonNetwork.LoadLevel(3);
     }
 }

@@ -3,6 +3,7 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NK_LobbyManager : MonoBehaviourPunCallbacks
@@ -110,7 +111,7 @@ public class NK_LobbyManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
-        PhotonNetwork.LoadLevel(2);
+        SceneManager.LoadSceneAsync(2);
     }
 
     //방 참가가 실패 되었을 때 호출 되는 함수
