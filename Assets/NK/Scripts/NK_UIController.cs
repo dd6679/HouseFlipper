@@ -23,6 +23,8 @@ public class NK_UIController : MonoBehaviour
 
     public GameObject EndImage;
 
+    public GameObject ChattingUI;
+    bool isCheckChatting = false;
 
     public Text behaviorText;
     public GameObject[] behaviorThumbs;
@@ -131,7 +133,21 @@ public class NK_UIController : MonoBehaviour
             currentTime = 0;
             //isFinishWaiting = false;
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (!isCheckChatting)
+            {
+                ChattingUI.SetActive(true);
+                isCheckChatting = true;
+            }
+            else
+            {
+                ChattingUI.SetActive(false);
+                isCheckChatting = false;
+            }
+        }
+
         if (progressBar.fillAmount > 0.7 && Input.GetKeyDown(KeyCode.Return))
         {
             endUI.SetActive(true);
