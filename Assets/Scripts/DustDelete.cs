@@ -9,6 +9,8 @@ public class DustDelete : MonoBehaviourPun
     float currentTime = 1f;
     RaycastHit hit;
 
+
+
     void Start()
     {
         for (int i = 0; i < deletedDust.Count; i++)

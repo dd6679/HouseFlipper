@@ -10,9 +10,14 @@ public class NK_SellUI : MonoBehaviourPun
     public Text income;
     RaycastHit hit;
     float currentTime = 0;
-    // Start is called before the first frame update
+
+    AudioSource audioSource;
+    public AudioClip sellSound;
+
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+
         sellUI = GameObject.Find("SellUI");
         income = GameObject.Find("income").gameObject.GetComponent<Text>();
     }
@@ -61,6 +66,8 @@ public class NK_SellUI : MonoBehaviourPun
 
         if (view != null)
         {
+            audioSource.PlayOneShot(sellSound);
+
             Destroy(view.gameObject);
         }
     }

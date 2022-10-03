@@ -106,6 +106,7 @@ public class StoreUI : MonoBehaviourPun
             if (hit.collider.gameObject.tag.Contains("Floor"))
             {
                 GameObject gogo = PhotonNetwork.Instantiate(furName, hit.point, Quaternion.identity);
+
                 CompleteStoreQuest(furName);
                 //gogo.transform.position = hit.point;
                 UI.SetActive(false);

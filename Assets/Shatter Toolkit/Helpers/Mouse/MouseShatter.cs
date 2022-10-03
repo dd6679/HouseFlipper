@@ -8,7 +8,13 @@ namespace ShatterToolkit.Helpers
     public class MouseShatter : MonoBehaviourPun
     {
         //public GameObject[] walls;
+        public AudioClip deleteSound;
+        AudioSource audioSource;
 
+        void Start()
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
         public void Update()
         {
             if (!photonView.IsMine)
@@ -22,6 +28,8 @@ namespace ShatterToolkit.Helpers
                 {
                     if (Vector3.Distance(hit.collider.gameObject.transform.position, transform.position) <= 1.8f && hit.collider.gameObject.tag.Contains("Wall"))
                     {
+                        //audioSource.Play();
+                        audioSource.PlayOneShot(deleteSound);
                         DestroyShatter(hit.collider.gameObject.GetComponent<PhotonView>().ViewID, hit.point);
 
                     }

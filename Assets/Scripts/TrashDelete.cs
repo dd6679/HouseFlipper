@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class TrashDelete : MonoBehaviourPun
 {
-    public AudioClip deleteSound;
     static List<int> deletedTrash = new List<int>();
+    public AudioClip deleteSound;
     AudioSource audioSource;
     RaycastHit hit;
     Transform tr;
