@@ -8,7 +8,6 @@ public class FireTool : MonoBehaviourPun
     public GameObject Flames;
     public GameObject Sound;
     public GameObject Light;
-    bool isFire = false;
 
     RaycastHit hit;
     void Start()
