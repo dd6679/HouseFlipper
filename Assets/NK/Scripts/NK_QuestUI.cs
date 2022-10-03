@@ -32,7 +32,7 @@ public class NK_QuestUI : MonoBehaviourPun
         { "거실 25㎡", new Dictionary<string, int>{ {"쓰레기 버리기", 0 }, { "벽 철거하기", 0 }, { "작은 소파 놓기", 0 } } },
         {"주방 22㎡", new Dictionary<string, int>{ { "쓰레기 버리기", 0 } } },
         {"욕실 5㎡", new Dictionary<string, int>{ { "벽 철거하기", 0 } } },
-        {"욕실 10㎡", new Dictionary<string, int>{ { "벽 철거하기", 0 } } },
+        {"욕실 10㎡", new Dictionary<string, int>{ { "변기 놓기", 0 } } },
         {"욕실 13㎡", new Dictionary<string, int>{ { "벽 철거하기", 0 } } },
         {"욕실 8㎡", new Dictionary<string, int>{ { "벽 철거하기", 0 } } },
         {"다용도실 8㎡", new Dictionary<string, int>{{"벽 철거하기", 0 }, } },
