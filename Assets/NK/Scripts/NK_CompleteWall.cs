@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Vehicles.Ball;
-//using static UnityEditor.FilePathAttribute;
 
 public class NK_CompleteWall : MonoBehaviourPun
 {
@@ -14,13 +13,13 @@ public class NK_CompleteWall : MonoBehaviourPun
     public string color;
     public string colorCode;
     public GameObject[] walls;
+    public Image progressBar;
     int currentCount;
     bool isComplete;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-
+        progressBar = GameObject.Find("progressBar").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -45,6 +44,7 @@ public class NK_CompleteWall : MonoBehaviourPun
                     if (count == walls.Length && !NK_QuestUI.completeQuest[location].Contains(color + "으로 페인트 칠하기"))
                     {
                         NK_QuestUI.completeQuest[location].Add(color + "으로 페인트 칠하기");
+                        GameManager.instance.myChangeTool.photonView.RPC("RpcProgressBar", RpcTarget.All, progressBar.GetComponent<PhotonView>().ViewID);
                         isComplete = true;
                     }
                 }

@@ -1,22 +1,21 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Threading;
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
+using UnityEngine.UI;
 
 public class NK_CompleteDemolish : MonoBehaviourPun
 {
     public string location;
     public GameObject[] walls;
+    public Image progressBar;
     int currentCount;
     bool isComplete;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        progressBar = GameObject.Find("progressBar").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -24,6 +23,7 @@ public class NK_CompleteDemolish : MonoBehaviourPun
     {
         if (isComplete)
             return;
+
         int count = 0;
         for (int i = 0; i < walls.Length; i++)
         {
@@ -38,6 +38,7 @@ public class NK_CompleteDemolish : MonoBehaviourPun
                 if (count == walls.Length && !NK_QuestUI.completeQuest[location].Contains("º® Ã¶°ÅÇÏ±â"))
                 {
                     NK_QuestUI.completeQuest[location].Add("º® Ã¶°ÅÇÏ±â");
+                    GameManager.instance.myChangeTool.photonView.RPC("RpcProgressBar", RpcTarget.All, progressBar.GetComponent<PhotonView>().ViewID);
                     isComplete = true;
                 }
             }

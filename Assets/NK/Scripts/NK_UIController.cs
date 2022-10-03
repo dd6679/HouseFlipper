@@ -27,6 +27,8 @@ public class NK_UIController : MonoBehaviour
     public GameObject[] behaviorThumbs;
     public static bool isFinishWaiting = false;
 
+    public Image progressBar;
+
     int prevBehaviorId = -1;
 
     // Start is called before the first frame update
@@ -128,8 +130,8 @@ public class NK_UIController : MonoBehaviour
             currentTime = 0;
             //isFinishWaiting = false;
         }
-
-        if (Input.GetKeyDown(KeyCode.Return))
+        
+        if (progressBar.fillAmount > 0.7 && Input.GetKeyDown(KeyCode.Return))
         {
             endUI.SetActive(true);
         }
