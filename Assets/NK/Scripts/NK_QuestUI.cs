@@ -24,9 +24,9 @@ public class NK_QuestUI : MonoBehaviourPun
     {
         quests = new Dictionary<string, Dictionary<string, int>> {
         {"현관 14㎡", new Dictionary<string, int>{ {"쓰레기 버리기", 0 } } },
-        {"방 25㎡", new Dictionary<string, int>{ { "쓰레기 버리기", 0 }, { "연분홍색으로 페인트 칠하기", 0}, { "아기 침대 놓기", 0} } },
-        {"방 18㎡", new Dictionary<string, int>{ { "쓰레기 버리기", 0 }, { "먼지 닦기", 0 }, { "페인트 칠하기", 0} } },
-        {"방 15㎡", new Dictionary<string, int>{ { "쓰레기 버리기", 0 }, { "먼지 닦기", 0 }, { "페인트 칠하기", 0 } } },
+        {"방 25㎡", new Dictionary<string, int>{ { "쓰레기 버리기", 0 }, { "연분홍색으로 페인트 칠하기", 0}, { "이층 침대 놓기", 0} } },
+        {"방 18㎡", new Dictionary<string, int>{ { "쓰레기 버리기", 0 }, { "먼지 닦기", 0 } } },
+        {"방 15㎡", new Dictionary<string, int>{ { "쓰레기 버리기", 0 }, { "먼지 닦기", 0 }, { "아기 침대 놓기", 0 }, { "기저귀 갈이대 놓기", 0 } } },
         {"방 45㎡", new Dictionary<string, int>{ { "쓰레기 버리기", 0 }, { "먼지 닦기", 0 }, { "침대 놓기", 0 }, { "서랍장 놓기", 0 } } },
         { "거실 45㎡", new Dictionary<string, int>{ { "쓰레기 버리기", 0 }, { "먼지 닦기", 0 }, { "하얀색으로 페인트 칠하기", 0 }, { "찻장 놓기", 0 }, {"식탁 놓기", 0 }, { "의자 놓기", 0 } } },
         { "거실 25㎡", new Dictionary<string, int>{ {"쓰레기 버리기", 0 }, { "벽 철거하기", 0 }, { "작은 소파 놓기", 0 } } },
