@@ -11,8 +11,13 @@ public class PaintTool : MonoBehaviourPun
     public Material[] material;
     public int x;
     Renderer ren;
+
+    public AudioClip paintSound;
+    AudioSource audioSource;
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+
         x = -1;
     }
 
@@ -24,6 +29,8 @@ public class PaintTool : MonoBehaviourPun
             {
                 if (hit.collider.gameObject.tag.Contains("Paint"))
                 {
+                    audioSource.PlayOneShot(paintSound);
+
                     int index;
                     Int32.TryParse(hit.collider.gameObject.name.Replace("(Clone)", String.Empty), out index);
                     x = index - 1;
@@ -31,6 +38,8 @@ public class PaintTool : MonoBehaviourPun
 
                 if (hit.collider.gameObject.tag.Contains("Wall") && GameManager.instance.myChangeTool.index == (int)NK_ChangeTool.ToolState.PaintTool && GameManager.instance.myChangeTool.isMoving)
                 {
+                    audioSource.PlayOneShot(paintSound);
+                    //audioSource.Play();
                     photonView.RPC("RpcChangeColor", RpcTarget.All, hit.collider.gameObject.GetComponent<PhotonView>().ViewID, x);
                 }
             }
