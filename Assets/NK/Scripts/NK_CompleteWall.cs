@@ -15,7 +15,6 @@ public class NK_CompleteWall : MonoBehaviourPun
     public string colorCode;
     public GameObject[] walls;
     int currentCount;
-    int count = 0;
     bool isComplete;
 
     // Start is called before the first frame update

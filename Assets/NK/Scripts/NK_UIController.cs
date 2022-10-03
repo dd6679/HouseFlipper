@@ -20,6 +20,8 @@ public class NK_UIController : MonoBehaviour
     public GameObject StoreUI;
     bool isCheckStore = false;
 
+    public GameObject ChattingUI;
+    bool isCheckChatting = false;
 
     public Text behaviorText;
     public GameObject[] behaviorThumbs;
@@ -130,6 +132,20 @@ public class NK_UIController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             endUI.SetActive(true);
+        }
+
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            if(!isCheckChatting)
+            {
+                ChattingUI.SetActive(true);
+                isCheckChatting = true;
+            }
+            else
+            {
+                ChattingUI.SetActive(false);
+                isCheckChatting = false;
+            }
         }
     }
 
