@@ -152,6 +152,10 @@ public class StoreUI : MonoBehaviourPun
         {
             GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "기저귀 갈이대 놓기", location.text);
         }
+        if(furName.Contains("Toilet"))
+        {
+            GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "변기 놓기", location.text);
+        }
         
     }
 }
