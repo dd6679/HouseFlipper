@@ -10,9 +10,15 @@ public class NK_QuestUI : MonoBehaviourPun
     public string locationName;
     public Text questFactory;
     public Image questParent;
+    public GameObject completeText;
     public List<string> kList = new List<string>();
     public static Dictionary<string, Dictionary<string, int>> quests;
     public static Dictionary<string, List<string>> completeQuest = new Dictionary<string, List<string>>();
+
+    private void Awake()
+    {
+        completeText = GameObject.Find("completeText");
+    }
 
     private void Start()
     {
@@ -65,10 +71,19 @@ public class NK_QuestUI : MonoBehaviourPun
                 child.transform.GetChild(0).GetComponent<Text>().text = quests[location.text][child.text].ToString() + "%";
             }
 
-            if (completeQuest[location.text].Contains(child.text))
+            if (completeQuest[location.text].Contains(child.text) && child.gameObject != null)
             {
                 Destroy(child.gameObject);
             }
+        }
+
+        if(allChild.Length == 0)
+        {
+            completeText.SetActive(true);
+        }
+        else
+        {
+            completeText.SetActive(false);
         }
 
         questParent.rectTransform.sizeDelta = new Vector2(500, 55 * allChild.Length / 2);

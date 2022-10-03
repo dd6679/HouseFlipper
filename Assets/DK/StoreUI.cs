@@ -118,23 +118,19 @@ public class StoreUI : MonoBehaviourPun
     {
         if (furName.Contains("DiningCupboard"))
         {
-            NK_QuestUI.completeQuest[location.text].Add("찻장 놓기");
-            NK_QuestUI.quests[location.text]["찻장 놓기"] = 100;
+            GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "찻장 놓기", location.text);
         }
         if (furName.Contains("DiningChair"))
         {
-            NK_QuestUI.completeQuest[location.text].Add("의자 놓기");
-            NK_QuestUI.quests[location.text]["의자 놓기"] = 100;
+            GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "의자 놓기", location.text);
         }
         if (furName.Contains("DiningTable"))
         {
-            NK_QuestUI.completeQuest[location.text].Add("식탁 놓기");
-            NK_QuestUI.quests[location.text]["식탁 놓기"] = 100;
+            GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "식탁 놓기", location.text);
         }
         if (furName.Contains("SofaSmall"))
         {
-            NK_QuestUI.completeQuest[location.text].Add("작은 소파 놓기");
-            NK_QuestUI.quests[location.text]["작은 소파 놓기"] = 100;
+            GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "작은 소파 놓기", location.text);
         }
     }
 }

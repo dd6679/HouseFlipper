@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR;
 
 public class NK_PlayerBehavior : MonoBehaviourPun
 {
@@ -254,5 +253,23 @@ public class NK_PlayerBehavior : MonoBehaviourPun
     public void OnClickWorkTileAndPanel()
     {
         ChangeState(PlayerBehaviorState.WorkTileAndPanel);
+    }
+
+    [PunRPC]
+    private void RpcProgressBar(int viewId)
+    {
+        PhotonView view = PhotonView.Find(viewId);
+        if (view != null)
+        {
+            Image progress = view.gameObject.GetComponent<Image>();
+            progress.fillAmount += 0.03f;
+        }
+    }
+
+    [PunRPC]
+    private void RpcCompleteStoreQuest(string quest, string location)
+    {
+        NK_QuestUI.completeQuest[location].Add(quest);
+        NK_QuestUI.quests[location][quest] = 100;
     }
 }
