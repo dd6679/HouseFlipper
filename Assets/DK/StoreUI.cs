@@ -132,5 +132,26 @@ public class StoreUI : MonoBehaviourPun
         {
             GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "작은 소파 놓기", location.text);
         }
+        if(furName.Contains("Bed"))
+        {
+            GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "침대 놓기", location.text);
+        }
+        if(furName.Contains("Cabinet"))
+        {
+            GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "서랍장 놓기", location.text);
+        }
+        if(furName.Contains("BabyBed"))
+        {
+            GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "아기 침대 놓기", location.text);
+        }
+        if(furName.Contains("BedAndTable"))
+        {
+            GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "이층 침대 놓기", location.text);
+        }
+        if(furName.Contains("BedAndTable"))
+        {
+            GameManager.instance.myChangeTool.photonView.RPC("RpcCompleteStoreQuest", RpcTarget.All, "기저귀 갈이대 놓기", location.text);
+        }
+        
     }
 }
