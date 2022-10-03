@@ -10,14 +10,11 @@ public class NK_CompleteQuest : MonoBehaviourPun
     int questCount;
     int childCount;
 
-    PhotonView photonView;
-
     // Start is called before the first frame update
     void Start()
     {
         questCount = gameObject.transform.childCount;
         childCount = gameObject.transform.childCount;
-        photonView = GameManager.instance.photonView;
     }
 
     // Update is called once per frame

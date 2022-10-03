@@ -3,7 +3,6 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NK_LobbyManager : MonoBehaviourPunCallbacks
@@ -25,6 +24,15 @@ public class NK_LobbyManager : MonoBehaviourPunCallbacks
     // map Thumbnail
     public GameObject[] mapThumbs;
 
+    public GameObject loadingUI;
+    public GameObject loadingManager;
+
+    RoomOptions roomOptions;
+
+    bool isCreate;
+    bool isJoin;
+    bool isRequest;
+
     void Start()
     {
         //방이름(InputField)이 변경될 때, 호출되는 함수 등록
@@ -37,7 +45,22 @@ public class NK_LobbyManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
-
+        if(isRequest)
+            return;
+        if (LoadingManager.isCheck)
+        {
+            if(isCreate)
+            {
+                // 방 생성 요청 (해당 옵션을 이용해서)
+                PhotonNetwork.CreateRoom(inputRoomName.text, roomOptions);
+                isRequest = true;
+            }
+            if(isJoin)
+            {
+                PhotonNetwork.JoinRoom(inputRoomName.text);
+                isRequest = true;
+            }
+        }
     }
 
     public void OnRoomNameValueChanged(string s)
@@ -69,7 +92,7 @@ public class NK_LobbyManager : MonoBehaviourPunCallbacks
     public void CreateRoom()
     {
         // 방 옵션을 설정
-        RoomOptions roomOptions = new RoomOptions();
+        roomOptions = new RoomOptions();
         // 최대 인원 (0이면 최대인원)
         roomOptions.MaxPlayers = byte.Parse(InputMaxPlayer.text);
         // 룸 리스트에 보이지 않게? 보이게?
@@ -82,8 +105,9 @@ public class NK_LobbyManager : MonoBehaviourPunCallbacks
         // custom 정보를 공개하는 설정
         roomOptions.CustomRoomPropertiesForLobby = new string[] { "desc", "map_id" };
 
-        // 방 생성 요청 (해당 옵션을 이용해서)
-        PhotonNetwork.CreateRoom(inputRoomName.text, roomOptions);
+        loadingUI.SetActive(true);
+        loadingManager.SetActive(true);
+        isCreate = true;
     }
 
     //방이 생성되면 호출 되는 함수
@@ -103,7 +127,9 @@ public class NK_LobbyManager : MonoBehaviourPunCallbacks
     //방 참가 요청
     public void JoinRoom()
     {
-        PhotonNetwork.JoinRoom(inputRoomName.text);
+        loadingUI.SetActive(true);
+        loadingManager.SetActive(true);
+        isJoin = true;
     }
 
     //방 참가가 완료 되었을 때 호출 되는 함수
@@ -111,7 +137,7 @@ public class NK_LobbyManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
-        SceneManager.LoadSceneAsync(2);
+        PhotonNetwork.LoadLevel(2);
     }
 
     //방 참가가 실패 되었을 때 호출 되는 함수

@@ -23,6 +23,8 @@ public class StoreUI : MonoBehaviourPun
 
     Text location;
 
+    PhotonView photonView;
+
 
     private void Awake()
     {
@@ -40,6 +42,7 @@ public class StoreUI : MonoBehaviourPun
         //UI = gameObject.GetComponentInParent<Image>();
         Paint.SetActive(false);
         Bath.SetActive(false);
+        photonView = GameManager.instance.photonView;
     }
 
     void Update()
