@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class NK_EndUI : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public GameObject Cine;
+    public GameObject canvas1;
+    public GameObject canvas2;
+    public GameObject canvas3;
     void Start()
     {
         
@@ -21,7 +25,16 @@ public class NK_EndUI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            PhotonNetwork.LoadLevel("ConnectionScene");
+            //PhotonNetwork.LoadLevel("ConnectionScene");
+            GameObject Player = GameObject.FindGameObjectWithTag("Player");
+            Camera cam = Player.GetComponentInChildren<Camera>();
+            cam.gameObject.SetActive(false);
+
+            Cine.SetActive(true);
+            canvas1.SetActive(false);
+            canvas2.SetActive(false);
+            canvas3.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }

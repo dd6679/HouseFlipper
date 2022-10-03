@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 using static NK_PlayerBehavior;
 
 public class NK_UIController : MonoBehaviour
@@ -20,8 +21,8 @@ public class NK_UIController : MonoBehaviour
     public GameObject StoreUI;
     bool isCheckStore = false;
 
-    public GameObject ChattingUI;
-    bool isCheckChatting = false;
+    public GameObject EndImage;
+
 
     public Text behaviorText;
     public GameObject[] behaviorThumbs;
@@ -136,21 +137,17 @@ public class NK_UIController : MonoBehaviour
             endUI.SetActive(true);
         }
 
-        if(Input.GetKeyDown(KeyCode.C))
+        if(EndImage.activeSelf)
         {
-            if(!isCheckChatting)
-            {
-                ChattingUI.SetActive(true);
-                isCheckChatting = true;
-            }
-            else
-            {
-                ChattingUI.SetActive(false);
-                isCheckChatting = false;
-            }
+            Invoke("Connection", 3f);
         }
     }
 
+    public void Connection()
+    {
+        PhotonNetwork.LoadLevel("ConnectionScene");
+
+    }
 
     // ¿Å±â±â
     public void OnClickMove()
