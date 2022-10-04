@@ -10,6 +10,10 @@ public class NK_EndUI : MonoBehaviour
     public GameObject canvas1;
     public GameObject canvas2;
     public GameObject canvas3;
+
+    public GameObject wall1;
+    public GameObject wall2;
+
     void Start()
     {
         
@@ -35,6 +39,8 @@ public class NK_EndUI : MonoBehaviour
             canvas2.SetActive(false);
             canvas3.SetActive(false);
             gameObject.SetActive(false);
+            wall1.SetActive(false);
+            wall2.SetActive(false);
         }
     }
 }

@@ -16,6 +16,7 @@ public class NK_CompleteWall : MonoBehaviourPun
     public Image progressBar;
     int currentCount;
     bool isComplete;
+    string locationText;
 
     private void Awake()
     {
@@ -29,7 +30,12 @@ public class NK_CompleteWall : MonoBehaviourPun
             return;
         int count = 0;
 
-        //if (location == GameObject.Find("location").GetComponent<Text>().text)
+        if(GameObject.Find("location") == null)
+        {
+            return;
+        }
+
+        if (location == GameObject.Find("location").GetComponent<Text>().text)
         {
             for (int i = 0; i < walls.Length; i++)
             {
