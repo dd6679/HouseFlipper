@@ -1,6 +1,7 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
@@ -22,7 +23,7 @@ public class NK_PlayerMove : MonoBehaviourPun, IPunObservable
     float yVelocity;
 
     //닉네임 UI
-    public Text nickName;
+    public TextMeshProUGUI nickName;
 
     //도착 위치
     Vector3 receivePos;
