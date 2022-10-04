@@ -29,7 +29,7 @@ public class NK_CompleteWall : MonoBehaviourPun
             return;
         int count = 0;
 
-        if (location == GameObject.Find("location").GetComponent<Text>().text)
+        //if (location == GameObject.Find("location").GetComponent<Text>().text)
         {
             for (int i = 0; i < walls.Length; i++)
             {
