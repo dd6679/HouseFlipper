@@ -155,7 +155,7 @@ public class NK_UIController : MonoBehaviour
 
         if(EndImage.activeSelf)
         {
-            Invoke("Connection", 3f);
+            Invoke("Connection", 4f);
         }
     }
 
