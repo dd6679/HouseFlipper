@@ -72,7 +72,7 @@ public class NK_Move : MonoBehaviourPun
 
         int layerMask = 1 << LayerMask.NameToLayer("Floor");
 
-        if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask) && NK_UIController.isFinishWaiting)
+        if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask) && GameManager.instance.myPlayerBehavior.behaviorState == NK_PlayerBehavior.PlayerBehaviorState.Move)
         {
             float H = Camera.main.transform.position.y;
             float h = objectHitPosition.transform.position.y;
