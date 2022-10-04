@@ -53,7 +53,7 @@ public class NK_PlayerBehavior : MonoBehaviourPun
             if (Physics.Raycast(ray, out var hit))
             {
                 // ø¿∫Í¡ß∆Æ¿« ≈∏∞Ÿ √ÎµÊ
-                if (hit.collider.gameObject.CompareTag("Furniture"))
+                if (hit.collider.gameObject.CompareTag("Furniture") || hit.collider.gameObject.CompareTag("Wall"))
                 {
                     if (hit.collider.gameObject.GetComponent<Outline>() != null)
                     {

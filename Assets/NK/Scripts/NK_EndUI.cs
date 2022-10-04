@@ -14,14 +14,17 @@ public class NK_EndUI : MonoBehaviour
     public GameObject wall1;
     public GameObject wall2;
 
+    public GameObject fur;
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             gameObject.SetActive(false);
@@ -29,6 +32,12 @@ public class NK_EndUI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            Outline[] outline = fur.GetComponentsInChildren<Outline>();
+            for (int i = 0; i < outline.Length; i++)
+            {
+                outline[i].enabled = false;
+            }
+
             //PhotonNetwork.LoadLevel("ConnectionScene");
             GameObject Player = GameObject.FindGameObjectWithTag("Player");
             Camera cam = Player.GetComponentInChildren<Camera>();
