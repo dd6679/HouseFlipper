@@ -148,7 +148,7 @@ public class NK_UIController : MonoBehaviour
             }
         }
 
-        if (/*progressBar.fillAmount > 0.7 &&*/ Input.GetKeyDown(KeyCode.Return))
+        if (progressBar.fillAmount > 0.7 && Input.GetKeyDown(KeyCode.Return))
         {
             endUI.SetActive(true);
         }

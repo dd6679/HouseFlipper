@@ -14,8 +14,6 @@ public class NK_EndUI : MonoBehaviour
     public GameObject wall1;
     public GameObject wall2;
 
-    public GameObject fur;
-
     void Start()
     {
 
@@ -32,10 +30,13 @@ public class NK_EndUI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Outline[] outline = fur.GetComponentsInChildren<Outline>();
-            for (int i = 0; i < outline.Length; i++)
+            GameObject[] fur = GameObject.FindGameObjectsWithTag("Furniture");
+            for (int i = 0; i < fur.Length; i++)
             {
-                outline[i].enabled = false;
+                if (fur[i].GetComponent<Outline>() != null)
+                {
+                    fur[i].GetComponent<Outline>().enabled = false;
+                }
             }
 
             //PhotonNetwork.LoadLevel("ConnectionScene");

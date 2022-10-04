@@ -10,7 +10,6 @@ public class StoreUI : MonoBehaviourPun
 {
     public GameObject[] Bt;
     public GameObject[] Fur;
-    public Transform fur;
     int index = -1;
 
     GameObject UI;
@@ -104,7 +103,6 @@ public class StoreUI : MonoBehaviourPun
             if (hit.collider.gameObject.tag.Contains("Floor"))
             {
                 GameObject gogo = PhotonNetwork.Instantiate(furName, hit.point, Quaternion.identity);
-                gogo.transform.SetParent(fur,false);
                 CompleteStoreQuest(furName);
                 //gogo.transform.position = hit.point;
                 UI.SetActive(false);
